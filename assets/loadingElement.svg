@@ -1,0 +1,11 @@
+<svg width="1681" height="1471" viewBox="0 0 1681 1471" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path opacity="0.2" d="M308.183 1466.53H0L861.513 0H1260.75V1110.76H955.193L875.521 1247.71H1418.34V0H1681V1470.87H481.536L817.736 891.22H998.094V289.103L308.183 1466.53Z" fill="url(#grad-indicators-section-4)">
+            </path>
+            <defs>
+                <linearGradient class="pattern-gradient" id="grad-indicators-section-4" x1="1420.1" x2="1341.5" y1="1493.86" y2="31.8811" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#B5DDD6" stop-opacity="0"></stop>
+                    <stop class="pattern-gradient-stop" offset="0.588542" stop-color="#A5D9CC"></stop>
+                    <stop offset="1" stop-color="#B5DDD1" stop-opacity="0"></stop>
+                </linearGradient>
+            </defs>
+        </svg>

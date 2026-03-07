@@ -1,12 +1,11 @@
 import React from 'react';
-import Link from "next/link";
+
+import HomeHeader from "@/components/home/home_header";
 
 const Page = () => {
     return (
-        <div className={""}>
-            asdasd
-
-            <Link href={"/ru/about"}>asdasd</Link>
+        <div >
+<HomeHeader/>
         </div>
     );
 };
