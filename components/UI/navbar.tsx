@@ -307,7 +307,6 @@ export default function Navbar({ lang }: NavbarProps) {
                                     href={`/${lang}${href}`}
                                     style={{
                                         fontSize: 18, fontWeight: 400,
-                                        fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                                         letterSpacing: '0.01em',
                                         color: textColor, textDecoration: 'none',
                                         opacity: active ? 1 : 0.7,
@@ -337,7 +336,7 @@ export default function Navbar({ lang }: NavbarProps) {
                             border: `1.5px solid ${borderColor}`,
                             background: 'transparent', color: textColor,
                             fontSize: 14,
-                            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+
                             cursor: 'pointer', whiteSpace: 'nowrap',
                             transition: 'border-color 0.4s, color 0.4s',
                         }}>
@@ -356,7 +355,7 @@ export default function Navbar({ lang }: NavbarProps) {
                             border: `1.5px solid ${borderColor}`,
                             background: 'transparent', color: textColor,
                             fontSize: 14,
-                            fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+
                             cursor: 'pointer', whiteSpace: 'nowrap',
                             transition: 'border-color 0.4s, color 0.4s',
                         }}>
