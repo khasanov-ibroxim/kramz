@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import { sweepNavigate } from '@/components/UI/Pagetransition';
 
 interface NavbarProps {
     lang: string;
@@ -26,8 +27,7 @@ function Logo({ color = '#1a1a1a', size = 36 }: { color?: string; size?: number 
     const w = Math.round(size * (220 / 207));
     return (
         <svg
-            width={w}
-            height={h}
+            width={w} height={h}
             viewBox="0 0 220 207"
             fill={color}
             xmlns="http://www.w3.org/2000/svg"
@@ -56,11 +56,43 @@ function ArrowRight({ color = 'rgba(255,255,255,0.5)' }: { color?: string }) {
     );
 }
 
-// ── Mobile Menu (o'ngdan chapga) ───────────────────────────
+// ── SweepLink — sweepNavigate bilan ishlaydigan link ──────
+function SweepLink({
+                       href,
+                       children,
+                       style,
+                       onMouseEnter,
+                       onMouseLeave,
+                       onClick,
+                   }: {
+    href: string;
+    children: React.ReactNode;
+    style?: React.CSSProperties;
+    onMouseEnter?: React.MouseEventHandler<HTMLAnchorElement>;
+    onMouseLeave?: React.MouseEventHandler<HTMLAnchorElement>;
+    onClick?: () => void;
+}) {
+    return (
+        <a
+            href={href}
+            style={{ cursor: 'pointer', ...style }}
+            onClick={(e) => {
+                e.preventDefault();
+                onClick?.();
+                sweepNavigate(href);
+            }}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+        >
+            {children}
+        </a>
+    );
+}
+
+// ── Mobile Menu ────────────────────────────────────────────
 function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => void; lang: string }) {
     const pathname = usePathname();
 
-    // Scroll lock
     useEffect(() => {
         if (open) document.body.style.overflow = 'hidden';
         else document.body.style.overflow = '';
@@ -71,7 +103,6 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
         <AnimatePresence>
             {open && (
                 <>
-                    {/* Backdrop */}
                     <motion.div
                         key="backdrop"
                         initial={{ opacity: 0 }}
@@ -86,7 +117,6 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                         }}
                     />
 
-                    {/* Menu panel — o'ngdan chapga */}
                     <motion.div
                         key="mobile-menu"
                         initial={{ x: '100%' }}
@@ -96,8 +126,7 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                         style={{
                             position: 'fixed',
                             top: 0, right: 0, bottom: 0,
-                            width: '100%',
-                            maxWidth: 420,
+                            width: '100%', maxWidth: 420,
                             background: '#009C89',
                             zIndex: 9990,
                             display: 'flex',
@@ -108,10 +137,11 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                     >
                         {/* Top bar */}
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 36 }}>
-                            <Logo color="#fff" size={32} />
+                            <SweepLink href={`/${lang}`} onClick={onClose}>
+                                <Logo color="#fff" size={32} />
+                            </SweepLink>
 
                             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                                {/* Phone */}
                                 <button style={{
                                     width: 38, height: 38, borderRadius: '50%',
                                     border: '1.5px solid rgba(255,255,255,0.35)',
@@ -121,9 +151,8 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                                     <PhoneIcon color="#fff" />
                                 </button>
 
-                                {/* Lang */}
                                 {LOCALES.map(l => (
-                                    <Link key={l} href={`/${l}`} onClick={onClose} style={{
+                                    <SweepLink key={l} href={`/${l}`} onClick={onClose} style={{
                                         width: 34, height: 34, borderRadius: '50%',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                                         fontSize: 12, fontWeight: 600, letterSpacing: '0.05em',
@@ -133,10 +162,9 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                                         color: l === lang ? '#009C89' : 'rgba(255,255,255,0.65)',
                                         border: l === lang ? 'none' : '1.5px solid rgba(255,255,255,0.3)',
                                         transition: 'all 0.2s',
-                                    }}>{l}</Link>
+                                    }}>{l}</SweepLink>
                                 ))}
 
-                                {/* Close */}
                                 <button onClick={onClose} style={{
                                     width: 38, height: 38, background: 'transparent',
                                     border: 'none', cursor: 'pointer',
@@ -190,7 +218,8 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                         {/* Nav links */}
                         <nav style={{ flex: 1 }}>
                             {NAV_LINKS.map(({ label, href }, i) => {
-                                const active = pathname.startsWith(`/${lang}${href}`);
+                                const full = `/${lang}${href}`;
+                                const active = pathname.startsWith(full);
                                 return (
                                     <motion.div
                                         key={href}
@@ -198,8 +227,8 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                                         animate={{ x: 0, opacity: 1 }}
                                         transition={{ delay: 0.08 + i * 0.065, duration: 0.38, ease: [0.25, 0.46, 0.45, 0.94] }}
                                     >
-                                        <Link
-                                            href={`/${lang}${href}`}
+                                        <SweepLink
+                                            href={full}
                                             onClick={onClose}
                                             style={{
                                                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
@@ -214,7 +243,7 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                                         >
                                             {label}
                                             <ArrowRight />
-                                        </Link>
+                                        </SweepLink>
                                     </motion.div>
                                 );
                             })}
@@ -249,7 +278,6 @@ export default function Navbar({ lang }: NavbarProps) {
 
     return (
         <>
-            {/* ── NAVBAR — tepadan pastga animatsiya ── */}
             <motion.header
                 initial={{ y: -80, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -265,7 +293,6 @@ export default function Navbar({ lang }: NavbarProps) {
                     transition: 'background 0.4s, border-color 0.4s, backdrop-filter 0.4s',
                 }}
             >
-                {/* Full-width inner container */}
                 <div style={{
                     width: '100%',
                     padding: '0 clamp(16px, 4vw, 56px)',
@@ -278,7 +305,7 @@ export default function Navbar({ lang }: NavbarProps) {
                 }}>
 
                     {/* LOGO */}
-                    <Link
+                    <SweepLink
                         href={`/${lang}`}
                         style={{
                             display: 'flex', alignItems: 'center', gap: 14,
@@ -286,25 +313,26 @@ export default function Navbar({ lang }: NavbarProps) {
                         }}
                     >
                         <Logo color={textColor} size={34} />
-                        <div className={" hidden lg:block"} style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', lineHeight: 1.3, transition: 'color 0.4s' }}>
+                        <div className="hidden lg:block" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', lineHeight: 1.3, transition: 'color 0.4s' }}>
                             <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>КРАСНОЯРСКИЙ</div>
                             <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>МЕТАЛЛУРГИЧЕСКИЙ</div>
                             <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>ЗАВОД</div>
                         </div>
-                    </Link>
+                    </SweepLink>
 
-                    {/* DESKTOP NAV — centered */}
+                    {/* DESKTOP NAV */}
                     <nav className="nav-desktop" style={{
                         display: 'flex', alignItems: 'center',
                         gap: 'clamp(16px, 2.5vw, 36px)',
                         flex: 1, justifyContent: 'center',
                     }}>
                         {NAV_LINKS.map(({ label, href }) => {
-                            const active = pathname.startsWith(`/${lang}${href}`);
+                            const full = `/${lang}${href}`;
+                            const active = pathname.startsWith(full);
                             return (
-                                <Link
+                                <SweepLink
                                     key={href}
-                                    href={`/${lang}${href}`}
+                                    href={full}
                                     style={{
                                         fontSize: 18, fontWeight: 400,
                                         letterSpacing: '0.01em',
@@ -319,7 +347,7 @@ export default function Navbar({ lang }: NavbarProps) {
                                     onMouseLeave={e => (e.currentTarget.style.opacity = active ? '1' : '0.7')}
                                 >
                                     {label}
-                                </Link>
+                                </SweepLink>
                             );
                         })}
                     </nav>
@@ -329,15 +357,12 @@ export default function Navbar({ lang }: NavbarProps) {
                         display: 'flex', alignItems: 'center',
                         gap: 8, flexShrink: 0,
                     }}>
-                        {/* Скачать каталог */}
                         <button style={{
                             display: 'flex', alignItems: 'center', gap: 7,
                             padding: '8px 16px', borderRadius: 24,
                             border: `1.5px solid ${borderColor}`,
                             background: 'transparent', color: textColor,
-                            fontSize: 14,
-
-                            cursor: 'pointer', whiteSpace: 'nowrap',
+                            fontSize: 14, cursor: 'pointer', whiteSpace: 'nowrap',
                             transition: 'border-color 0.4s, color 0.4s',
                         }}>
                             Скачать каталог
@@ -348,21 +373,17 @@ export default function Navbar({ lang }: NavbarProps) {
                             }}>PDF</span>
                         </button>
 
-                        {/* Связаться */}
                         <button style={{
                             display: 'flex', alignItems: 'center', gap: 7,
                             padding: '8px 16px', borderRadius: 24,
                             border: `1.5px solid ${borderColor}`,
                             background: 'transparent', color: textColor,
-                            fontSize: 14,
-
-                            cursor: 'pointer', whiteSpace: 'nowrap',
+                            fontSize: 14, cursor: 'pointer', whiteSpace: 'nowrap',
                             transition: 'border-color 0.4s, color 0.4s',
                         }}>
                             Связаться с нами
                         </button>
 
-                        {/* Phone */}
                         <button style={{
                             width: 36, height: 36, borderRadius: '50%',
                             border: `1.5px solid ${borderColor}`,
@@ -376,7 +397,7 @@ export default function Navbar({ lang }: NavbarProps) {
                         {/* Lang */}
                         <div style={{ display: 'flex', gap: 4, marginLeft: 2 }}>
                             {LOCALES.map(l => (
-                                <Link key={l} href={`/${l}`} style={{
+                                <SweepLink key={l} href={`/${l}`} style={{
                                     width: 32, height: 32, borderRadius: '50%',
                                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                                     fontSize: 12, fontWeight: 600, letterSpacing: '0.04em',
@@ -387,14 +408,13 @@ export default function Navbar({ lang }: NavbarProps) {
                                     border: l === lang ? 'none' : `1.5px solid ${borderColor}`,
                                     opacity: l === lang ? 1 : 0.65,
                                     transition: 'all 0.3s',
-                                }}>{l}</Link>
+                                }}>{l}</SweepLink>
                             ))}
                         </div>
                     </div>
 
                     {/* MOBILE RIGHT */}
                     <div className="nav-mobile" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        {/* Catalog */}
                         <button style={{
                             display: 'flex', alignItems: 'center', gap: 6,
                             padding: '7px 13px', borderRadius: 20,
@@ -412,7 +432,6 @@ export default function Navbar({ lang }: NavbarProps) {
                             }}>PDF</span>
                         </button>
 
-                        {/* Burger */}
                         <button
                             onClick={() => setMobileOpen(true)}
                             style={{
@@ -431,18 +450,16 @@ export default function Navbar({ lang }: NavbarProps) {
                 </div>
             </motion.header>
 
-            {/* MOBILE MENU */}
             <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} lang={lang} />
 
             <style>{`
-        .nav-desktop { display: flex !important; }
-        .nav-mobile  { display: none  !important; }
-
-        @media (max-width: 900px) {
-          .nav-desktop { display: none  !important; }
-          .nav-mobile  { display: flex  !important; }
-        }
-      `}</style>
+                .nav-desktop { display: flex !important; }
+                .nav-mobile  { display: none  !important; }
+                @media (max-width: 900px) {
+                    .nav-desktop { display: none  !important; }
+                    .nav-mobile  { display: flex  !important; }
+                }
+            `}</style>
         </>
     );
 }

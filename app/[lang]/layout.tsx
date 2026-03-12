@@ -3,6 +3,7 @@ import { getCommonDictionary } from "@/lib/dictionary";
 import { notFound } from "next/navigation";
 import PageTransition from "@/components/UI/Pagetransition";
 import Navbar from "@/components/UI/navbar";
+import Footer from "@/components/UI/footer";
 
 export async function generateStaticParams() {
     return i18n.locales.map((locale) => ({ lang: locale }));
@@ -27,6 +28,7 @@ export default async function LangLayout({
         <PageTransition>
             <Navbar lang={lang}/>
             {children}
+            <Footer/>
         </PageTransition>
     );
 }

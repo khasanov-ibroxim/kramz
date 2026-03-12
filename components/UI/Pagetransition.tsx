@@ -1,17 +1,25 @@
 'use client';
 
-import { useEffect, useState, useRef } from 'react';
-import { usePathname } from 'next/navigation';
+import { useEffect, useState, useRef, useCallback } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const BRAND = '#009C89';
 const EASE = [0.76, 0, 0.24, 1] as const;
+const SWEEP_DURATION = 550;
+
+type SweepCallback = (href: string) => void;
+let globalSweepNavigate: SweepCallback | null = null;
+
+export function sweepNavigate(href: string) {
+    if (globalSweepNavigate) globalSweepNavigate(href);
+}
 
 // ── Counter 0→100 ──────────────────────────────────────────
 function useCounter(active: boolean, duration = 1400) {
     const [count, setCount] = useState(0);
     useEffect(() => {
-        if (!active) return; // reset qilmaymiz — 100 da qoladi
+        if (!active) return;
         const start = performance.now();
         let raf: number;
         const tick = (now: number) => {
@@ -26,7 +34,7 @@ function useCounter(active: boolean, duration = 1400) {
     return count;
 }
 
-// ── Watermark — pastdan tepaga opacity animatsiyasi ────────
+// ── Watermark ──────────────────────────────────────────────
 function WatermarkSVG({ exiting }: { exiting: boolean }) {
     return (
         <motion.div
@@ -34,12 +42,9 @@ function WatermarkSVG({ exiting }: { exiting: boolean }) {
             animate={exiting ? { opacity: 0 } : { opacity: 1 }}
             transition={{ duration: 1.4, ease: 'easeOut' }}
             style={{
-                position: 'absolute',
-                inset: 0,
-                pointerEvents: 'none',
-                userSelect: 'none',
-                overflow: 'hidden',
-                zIndex: 0,
+                position: 'absolute', inset: 0,
+                pointerEvents: 'none', userSelect: 'none',
+                overflow: 'hidden', zIndex: 0,
             }}
         >
             <svg
@@ -51,33 +56,20 @@ function WatermarkSVG({ exiting }: { exiting: boolean }) {
                 style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
             >
                 <defs>
-                    <linearGradient
-                        id="grad-loader-watermark"
-                        x1="1420.1" x2="1341.5"
-                        y1="1493.86" y2="31.8811"
-                        gradientUnits="userSpaceOnUse"
-                    >
+                    <linearGradient id="grad-loader-watermark" x1="1420.1" x2="1341.5" y1="1493.86" y2="31.8811" gradientUnits="userSpaceOnUse">
                         <stop stopColor="#B5DDD6" stopOpacity="0" />
                         <stop offset="0.588542" stopColor="#A5D9CC" stopOpacity="1" />
                         <stop offset="1" stopColor="#B5DDD1" stopOpacity="0" />
                     </linearGradient>
-
-                    {/* Pastdan tepaga mask — opacity 0 → 1 → 0.6 */}
-                    <linearGradient
-                        id="grad-loader-reveal"
-                        x1="0" y1="1471" x2="0" y2="0"
-                        gradientUnits="userSpaceOnUse"
-                    >
-                        <stop offset="0"   stopColor="white" stopOpacity="0" />
+                    <linearGradient id="grad-loader-reveal" x1="0" y1="1471" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+                        <stop offset="0" stopColor="white" stopOpacity="0" />
                         <stop offset="0.45" stopColor="white" stopOpacity="1" />
-                        <stop offset="1"   stopColor="white" stopOpacity="0.55" />
+                        <stop offset="1" stopColor="white" stopOpacity="0.55" />
                     </linearGradient>
-
                     <mask id="mask-loader-reveal">
                         <rect width="1681" height="1471" fill="url(#grad-loader-reveal)" />
                     </mask>
                 </defs>
-
                 <path
                     opacity="0.2"
                     d="M308.183 1466.53H0L861.513 0H1260.75V1110.76H955.193L875.521 1247.71H1418.34V0H1681V1470.87H481.536L817.736 891.22H998.094V289.103L308.183 1466.53Z"
@@ -89,7 +81,7 @@ function WatermarkSVG({ exiting }: { exiting: boolean }) {
     );
 }
 
-// ── Matn bloki (qayta ishlatiladi) ─────────────────────────
+// ── Brand Text ─────────────────────────────────────────────
 function BrandText({ exiting, align }: { exiting: boolean; align: 'right' | 'center' }) {
     return (
         <div style={{ textAlign: align, position: 'relative', zIndex: 1 }}>
@@ -129,7 +121,7 @@ function BrandText({ exiting, align }: { exiting: boolean; align: 'right' | 'cen
     );
 }
 
-// ── Full-screen loading ────────────────────────────────────
+// ── Full-screen loader ─────────────────────────────────────
 function FullLoader({ onDone }: { onDone: () => void }) {
     const [exiting, setExiting] = useState(false);
     const count = useCounter(!exiting, 1400);
@@ -145,13 +137,9 @@ function FullLoader({ onDone }: { onDone: () => void }) {
     const counterEl = (fontSize: string) => (
         <div style={{
             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-            fontSize,
-            fontWeight: 200,
-            color: '#fff',
-            letterSpacing: '-0.04em',
-            lineHeight: 1,
-            position: 'relative',
-            zIndex: 1,
+            fontSize, fontWeight: 200, color: '#fff',
+            letterSpacing: '-0.04em', lineHeight: 1,
+            position: 'relative', zIndex: 1,
         }}>
             [ {String(count).padStart(2, '0')} ]
         </div>
@@ -164,36 +152,22 @@ function FullLoader({ onDone }: { onDone: () => void }) {
             transition={{ duration: 0.7, ease: EASE }}
             style={{
                 position: 'fixed', inset: 0,
-                background: BRAND,
-                zIndex: 9999,
-                overflow: 'hidden',
+                background: BRAND, zIndex: 9999, overflow: 'hidden',
             }}
         >
             <WatermarkSVG exiting={exiting} />
-
-            {/* ── DESKTOP: chap counter + o'ng matn ── */}
             <div className="loader-desktop" style={{
-                position: 'absolute', inset: 0,
-                display: 'flex',
-                alignItems: 'flex-end',
-                justifyContent: 'space-between',
-                padding: 'clamp(24px, 5vw, 56px) clamp(24px, 6vw, 72px)',
-                zIndex: 1,
+                position: 'absolute', inset: 0, display: 'flex',
+                alignItems: 'flex-end', justifyContent: 'space-between',
+                padding: 'clamp(24px, 5vw, 56px) clamp(24px, 6vw, 72px)', zIndex: 1,
             }}>
                 {counterEl('clamp(72px, 11vw, 130px)')}
                 <BrandText exiting={exiting} align="right" />
             </div>
-
-            {/* ── MOBILE: markazda counter + matn ── */}
             <div className="loader-mobile" style={{
-                position: 'absolute', inset: 0,
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                zIndex: 1,
-                gap: 28,
-                padding: '24px',
+                position: 'absolute', inset: 0, display: 'flex',
+                flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                zIndex: 1, gap: 28, padding: '24px',
             }}>
                 {counterEl('clamp(64px, 20vw, 100px)')}
                 <BrandText exiting={exiting} align="center" />
@@ -205,17 +179,29 @@ function FullLoader({ onDone }: { onDone: () => void }) {
 // ── Main component ─────────────────────────────────────────
 export default function PageTransition({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
+    const router = useRouter();
     const [initialLoading, setInitialLoading] = useState(true);
     const [sweeping, setSweeping] = useState(false);
     const [displayChildren, setDisplayChildren] = useState(children);
     const isFirst = useRef(true);
 
-    useEffect(() => {
-        if (isFirst.current) { isFirst.current = false; return; }
+    globalSweepNavigate = useCallback((href: string) => {
+        // 1. Sweep kiradi
         setSweeping(true);
-        const t1 = setTimeout(() => { setDisplayChildren(children); }, 500);
-        const t2 = setTimeout(() => { setSweeping(false); }, 1100);
-        return () => { clearTimeout(t1); clearTimeout(t2); };
+
+        // 2. Sweep to'liq ekranni yopganda (SWEEP_DURATION ms) — navigate
+        setTimeout(() => {
+            router.push(href);
+        }, SWEEP_DURATION);
+    }, [router]);
+
+    useEffect(() => {
+        // Birinchi render — skip
+        if (isFirst.current) { isFirst.current = false; return; }
+
+        // Pathname o'zgardi: children yangilab, sweep chiqarамиз
+        setDisplayChildren(children);
+        setTimeout(() => setSweeping(false), 50);
     }, [pathname]);
 
     return (
@@ -231,7 +217,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
                         initial={{ y: '-100%' }}
                         animate={{ y: '0%' }}
                         exit={{ y: '100%' }}
-                        transition={{ duration: 0.55, ease: EASE }}
+                        transition={{ duration: SWEEP_DURATION / 1000, ease: EASE }}
                         style={{
                             position: 'fixed', inset: 0,
                             background: BRAND,

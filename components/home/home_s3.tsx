@@ -120,7 +120,6 @@ const HomeS3 = () => {
 
     const items = TAB_DATA[activeTab] ?? [];
 
-    // Birinchi qatordagi kartalar soni: tab 0 → 2, tab 1 → 2
     const firstRow = items.slice(0, 2);
     const secondRow = items.slice(2);
 
