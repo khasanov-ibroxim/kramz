@@ -3,12 +3,14 @@
 @font-face {
   font-family: "Title_Font_Gilroy";
   src: url("../assets/fonts/Gilroy-Light.otf") format("opentype");
-
+}
+@font-face {
+  font-family: "Title_Font_Gilroy_Bold";
+  src: url("../assets/fonts/Gilroy-ExtraBold.otf") format("opentype");
 }
 @font-face {
   font-family: "Other_Font_Suisse";
   src: url("../assets/fonts/suisse-intl-regular.ttf") format("truetype");
-
 }
 
 :root {
@@ -41,4 +43,16 @@ body {
 }
 .title_font{
   font-family: Title_Font_Gilroy, sans-serif;
+}
+.title_font_bold{
+  font-family: Title_Font_Gilroy_Bold, sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 4vw, 80px);
+  padding-right: clamp(16px, 4vw, 80px);
 }
