@@ -50,7 +50,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1240px;
+  max-width: 1340px;
   margin-left: auto;
   margin-right: auto;
   padding-left: clamp(16px, 4vw, 80px);
