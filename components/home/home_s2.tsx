@@ -36,34 +36,49 @@ function TextPara({ text, delay }: { text: string; delay: number }) {
 }
 
 // ── Карточка ───────────────────────────────────────────────
-function StatCard({ stat, index }: { stat: typeof STATS[0]; index: number }) {
+function StatCard({ stat, index, total }: { stat: typeof STATS[0]; index: number; total: number }) {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: '-50px' });
+
+    // Grid positions for 3-column layout
+    const col = index % 3;
+    const row = Math.floor(index / 3);
+    const totalRows = Math.ceil(total / 3);
+
+    const isLastRow = row === totalRows - 1;
+    const isLastCol = col === 2 || index === total - 1;
 
     return (
         <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: (index % 3) * 0.09, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 0.5, delay: col * 0.09, ease: [0.25, 0.46, 0.45, 0.94] }}
             className={[
-                "relative flex flex-col items-center justify-center text-center rounded-2xl p-8 md:p-10",
-                stat.highlight
-                    ? "bg-[#009C89]"
-                    : "",
+                "relative flex flex-col items-center justify-center text-center",
+                "p-8 md:p-10",
+                stat.highlight ? "bg-[#009C89] rounded-2xl" : "rounded-2xl",
             ].join(" ")}
         >
-
             {!stat.highlight && (
                 <>
-                    {/* top line */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-black/20" />
+                    {/* top border — всегда */}
+                    <div className="absolute top-0 left-4 right-4 h-[1px] bg-black/15" />
 
-                    {/* bottom line */}
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[1px] bg-black/20" />
+                    {/* bottom border — только не в последней строке */}
+                    {!isLastRow && (
+                        <div className="absolute bottom-0 left-4 right-4 h-[1px] bg-black/15" />
+                    )}
 
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[90%] w-[1px] bg-black/20" />
-                    <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[90%] w-[1px] bg-black/20" />
+                    {/* left border — только не в первой колонке */}
+                    {col !== 0 && (
+                        <div className="absolute left-0 top-4 bottom-4 w-[1px] bg-black/15" />
+                    )}
+
+                    {/* right border — только не в последней колонке */}
+                    {!isLastCol && (
+                        <div className="absolute right-0 top-4 bottom-4 w-[1px] bg-black/15" />
+                    )}
                 </>
             )}
 
@@ -84,7 +99,6 @@ function StatCard({ stat, index }: { stat: typeof STATS[0]; index: number }) {
             >
                 {stat.label}
             </div>
-
         </motion.div>
     );
 }
@@ -123,10 +137,10 @@ const HomeS2 = () => {
                     ))}
                 </div>
 
-                {/* Сетка карточек 3×2 */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  pt-4">
+                {/* Сетка карточек — mobile: 1 col, tablet: 2 col, desktop: 3 col */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-4">
                     {STATS.map((stat, i) => (
-                        <StatCard key={stat.value} stat={stat} index={i} />
+                        <StatCard key={stat.value} stat={stat} index={i} total={STATS.length} />
                     ))}
                 </div>
 

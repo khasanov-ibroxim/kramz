@@ -76,7 +76,7 @@ function ImageSkeleton() {
     );
 }
 
-// ── Optimized Image — blur placeholder + fade on load ──────
+// ── Optimized Image ────────────────────────────────────────
 function OptimizedImage({src, alt, fill, priority = false, sizes, style}: {
     src: StaticImageData | string;
     alt: string;
@@ -137,7 +137,6 @@ function ProjectPopup({item, onClose}: { item: ProjectItem; onClose: () => void 
                 style={{background: '#fff', borderRadius: 20, width: '100%', maxWidth: 900, maxHeight: '90vh', overflow: 'hidden', display: 'flex', flexDirection: 'column', boxShadow: '0 32px 80px rgba(0,0,0,0.22)'}}
             >
                 <div style={{position: 'relative', width: '100%', height: 340, flexShrink: 0, overflow: 'hidden'}}>
-                    {/* priority=true — popup ochilganda darhol yuklanadi */}
                     <OptimizedImage src={item.image} alt={item.title} fill priority sizes="(max-width: 768px) 100vw, 900px"/>
                     <div style={{position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 55%)', zIndex: 1}}/>
                     <div style={{position: 'absolute', top: 20, left: 24, zIndex: 2, background: 'rgba(255,255,255,0.18)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.3)', borderRadius: 100, padding: '6px 14px', display: 'flex', alignItems: 'center', gap: 6}}>
@@ -244,7 +243,7 @@ const HomeS5 = () => {
     const secondRow = items.slice(3);
 
     return (
-        <div className="container py-16">
+        <div className="container py-16 overflow-hidden">
             <motion.h2 ref={titleRef} initial={{opacity: 0, y: 20}} animate={titleInView ? {opacity: 1, y: 0} : {}} transition={{duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94]}} className="title_font font-semibold text-4xl md:text-5xl lg:text-5xl uppercase mb-10 tracking-tight text-[#1a1a1a]">
                 Реализованные проекты
             </motion.h2>
@@ -254,16 +253,52 @@ const HomeS5 = () => {
             </div>
 
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 12}}>
-                <motion.div initial={{opacity: 0, y: 10}} animate={titleInView ? {opacity: 1, y: 0} : {}} transition={{duration: 0.5, delay: 0.14}} style={{display: 'flex', gap: 4, padding: 4, borderRadius: 100, background: '#fff', width: 'fit-content'}}>
+                {/* Табы — уникальный layoutId "s5-activeTab" */}
+                <motion.div
+                    initial={{opacity: 0, y: 10}}
+                    animate={titleInView ? {opacity: 1, y: 0} : {}}
+                    transition={{duration: 0.5, delay: 0.14}}
+                    style={{display: 'flex', gap: 4, padding: 4, borderRadius: 100, background: '#fff', width: 'fit-content'}}
+                >
                     {TABS.map((tab, i) => (
-                        <button key={tab} onClick={() => setActiveTab(i)} style={{position: 'relative', padding: '10px 20px', borderRadius: 100, fontSize: 14, fontWeight: 500, cursor: 'pointer', border: 'none', background: 'transparent', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', color: activeTab === i ? '#fff' : '#1a1a1a', transition: 'color 0.3s', zIndex: 1}}>
-                            {activeTab === i && <motion.div layoutId="activeTab" style={{position: 'absolute', inset: 0, background: '#009C89', borderRadius: 100, zIndex: -1}} transition={{duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94]}}/>}
+                        <button
+                            key={tab}
+                            onClick={() => setActiveTab(i)}
+                            style={{
+                                position: 'relative',
+                                padding: '10px 16px',
+                                borderRadius: 100,
+                                fontSize: 14,
+                                fontWeight: 500,
+                                cursor: 'pointer',
+                                border: 'none',
+                                background: 'transparent',
+                                fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
+                                color: activeTab === i ? '#fff' : '#1a1a1a',
+                                transition: 'color 0.3s',
+                                zIndex: 1,
+                                whiteSpace: 'nowrap',
+                            }}
+                        >
+                            {activeTab === i && (
+                                <motion.div
+                                    layoutId="s5-activeTab"
+                                    style={{position: 'absolute', inset: 0, background: '#009C89', borderRadius: 100, zIndex: -1}}
+                                    transition={{duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94]}}
+                                />
+                            )}
                             {tab}
                         </button>
                     ))}
                 </motion.div>
 
-                <motion.button initial={{opacity: 0, x: 10}} animate={titleInView ? {opacity: 1, x: 0} : {}} transition={{duration: 0.5, delay: 0.2}} style={{ alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}} className="hidden md:flex bg-transparent group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300">
+                <motion.button
+                    initial={{opacity: 0, x: 10}}
+                    animate={titleInView ? {opacity: 1, x: 0} : {}}
+                    transition={{duration: 0.5, delay: 0.2}}
+                    style={{alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}}
+                    className="hidden md:flex bg-transparent group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300"
+                >
                     Все проекты
                     <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#009C89] transition-colors duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
@@ -290,10 +325,14 @@ const HomeS5 = () => {
                         )}
                     </div>
 
-                    <div className="md:hidden">
-                        <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>
+                    {/* Mobile swiper */}
+                    <div className="md:hidden -mx-4 px-4">
+                        <div
+                            className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
+                            style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}
+                        >
                             {items.map((item, i) => (
-                                <div key={`${activeTab}-mobile-${i}`} className="snap-start flex-shrink-0 w-[80vw] max-w-[320px]">
+                                <div key={`${activeTab}-mobile-${i}`} className="snap-start flex-shrink-0 w-[78vw] max-w-[320px]">
                                     <ProductCard item={item} index={i} priority={i === 0 && activeTab === 0} onClick={() => setSelectedItem(item)}/>
                                 </div>
                             ))}
@@ -308,11 +347,18 @@ const HomeS5 = () => {
             <AnimatePresence>
                 {selectedItem && <ProjectPopup item={selectedItem} onClose={() => setSelectedItem(null)}/>}
             </AnimatePresence>
-            <motion.button initial={{opacity: 0, x: 10}} animate={titleInView ? {opacity: 1, x: 0} : {}} transition={{duration: 0.5, delay: 0.2}} style={{display: 'flex', alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}} className="bg-transparent mt-5 group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300">
+
+            <motion.button
+                initial={{opacity: 0, x: 10}}
+                animate={titleInView ? {opacity: 1, x: 0} : {}}
+                transition={{duration: 0.5, delay: 0.2}}
+                style={{display: 'flex', alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}}
+                className="bg-transparent mt-5 group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300"
+            >
                 Все проекты
-                <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white  bg-[#009C89] transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
-                    </span>
+                <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#009C89] transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
+                </span>
             </motion.button>
         </div>
     );

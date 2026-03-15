@@ -10,8 +10,6 @@ import i6 from "@/assets/home/home_s3/6.jpg"
 import i7 from "@/assets/home/home_s3/7.jpg"
 import i8 from "@/assets/home/home_s3/8.jpg"
 import i9 from "@/assets/home/home_s3/9.jpg"
-import i10 from "@/assets/home/home_s3/10.jpg"
-import i11 from "@/assets/home/home_s3/11.jpg"
 import Image, {StaticImageData} from "next/image";
 
 // ── Data ───────────────────────────────────────────────────
@@ -85,12 +83,20 @@ function ProductCard({item, index}: { item: { title: string; desc: string; img: 
         >
             {/* Title + arrow */}
             <div className="flex items-center gap-1.5">
-                <h3 className="title_font text-[#009C89] text-[21px] font-bold  tracking-tight leading-tight">
+                <h3 className="title_font text-[#009C89] text-[21px] font-bold tracking-tight leading-tight">
                     {item.title}
                 </h3>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                     stroke="#009C89" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
-                     className="lucide lucide-chevron-right-icon lucide-chevron-right hidden group-hover:block">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20" height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#009C89"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="hidden group-hover:block flex-shrink-0"
+                >
                     <path d="m9 18 6-6-6-6"/>
                 </svg>
             </div>
@@ -124,7 +130,7 @@ const HomeS3 = () => {
     const secondRow = items.slice(2);
 
     return (
-        <div className="w-full py-16">
+        <div className="w-full py-16 overflow-hidden">
             <div className="container">
 
                 {/* Заголовок */}
@@ -148,34 +154,33 @@ const HomeS3 = () => {
                     Мы создаем технологии, алюминиевые продукты и решения для настоящего и будущего
                 </motion.p>
 
-                {/* Табы */}
+                {/* Табы — уникальный layoutId "s3-tab" */}
                 <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={titleInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.14 }}
+                    initial={{opacity: 0, y: 10}}
+                    animate={titleInView ? {opacity: 1, y: 0} : {}}
+                    transition={{duration: 0.5, delay: 0.14}}
                     className="flex gap-1 mb-8 p-1 rounded-full w-fit bg-white"
                 >
                     {TABS.map((tab, i) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(i)}
-                            className="relative px-8 py-3 rounded-full text-[16px] md:text-[16px] font-medium cursor-pointer other_font"
+                            className="relative px-5 sm:px-8 py-3 rounded-full text-[14px] sm:text-[16px] font-medium cursor-pointer other_font"
                         >
                             {activeTab === i && (
                                 <motion.div
-                                    layoutId="activeTab"
+                                    layoutId="s3-activeTab"
                                     className="absolute inset-0 bg-[#009C89] rounded-full"
-                                    transition={{ duration: 0.6, ease: "easeInOut" }}
+                                    transition={{duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94]}}
                                 />
                             )}
-
                             <span
                                 className={`relative z-10 transition-colors duration-300 ${
                                     activeTab === i ? "text-white" : "text-black"
                                 }`}
                             >
-        {tab}
-      </span>
+                                {tab}
+                            </span>
                         </button>
                     ))}
                 </motion.div>
@@ -191,14 +196,12 @@ const HomeS3 = () => {
                     >
                         {/* Desktop grid */}
                         <div className="hidden md:flex flex-col gap-4">
-                            {/* Birinchi qator — har doim 2 ta karta */}
                             <div className="grid grid-cols-2 gap-4">
                                 {firstRow.map((item, i) => (
                                     <ProductCard key={item.title} item={item} index={i}/>
                                 ))}
                             </div>
 
-                            {/* Ikkinchi qator — 3 ta yoki 2 ta */}
                             {secondRow.length > 0 && (
                                 <div className={`grid gap-4 ${secondRow.length === 3 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                                     {secondRow.map((item, i) => (
@@ -209,13 +212,13 @@ const HomeS3 = () => {
                         </div>
 
                         {/* Mobile swiper */}
-                        <div className="md:hidden">
+                        <div className="md:hidden -mx-4 px-4">
                             <div
-                                className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+                                className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
                                 style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}
                             >
                                 {items.map((item, i) => (
-                                    <div key={item.title} className="snap-start flex-shrink-0 w-[80vw] max-w-[320px]">
+                                    <div key={item.title} className="snap-start flex-shrink-0 w-[78vw] max-w-[300px]">
                                         <ProductCard item={item} index={i}/>
                                     </div>
                                 ))}

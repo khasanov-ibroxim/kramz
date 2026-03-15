@@ -36,6 +36,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Other_Font_Suisse, sans-serif;
+  overflow-x: hidden;
 }
 
 .other_font {
