@@ -1,0 +1,29 @@
+import React from 'react';
+import bg from "@/assets/about/about_s6/1.jpg"
+import Image from "next/image";
+
+const AboutS6 = () => {
+    return (
+        <div className={"relative w-full h-[70vh] overflow-hidden"}>
+            <Image src={bg} alt={"sad"} className={"absolute w-full h-full z-10 object-cover"}/>
+            <div className="container">
+                <div className="absolute z-20 flex flex-col w-full h-full justify-start top-24 items-start overflow-hidden">
+                    <h1 className={"mt-10 other_font font-semibold text-4xl sm:text-5xl uppercase text-[#2B362D] mb-5"}>Устойчивое развитие</h1>
+                    <p className={"w-full md:w-1/3"}>Мы стремимся использовать принципы устойчивого развития во всех сферах нашей деятельности</p>
+                    <button
+                        style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 20px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.30)', cursor: 'pointer', fontSize: 14, fontWeight: 500 }}
+                        className="bg-transparent mt-5 group hover:bg-[#fff] text-black max-w-[200px]  transition-colors duration-300"
+                    >
+                        Подробнее
+                        <span style={{ width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className=" bg-[#009C89] transition-colors duration-300">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right  stroke-white"><path d="m9 18 6-6-6-6" /></svg>
+                                        </span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    );
+};
+
+export default AboutS6;

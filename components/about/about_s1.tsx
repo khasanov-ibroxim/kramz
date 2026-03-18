@@ -9,7 +9,7 @@ const AboutS1 = () => {
     const inView = useInView(ref, { once: true, margin: '-60px' });
 
     return (
-        <section ref={ref} className="relative overflow-hidden h-screen ">
+        <section ref={ref} className="relative overflow-hidden h-[50vh] lg:h-screen ">
             <div className="relative w-full h-screen bg-[#009C89] flex flex-col md:flex-row items-center">
 
                 {/* Gradient overlay */}
