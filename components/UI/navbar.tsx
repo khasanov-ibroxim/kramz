@@ -14,9 +14,8 @@ const EASE = [0.76, 0, 0.24, 1] as const;
 
 const NAV_LINKS = [
     { label: 'О компании', href: '/about' },
-    { label: 'Клиентам',   href: '/clients' },
-    { label: 'Карьера',    href: '/career' },
-    { label: 'Контакты',   href: '/contacts' },
+    { label: 'Производство',   href: '/production' },
+    { label: 'Контакты',   href: '/contact' },
 ];
 
 const LOCALES = ['en', 'ru'] as const;
