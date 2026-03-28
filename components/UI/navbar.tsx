@@ -313,9 +313,9 @@ export default function Navbar({ lang }: NavbarProps) {
                     >
                         <Logo color={textColor} size={34} />
                         <div className="hidden lg:block" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', lineHeight: 1.3, transition: 'color 0.4s' }}>
-                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>КРАСНОЯРСКИЙ</div>
-                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>МЕТАЛЛУРГИЧЕСКИЙ</div>
-                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>ЗАВОД</div>
+                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>Gurlan</div>
+                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>Global Teks</div>
+                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}></div>
                         </div>
                     </SweepLink>
 

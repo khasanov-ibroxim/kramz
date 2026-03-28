@@ -1,1 +1,114 @@
-{}
+{
+  "header": {
+    "title": "Professionals in aluminum products and solutions"
+  },
+  "s2": {
+    "title": "Key Indicators",
+    "texts": [
+      "Krasnoyarsk Metallurgical Plant is the third largest and youngest of the major processing enterprises in Russia. The main productions are smelting, pressing and forging.",
+      "The current production of KraMZ LLC ensures the output of flat and round ingots, extruded profiles, rods and pipes, forgings and stampings from a wide range of aluminum alloys in accordance with the chemical composition of Russian and foreign standards."
+    ],
+    "stats": [
+      { "value": "#1",           "label": "Among manufacturers of aluminum bridges and infrastructure solutions" },
+      { "value": "Top-3",        "label": "Among aluminum processing enterprises" },
+      { "value": "37 countries", "label": "KraMZ product delivery geography" },
+      { "value": ">130k t.",     "label": "per year. Company production capacity" },
+      { "value": "since 1969",   "label": "Experts in aluminum products and solutions" },
+      { "value": ">13 000",      "label": "Mastered nomenclatures of profiles, rods and pipes of various sections" }
+    ]
+  },
+  "s3": {
+    "title": "Products",
+    "subtitle": "We create technologies, aluminum products and solutions for the present and the future",
+    "tabs": ["By product types", "Integrated solutions"],
+    "byType": [
+      {
+        "title": "Rods",
+        "desc": "We offer extruded round, square, hexagonal, calibrated rods from 8 to 254 mm from various alloys"
+      },
+      {
+        "title": "Profiles",
+        "desc": "We produce aluminum profiles for various purposes: architectural-construction, interior, construction, standard, engineering and according to customer drawings"
+      },
+      {
+        "title": "Pipes",
+        "desc": "KraMZ produces pipes: drawn, extruded, rolled and coil-drawn"
+      },
+      {
+        "title": "Strip",
+        "desc": "KraMZ rolling production is based on a Quarto 500 cold rolling mill and a continuous strip rolling unit"
+      },
+      {
+        "title": "Stampings",
+        "desc": "KraMZ rolled products are represented by plates, GRETS strip, thin and standard strip"
+      }
+    ],
+    "solutions": [
+      {
+        "title": "Construction",
+        "desc": "We offer both ready-made architectural and construction systems and custom solutions for customer needs"
+      },
+      {
+        "title": "Infrastructure",
+        "desc": "KraMZ is the first among manufacturers of aluminum bridges and infrastructure solutions"
+      },
+      {
+        "title": "Transport",
+        "desc": "KraMZ products are actively used for the production of a wide range of vehicles"
+      },
+      {
+        "title": "Comfortable environment",
+        "desc": "The plant produces and supplies products for the improvement of urban and suburban environments"
+      }
+    ]
+  },
+  "s4": {
+    "title": "Advantages",
+    "text": "KraMZ is one of the largest manufacturers and engineering centers of aluminum products and solutions in Russia and CIS",
+    "stats": [
+      { "value": "01",
+        "title": "Полный цикл производства",
+        "label": "Вертикальная интеграция — от хлопка до готовой продукции с контролем качества на каждом этапе." },
+      { "value": "02","title": "Высокое качество", "label": "Современное оборудование и стандарты обеспечивают стабильность и соответствие международным требованиям." },
+      { "value": "03",
+        "title": "Экспортная ориентация",
+        "label": "Развитое международное сотрудничество и опыт работы с глобальными рынками." },
+      { "value": "04",
+        "title": "Надёжное партнёрство",
+        "label": "Долгосрочные отношения, основанные на доверии и выполнении обязательств." },
+      { "value": "04",
+        "title": "Инновации и развитие",
+        "label": "Внедрение современных технологий и постоянная оптимизация производственных процессов." },
+      { "value": "05",
+        "title": "Устойчивое производство",
+        "label": "Экологическая ответственность и эффективное использование ресурсов." }
+    ]
+  },
+  "s5": {
+    "title": "Completed Projects",
+    "text": "Facilities where KraMZ systems were used during construction",
+    "tabs": ["Construction", "Transport", "Infrastructure"],
+    "popup": {
+      "year": "Year",
+      "area": "Area",
+      "materials": "Materials"
+    }
+  },
+  "s6": {
+    "title": "PEOPLE ARE OUR\nGREATEST VALUE",
+    "text": "For KraMZ LLC employees we create safe working conditions, offer one of the best social packages, the opportunity for continuous learning and career growth, development not only in professional activities, but also active participation in the life of the plant and city",
+    "button": "Work with us"
+  },
+  "s7": {
+    "title": "WE VALUE EVERY\nOUR CLIENT",
+    "buttons": {
+      "feedback": "Feedback form",
+      "directions": "Directions"
+    },
+    "phones": [
+      { "number": "+7 391 226 70 99", "label": "Information:" },
+      { "number": "+7 391 256 34 57", "label": "Reception:" },
+      { "number": "+7 391 226 70 89", "label": "Office:" }
+    ]
+  }
+}

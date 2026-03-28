@@ -1,0 +1,107 @@
+{
+  "header": {
+    "title": "Production"
+  },
+  "s1": {
+    "title": "Main Production Units",
+    "subtitle": "Years of accumulated experience and a quality control system at all stages of production guarantee reliability, precision and consistency of characteristics to consumers of aluminum semi-finished products",
+    "button": "Our products",
+    "cards": [
+      {
+        "title": "Press tooling",
+        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+      },
+      {
+        "title": "Press shops",
+        "description": "Production of rods, profiles and pipes from hard- and easy-deformable alloys"
+      },
+      {
+        "title": "Tube press shop",
+        "description": "Production of pipes, calibrated rods, extruded rods into coil — blank for welding wire"
+      },
+      {
+        "title": "Forging and press shop",
+        "description": "Production of forgings and stampings, semi-finished products and finished automotive wheels"
+      },
+      {
+        "title": "Rolling section",
+        "description": "Production of rolled strips and sheets for electrolyzers"
+      }
+    ]
+  },
+  "s2": {
+    "title": "KraMZ production capacity exceeds 130 thousand tons per year",
+    "text": "KraMZ ships more than 10 thousand tons of finished products monthly to various regions of the country, as well as near and far abroad"
+  },
+  "s3": {
+    "title": "One of the country's largest processors",
+    "subtitle": "Years of accumulated experience and a quality control system at all stages of production guarantee reliability, precision and consistency of characteristics to consumers of aluminum semi-finished products",
+    "stats": [
+      {
+        "value": "17000+",
+        "unit": "product\ntypes",
+        "label": "Product nomenclature"
+      },
+      {
+        "value": "22+",
+        "unit": "thousand\ntons/year",
+        "label": "HARD ALLOYS: pipes, rods, profiles for engineering, aviation, shipbuilding and other transport segments"
+      },
+      {
+        "value": "18+",
+        "unit": "thousand\ntons/year",
+        "label": "SOFT ALLOYS: standard profile per customer drawings for construction, bridge building, load-bearing systems and transport segments"
+      },
+      {
+        "value": "70+",
+        "unit": "aluminum\nbridges",
+        "label": "Manufactured for cities of the Russian Federation and foreign customers"
+      }
+    ]
+  },
+  "s4": {
+    "title": "Clean Aluminum",
+    "paragraphs": [
+      "KraMZ pays great attention to environmental issues and strives to minimize the negative impact on the environment. The climate agenda is one of the key areas of KraMZ's environmental activities and is an integral part of the company's corporate culture.",
+      "The carbon footprint of ALLOW is one of the lowest in the industry. We continue our work in reducing greenhouse gas emissions and have set ourselves the task: increasing the use of ALLOW in the company's products.",
+      "We support our clients' desire to increase social responsibility and are ready to move in this direction together!"
+    ],
+    "certificates": [
+      { "title": "ISO 9001:2015", "subtitle": "Compliance certificate" },
+      { "title": "ISO 14001:2015", "subtitle": "Compliance certificate" }
+    ],
+    "downloadButton": "Download"
+  },
+  "s5": {
+    "title": "We create opportunities to implement any of your ideas",
+    "cards": [
+      {
+        "title": "Smelting shop",
+        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+      },
+      {
+        "title": "Press shops",
+        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+      },
+      {
+        "title": "Tube press shop",
+        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+      },
+      {
+        "title": "Forging and press shop",
+        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+      },
+      {
+        "title": "Rolling section",
+        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+      }
+    ]
+  },
+  "s6": {
+    "title": "Production Gallery",
+    "tabs": {
+      "image": "Images",
+      "video": "Video"
+    }
+  }
+}

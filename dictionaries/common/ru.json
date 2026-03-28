@@ -1,1 +1,69 @@
-{}
+{
+  "navbar": {
+    "links": {
+      "about": "О компании",
+      "production": "Производство",
+      "contacts": "Контакты"
+    },
+    "actions": {
+      "downloadCatalog": "Скачать каталог",
+      "contactUs": "Связаться с нами"
+    },
+    "mobile": {
+      "actions": "Действия:",
+      "contactUs": "Связаться с нами",
+      "downloadCatalog": "Скачать каталог"
+    }
+  },
+  "footer": {
+    "columns": {
+      "about": {
+        "title": "О компании",
+        "links": [
+          { "title": "О компании", "link": "/about" },
+          { "title": "Производство", "link": "/production" }
+        ]
+      },
+      "clients": {
+        "title": "Клиентам",
+        "links": [
+          { "title": "Продукция", "link": "/products" },
+          { "title": "Услуги", "link": "/services" }
+        ]
+      },
+      "career": {
+        "title": "Карьера",
+        "links": [
+          { "title": "Вакансии", "link": "/jobs" },
+          { "title": "Профессионалам", "link": "/career" },
+          { "title": "Студентам", "link": "/students" },
+          { "title": "Забота о персонале", "link": "/care" }
+        ]
+      },
+      "contacts": {
+        "title": "Контакты",
+        "links": [
+          { "title": "+7 391 226 70 99", "link": "tel:+73912267099" },
+          { "title": "info@gurlanglobalteks.uz", "link": "mailto:info@gurlanglobalteks.uz" },
+          { "title": "Telegram", "link": "https://t.me/ggt_inc" }
+        ]
+      }
+    },
+    "address": "660111, Красноярск, ул.\nПограничников, 42",
+    "viewOnMap": "Посмотреть на карте",
+    "suppliers": "Каталог ",
+    "orderProducts": "Заказать продукцию"
+  },
+  "buttons": {
+    "readMore": "Читать полностью",
+    "allProjects": "Все проекты",
+    "allServices": "Все услуги",
+    "download": "Скачать",
+    "send": "Отправить",
+    "sending": "Отправка...",
+    "showAll": "Показать все",
+    "hide": "Скрыть",
+    "details": "Подробнее",
+    "routeMap": "Проложить маршрут"
+  }
+}

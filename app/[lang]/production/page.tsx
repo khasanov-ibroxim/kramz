@@ -7,18 +7,24 @@ import ProductionS4 from "@/components/production/production_s4";
 import ProductionS5 from "@/components/production/production_s5";
 import ProductionS6 from "@/components/production/production_s6";
 import HomeS7 from "@/components/home/home_s7";
+import {getCommonDictionary, getHomeDictionary, getProductionDictionary} from "@/lib/dictionary";
+import {Locale} from "@/i18n-config";
 
-const Page = () => {
+const Page = async ({ params }: { params: Promise<{ lang: string }> }) => {
+    const { lang } = await params;
+    const dictHome   = await getHomeDictionary(lang as Locale);
+    const dict   = await getProductionDictionary(lang as Locale);
+    const common = await getCommonDictionary(lang as Locale);
     return (
         <>
-            <ProductionHeader/>
-            <ProductionS1/>
-            <ProductionS2/>
-            <ProductionS3/>
-            <ProductionS4/>
-            <ProductionS5/>
-            <ProductionS6/>
-            <HomeS7/>
+            <ProductionHeader dict={dict.header}/>
+            <ProductionS1 dict={dict.s1} commonDict={common}/>
+            <ProductionS2 dict={dict.s2}/>
+            <ProductionS3 dict={dict.s3}/>
+            <ProductionS4 dict={dict.s4}/>
+            <ProductionS5 dict={dict.s5} commonDict={common}/>
+            <ProductionS6 dict={dict.s6}/>
+            <HomeS7       dict={dictHome.s7} commonDict={common} />
         </>
     );
 };

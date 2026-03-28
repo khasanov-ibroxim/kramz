@@ -28,7 +28,7 @@ export default async function LangLayout({
         <PageTransition>
             <Navbar lang={lang} />
             {children}
-            <Footer />
+            <Footer dict={dict}/>
         </PageTransition>
     );
 }

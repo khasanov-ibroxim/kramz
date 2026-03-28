@@ -3,14 +3,18 @@ import React, {useRef} from 'react';
 import {motion, useInView} from "framer-motion";
 import Image from "next/image";
 import watermaker_s6 from "@/assets/production/production_s2/watermaker_p_s2.png";
+import type {ProductionDictionary} from "@/lib/dictionary";
 
-const ProductionS2 = () => {
+interface Production2Props {
+    dict: ProductionDictionary['s2'];
+}
+const ProductionS2 = ({dict}:Production2Props) => {
     const ref = useRef(null);
     const inView = useInView(ref, {once: true, margin: '-60px'});
 
     return (
         <section ref={ref} className="relative overflow-hidden">
-            <div className="relative w-full h-[60vh] bg-[#009C89] flex flex-col md:flex-row items-center">
+            <div className="relative w-full h-[80vh] bg-[#009C89] flex flex-col md:flex-row items-center">
 
                 {/* Gradient overlay */}
                 <div
@@ -38,8 +42,7 @@ const ProductionS2 = () => {
                         transition={{duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2}}
                         className="title_font_bold text-white font-extrabold uppercase mb-6 text-2xl md:text-5xl  leading-[1.05] tracking-[-0.01em]"
                     >
-                        Производственные <br/> мощности  КраМЗ свыше <br/> 130 тыс. тн. в год
-
+                        {dict.title[0]} <br/> {dict.title[1]} <br/> {dict.title[2]}
                     </motion.h2>
 
                     <motion.p
@@ -48,8 +51,7 @@ const ProductionS2 = () => {
                         transition={{duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.3}}
                         className="other_font text-white/80 leading-[1.7] mb-10 text-[clamp(13px,1.1vw,15px)] max-w-[430px]"
                     >
-                        Ежемесячно КраМЗ отгружает более 10 тыс. тонн готовой продукции в различные регионы страны, а
-                        также ближнее и дальнее зарубежье
+                        {dict.text}
                     </motion.p>
 
                 </div>

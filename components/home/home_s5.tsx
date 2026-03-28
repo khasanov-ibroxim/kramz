@@ -21,6 +21,7 @@ import i2_2 from "@/assets/home/home_s5/2_2.jpg"
 import i2_3 from "@/assets/home/home_s5/2_3.jpg"
 import i2_4 from "@/assets/home/home_s5/2_4.png"
 import i2_5 from "@/assets/home/home_s5/2_5.jpg"
+import type {HomeDictionary} from "@/lib/dictionary";
 
 interface ProjectItem {
     title: string;
@@ -231,8 +232,12 @@ function TextPara({text, delay}: { text: string; delay: number }) {
     );
 }
 
+interface HomeS2Props {
+    dict: HomeDictionary['s5'];
+    lang: string;
+}
 // ── Main ───────────────────────────────────────────────────
-const HomeS5 = () => {
+const HomeS5 = ({ dict , lang }: HomeS2Props) => {
     const [activeTab, setActiveTab] = useState(0);
     const [selectedItem, setSelectedItem] = useState<ProjectItem | null>(null);
     const titleRef = useRef(null);

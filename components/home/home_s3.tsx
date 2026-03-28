@@ -11,66 +11,17 @@ import i7 from "@/assets/home/home_s3/7.jpg"
 import i8 from "@/assets/home/home_s3/8.jpg"
 import i9 from "@/assets/home/home_s3/9.jpg"
 import Image, {StaticImageData} from "next/image";
+import type {HomeDictionary} from "@/lib/dictionary";
 
-// ── Data ───────────────────────────────────────────────────
-const TABS = ['По типам продукции', 'Комплексные решения'] as const;
-
-const TAB_DATA: Record<number, { title: string; desc: string; img: StaticImageData }[]> = {
-    0: [
-        {
-            title: 'Прутки',
-            desc: 'Мы предлагаем прутки прессованные круглые, квадратные, шестигранные, калиброванные размеров от 8 до 254 мм из различных сплавов',
-            img: i1,
-        },
-        {
-            title: 'Профили',
-            desc: 'Мы производим алюминиевые профили различного назначения: архитектурно-строительные, интерьерные, строительные, стандартные, машиностроительные и по чертежам заказчика',
-            img: i2,
-        },
-        {
-            title: 'Трубы',
-            desc: 'КраМЗ производит трубы: волоченые, прессованные, катаные и бухтового волочения',
-            img: i3,
-        },
-        {
-            title: 'Лента',
-            desc: 'Прокатное производство КраМЗ базируется на стане холодной прокатки «Кварто 500» и установке бесслитковой прокатки ленты (БПЛ)',
-            img: i4,
-        },
-        {
-            title: 'Штамповки',
-            desc: 'Прокатная продукция КраМЗ представлена пластинами, лентой ГРЭТС, лентой тонкой и стандартной',
-            img: i5,
-        },
-    ],
-    1: [
-        {
-            title: 'Строительство',
-            desc: 'Мы предлагаем как готовые архитектурно-строительные системы, так и нестандартные решения под нужды заказчика',
-            img: i6,
-        },
-        {
-            title: 'Инфраструктура',
-            desc: 'КраМЗ — первый среди производителей алюминиевых мостов и инфраструктурных решений',
-            img: i7,
-        },
-        {
-            title: 'Транспорт',
-            desc: 'Продукция КраМЗ активно применяется для производства широкого спектра транспортных средств',
-            img: i8,
-        },
-        {
-            title: 'Комфортная среда',
-            desc: 'Завод производит и поставляет продукцию для благоустройства городской и загородной среды',
-            img: i9,
-        },
-    ],
-};
+// ── TYPES ───────────────────────────────────────────────────
+interface HomeS3Props {
+    dict: HomeDictionary['s3'];
+}
 
 // ── Card ───────────────────────────────────────────────────
 function ProductCard({item, index}: { item: { title: string; desc: string; img: StaticImageData }; index: number }) {
     const ref = useRef(null);
-    const inView = useInView(ref, {once: true, margin: '-40px'});
+    const inView = useInView(ref, {once: true, margin: '-40px' });
 
     return (
         <motion.div
@@ -81,32 +32,16 @@ function ProductCard({item, index}: { item: { title: string; desc: string; img: 
             className="flex h-[450px] md:h-auto flex-col gap-4 bg-[#fff] rounded-2xl p-5 cursor-pointer
                        hover:bg-[#E8F2F0] group transition-colors duration-300 min-w-[280px]"
         >
-            {/* Title + arrow */}
             <div className="flex items-center gap-1.5">
                 <h3 className="title_font text-[#009C89] text-[21px] font-bold tracking-tight leading-tight">
                     {item.title}
                 </h3>
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20" height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#009C89"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="hidden group-hover:block flex-shrink-0"
-                >
-                    <path d="m9 18 6-6-6-6"/>
-                </svg>
             </div>
 
-            {/* Description */}
             <p className="other_font text-[16px] leading-[1.6] text-black flex-1 min-h-[60px]">
                 {item.desc}
             </p>
 
-            {/* Image */}
             <div className="w-full h-44 rounded-xl overflow-hidden">
                 <Image
                     src={item.img}
@@ -119,10 +54,24 @@ function ProductCard({item, index}: { item: { title: string; desc: string; img: 
 }
 
 // ── Main ───────────────────────────────────────────────────
-const HomeS3 = () => {
+const HomeS3 = ({ dict }: HomeS3Props) => {
     const [activeTab, setActiveTab] = useState(0);
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, {once: true, margin: '-40px'});
+
+    // 🔥 dict dan olish
+    const TABS = dict.tabs;
+
+    const TAB_DATA = [
+        dict.byType.map((item, i) => ({
+            ...item,
+            img: [i1, i2, i3, i4, i5][i]
+        })),
+        dict.solutions.map((item, i) => ({
+            ...item,
+            img: [i6, i7, i8, i9][i]
+        }))
+    ];
 
     const items = TAB_DATA[activeTab] ?? [];
 
@@ -133,28 +82,28 @@ const HomeS3 = () => {
         <div className="w-full py-16 overflow-hidden">
             <div className="container">
 
-                {/* Заголовок */}
+                {/* Title */}
                 <motion.h2
                     ref={titleRef}
                     initial={{opacity: 0, y: 20}}
                     animate={titleInView ? {opacity: 1, y: 0} : {}}
-                    transition={{duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94]}}
+                    transition={{duration: 0.6}}
                     className="other_font font-semibold text-4xl md:text-4xl lg:text-5xl uppercase tracking-tight text-[#1a1a1a] mb-3"
                 >
-                    Продукция
+                    {dict.title}
                 </motion.h2>
 
-                {/* Подзаголовок */}
+                {/* Subtitle */}
                 <motion.p
                     initial={{opacity: 0, y: 12}}
                     animate={titleInView ? {opacity: 1, y: 0} : {}}
                     transition={{duration: 0.5, delay: 0.08}}
                     className="other_font text-[16px] text-black mb-8 max-w-sm leading-snug"
                 >
-                    Мы создаем технологии, алюминиевые продукты и решения для настоящего и будущего
+                    {dict.subtitle}
                 </motion.p>
 
-                {/* Табы — уникальный layoutId "s3-tab" */}
+                {/* Tabs */}
                 <motion.div
                     initial={{opacity: 0, y: 10}}
                     animate={titleInView ? {opacity: 1, y: 0} : {}}
@@ -171,30 +120,19 @@ const HomeS3 = () => {
                                 <motion.div
                                     layoutId="s3-activeTab"
                                     className="absolute inset-0 bg-[#009C89] rounded-full"
-                                    transition={{duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94]}}
                                 />
                             )}
-                            <span
-                                className={`relative z-10 transition-colors duration-300 ${
-                                    activeTab === i ? "text-white" : "text-black"
-                                }`}
-                            >
+                            <span className={`relative z-10 ${activeTab === i ? "text-white" : "text-black"}`}>
                                 {tab}
                             </span>
                         </button>
                     ))}
                 </motion.div>
 
-                {/* Grid — desktop */}
+                {/* Grid */}
                 <AnimatePresence mode="wait">
-                    <motion.div
-                        key={activeTab}
-                        initial={{opacity: 0, y: 10}}
-                        animate={{opacity: 1, y: 0}}
-                        exit={{opacity: 0, y: -10}}
-                        transition={{duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94]}}
-                    >
-                        {/* Desktop grid */}
+                    <motion.div key={activeTab} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
+
                         <div className="hidden md:flex flex-col gap-4">
                             <div className="grid grid-cols-2 gap-4">
                                 {firstRow.map((item, i) => (
@@ -211,29 +149,17 @@ const HomeS3 = () => {
                             )}
                         </div>
 
-                        {/* Mobile swiper */}
+                        {/* Mobile */}
                         <div className="md:hidden -mx-4 px-4">
-                            <div
-                                className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
-                                style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}
-                            >
+                            <div className="flex gap-4 overflow-x-auto pb-4">
                                 {items.map((item, i) => (
-                                    <div key={item.title} className="snap-start flex-shrink-0 w-[78vw] max-w-[300px]">
+                                    <div key={item.title} className="flex-shrink-0 w-[78vw] max-w-[300px]">
                                         <ProductCard item={item} index={i}/>
                                     </div>
                                 ))}
                             </div>
-
-                            {/* Scroll dots */}
-                            <div className="flex justify-center gap-1.5 mt-2">
-                                {items.map((_, i) => (
-                                    <div
-                                        key={i}
-                                        className="w-1.5 h-1.5 rounded-full bg-[#009C89]/30"
-                                    />
-                                ))}
-                            </div>
                         </div>
+
                     </motion.div>
                 </AnimatePresence>
 

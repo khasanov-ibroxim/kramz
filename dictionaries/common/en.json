@@ -1,1 +1,69 @@
-{}
+{
+  "navbar": {
+    "links": {
+      "about": "About",
+      "production": "Production",
+      "contacts": "Contacts"
+    },
+    "actions": {
+      "downloadCatalog": "Download catalog",
+      "contactUs": "Contact us"
+    },
+    "mobile": {
+      "actions": "Actions:",
+      "contactUs": "Contact us",
+      "downloadCatalog": "Download catalog"
+    }
+  },
+  "footer": {
+    "columns": {
+      "about": {
+        "title": "О компании",
+        "links": [
+          { "title": "О компании", "link": "/about" },
+          { "title": "Производство", "link": "/production" }
+        ]
+      },
+      "clients": {
+        "title": "Клиентам",
+        "links": [
+          { "title": "Продукция", "link": "/products" },
+          { "title": "Услуги", "link": "/services" }
+        ]
+      },
+      "career": {
+        "title": "Карьера",
+        "links": [
+          { "title": "Вакансии", "link": "/jobs" },
+          { "title": "Профессионалам", "link": "/career" },
+          { "title": "Студентам", "link": "/students" },
+          { "title": "Забота о персонале", "link": "/care" }
+        ]
+      },
+      "contacts": {
+        "title": "Контакты",
+        "links": [
+          { "title": "+7 391 226 70 99", "link": "tel:+73912267099" },
+          { "title": "info@gurlanglobalteks.uz", "link": "mailto:info@gurlanglobalteks.uz" },
+          { "title": "Telegram", "link": "https://t.me/ggt_inc" }
+        ]
+      }
+    },
+    "address": "Республика Узбекистан,\nХорезмская область,\nГурленский район,\nул. Мустакиллик, 5\n",
+    "viewOnMap": "Посмотреть на карте",
+    "suppliers": "Каталог",
+    "orderProducts": "Заказать продукцию "
+  },
+  "buttons": {
+    "readMore": "Read more",
+    "allProjects": "All projects",
+    "allServices": "All services",
+    "download": "Download",
+    "send": "Send",
+    "sending": "Sending...",
+    "showAll": "Show all",
+    "hide": "Hide",
+    "details": "Learn more",
+    "routeMap": "Get directions"
+  }
+}

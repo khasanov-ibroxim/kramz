@@ -8,8 +8,13 @@ import AboutS5 from "@/components/about/about_s5";
 import AboutS6 from "@/components/about/about_s6";
 import AboutS7 from "@/components/about/about_s7";
 import HomeS7 from "@/components/home/home_s7";
+import {getCommonDictionary, getHomeDictionary} from "@/lib/dictionary";
+import {Locale} from "@/i18n-config";
 
-const Page = () => {
+const Page = async ({ params }: { params: Promise<{ lang: string }> }) => {
+    const { lang } = await params;
+    const dictHome   = await getHomeDictionary(lang as Locale);
+    const common = await getCommonDictionary(lang as Locale);
     return (
         <>
             <AboutHeader/>
@@ -20,7 +25,7 @@ const Page = () => {
             <AboutS5/>
             <AboutS6/>
             <AboutS7/>
-            <HomeS7/>
+            <HomeS7       dict={dictHome.s7} commonDict={common} />
         </>
     );
 };
