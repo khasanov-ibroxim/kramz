@@ -23,6 +23,13 @@ import i2_4 from "@/assets/home/home_s5/2_4.png"
 import i2_5 from "@/assets/home/home_s5/2_5.jpg"
 import type {HomeDictionary} from "@/lib/dictionary";
 
+// Images are kept as StaticImageData — only text comes from dict
+const TAB_IMAGES: Record<number, StaticImageData[]> = {
+    0: [i0_1, i0_2, i0_3, i0_4, i0_5],
+    1: [i1_1, i1_2, i1_3, i1_4, i1_5],
+    2: [i2_1, i2_2, i2_3, i2_4, i2_5],
+};
+
 interface ProjectItem {
     title: string;
     listTitle: string;
@@ -34,33 +41,6 @@ interface ProjectItem {
     area?: string;
     materials?: string[];
 }
-
-const TEXTS = ['Объекты, при строительстве которых использовались системы КраМЗа'];
-const TABS = ['Строительство', 'Транспорт', 'Инфраструктура'] as const;
-
-const TAB_DATA: Record<number, ProjectItem[]> = {
-    0: [
-        { title: `ФГАОУ ВПО «Сибирский Федеральный Университет»`, location: "г. Красноярск", image: i0_1, listTitle: "Применённые системы", list: ["Алюминиевые фасадные системы", "Светопрозрачные конструкции", "Кровельные профили"], description: "Крупнейший университетский комплекс Сибири. При строительстве применялись фасадные алюминиевые системы КраМЗа, обеспечивающие высокую теплоизоляцию и долговечность в условиях сибирского климата.", year: "2006", area: "140 000 м²", materials: ["Алюминиевый профиль АД31", "Фасадные системы серии КМЗ-500"] },
-        { title: `Дворец спорта им. Ивана Ярыгина`, location: "г. Красноярск", image: i0_2, listTitle: "Применённые системы", list: ["Несущие алюминиевые конструкции", "Кровельные системы"], description: "Многофункциональный спортивный комплекс, рассчитанный на проведение соревнований международного уровня.", year: "2007", area: "25 000 м²", materials: ["Несущий профиль серии НП-200", "Кровельные панели"] },
-        { title: `Мкр. «Взлётный»`, location: "г. Красноярск", image: i0_3, listTitle: "Применённые системы", list: ["Оконные системы", "Балконные ограждения", "Фасадные элементы"], description: "Жилой квартал премиум-класса с применением современных алюминиевых оконных и фасадных систем производства КраМЗа.", year: "2015", area: "85 000 м²", materials: ["Оконный профиль серии ОП-72", "Алюминиевые ограждения"] },
-        { title: `Торгово-развлекательный центр «Планета»`, location: "г. Красноярск", image: i0_4, listTitle: "Применённые системы", list: ["Световые фонари", "Навесные вентилируемые фасады", "Алюминиевые перегородки"], description: "Один из крупнейших торговых центров Красноярска.", year: "2013", area: "120 000 м²", materials: ["Фасадные системы серии КМЗ-600", "Световые фонари ФС-300"] },
-        { title: `Бизнес-центр «Первая башня»`, location: "г. Красноярск", image: i0_5, listTitle: "Применённые системы", list: ["Структурное остекление", "Алюминиевые витражи", "Входные группы"], description: "Современный высотный бизнес-центр класса А.", year: "2019", area: "45 000 м²", materials: ["Структурное остекление СО-160", "Алюминиевый профиль АД31Т1"] },
-    ],
-    1: [
-        { title: `Железнодорожный вокзал Красноярск-Главный`, location: "г. Красноярск", image: i1_1, listTitle: "Применённые системы", list: ["Перронные навесы", "Фасадные системы", "Кровельные конструкции"], description: "Реконструкция главного железнодорожного вокзала города.", year: "2011", area: "18 500 м²", materials: ["Навесные конструкции серии НК-400", "Кровельный профиль КП-150"] },
-        { title: `Метромост через реку Енисей`, location: "г. Красноярск", image: i1_2, listTitle: "Применённые системы", list: ["Несущие алюминиевые элементы", "Защитные ограждения", "Декоративные панели"], description: "Уникальное инженерное сооружение — совмещённый мост для метро и автомобильного транспорта.", year: "2021", area: "—", materials: ["Алюминиевые панели АП-300", "Ограждения серии ОГ-200"] },
-        { title: `Аэропорт «Красноярск» (Емельяново)`, location: "г. Красноярск", image: i1_3, listTitle: "Применённые системы", list: ["Терминальные фасады", "Светопрозрачные кровли", "Переходные галереи"], description: "Новый терминал международного аэропорта.", year: "2022", area: "55 000 м²", materials: ["Фасадная система ФС-800", "Светопрозрачная кровля СК-200"] },
-        { title: `Автовокзал «Северный»`, location: "г. Красноярск", image: i1_4, listTitle: "Применённые системы", list: ["Навесы над платформами", "Оконные системы", "Фасадные панели"], description: "Современный автовокзал с развитой инфраструктурой.", year: "2018", area: "8 200 м²", materials: ["Навесные конструкции НК-300", "Оконный профиль ОП-60"] },
-        { title: `Путепровод на ул. Шахтёров`, location: "г. Красноярск", image: i1_5, listTitle: "Применённые системы", list: ["Перильные ограждения", "Шумозащитные экраны", "Декоративные элементы"], description: "Современный путепровод с алюминиевыми шумозащитными экранами КраМЗа.", year: "2020", area: "—", materials: ["Шумозащитные экраны ШЭ-500", "Перильные ограждения ПО-120"] },
-    ],
-    2: [
-        { title: `Краевая клиническая больница`, location: "г. Красноярск", image: i2_1, listTitle: "Применённые системы", list: ["Медицинские перегородки", "Фасадные системы", "Оконные блоки"], description: "Крупнейший медицинский комплекс края.", year: "2016", area: "95 000 м²", materials: ["Перегородочная система ПС-100", "Медицинский профиль МП-80"] },
-        { title: `Стадион «Енисей»`, location: "г. Красноярск", image: i2_2, listTitle: "Применённые системы", list: ["Козырьки трибун", "Фасадные системы", "Осветительные мачты"], description: "Реконструированный стадион с современной инфраструктурой.", year: "2018", area: "35 000 м²", materials: ["Козырьковые системы КС-600", "Фасадный профиль ФП-200"] },
-        { title: `Набережная реки Енисей`, location: "г. Красноярск", image: i2_3, listTitle: "Применённые системы", list: ["Ограждения", "Навесы", "Малые архитектурные формы"], description: "Благоустройство центральной набережной города.", year: "2019", area: "—", materials: ["Ограждения серии ОГ-180", "Навесные конструкции НК-250"] },
-        { title: `Технопарк «Сибирь»`, location: "г. Красноярск", image: i2_4, listTitle: "Применённые системы", list: ["Структурные фасады", "Алюминиевые перекрытия", "Инженерные системы"], description: "Инновационный технопарк для высокотехнологичных производств.", year: "2021", area: "28 000 м²", materials: ["Структурный фасад СФ-900", "Алюминиевые перекрытия АП-400"] },
-        { title: `МФЦ «Мои документы»`, location: "г. Красноярск", image: i2_5, listTitle: "Применённые системы", list: ["Входные группы", "Световые витражи", "Офисные перегородки"], description: "Сеть многофункциональных центров предоставления государственных услуг.", year: "2017", area: "4 500 м²", materials: ["Витражная система ВС-160", "Перегородки серии ПС-80"] },
-    ]
-};
 
 // ── Shimmer skeleton ───────────────────────────────────────
 function ImageSkeleton() {
@@ -111,7 +91,11 @@ function OptimizedImage({src, alt, fill, priority = false, sizes, style}: {
 }
 
 // ── Project Popup ──────────────────────────────────────────
-function ProjectPopup({item, onClose}: { item: ProjectItem; onClose: () => void }) {
+function ProjectPopup({item, onClose, popup}: {
+    item: ProjectItem;
+    onClose: () => void;
+    popup: HomeDictionary['s5']['popup'];
+}) {
     useEffect(() => {
         document.body.style.overflow = 'hidden';
         const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -155,25 +139,45 @@ function ProjectPopup({item, onClose}: { item: ProjectItem; onClose: () => void 
                 <div style={{overflowY: 'auto', padding: '28px 28px 32px', flex: 1}}>
                     {(item.year || item.area) && (
                         <div style={{display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24}}>
-                            {item.year && <div style={{background: '#F4F8F7', borderRadius: 12, padding: '10px 18px', display: 'flex', flexDirection: 'column', gap: 2}}><span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>Год</span><span style={{fontSize: 18, fontWeight: 700, color: '#1a1a1a', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', letterSpacing: '-0.02em'}}>{item.year}</span></div>}
-                            {item.area && item.area.trim() !== '—' && <div style={{background: '#F4F8F7', borderRadius: 12, padding: '10px 18px', display: 'flex', flexDirection: 'column', gap: 2}}><span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>Площадь</span><span style={{fontSize: 18, fontWeight: 700, color: '#1a1a1a', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', letterSpacing: '-0.02em'}}>{item.area}</span></div>}
+                            {item.year && (
+                                <div style={{background: '#F4F8F7', borderRadius: 12, padding: '10px 18px', display: 'flex', flexDirection: 'column', gap: 2}}>
+                                    <span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.year}</span>
+                                    <span style={{fontSize: 18, fontWeight: 700, color: '#1a1a1a', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', letterSpacing: '-0.02em'}}>{item.year}</span>
+                                </div>
+                            )}
+                            {item.area && item.area.trim() !== '—' && (
+                                <div style={{background: '#F4F8F7', borderRadius: 12, padding: '10px 18px', display: 'flex', flexDirection: 'column', gap: 2}}>
+                                    <span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.area}</span>
+                                    <span style={{fontSize: 18, fontWeight: 700, color: '#1a1a1a', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', letterSpacing: '-0.02em'}}>{item.area}</span>
+                                </div>
+                            )}
                         </div>
                     )}
                     {item.description && <p style={{margin: '0 0 24px', fontSize: 15, lineHeight: 1.7, color: '#444', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{item.description}</p>}
                     <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16}}>
                         {item.list.length > 0 && (
                             <div style={{background: '#F4F8F7', borderRadius: 14, padding: '18px 20px'}}>
-                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{item.listTitle || 'Системы'}</p>
+                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{item.listTitle || popup.systems}</p>
                                 <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8}}>
-                                    {item.list.map((l, i) => <li key={i} style={{display: 'flex', alignItems: 'flex-start', gap: 8}}><span style={{width: 6, height: 6, borderRadius: '50%', background: '#009C89', flexShrink: 0, marginTop: 6}}/><span style={{fontSize: 13.5, color: '#333', lineHeight: 1.5, fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{l}</span></li>)}
+                                    {item.list.map((l, i) => (
+                                        <li key={i} style={{display: 'flex', alignItems: 'flex-start', gap: 8}}>
+                                            <span style={{width: 6, height: 6, borderRadius: '50%', background: '#009C89', flexShrink: 0, marginTop: 6}}/>
+                                            <span style={{fontSize: 13.5, color: '#333', lineHeight: 1.5, fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{l}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         )}
                         {item.materials && item.materials.length > 0 && (
                             <div style={{background: '#F4F8F7', borderRadius: 14, padding: '18px 20px'}}>
-                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>Материалы</p>
+                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.materials}</p>
                                 <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8}}>
-                                    {item.materials.map((m, i) => <li key={i} style={{display: 'flex', alignItems: 'flex-start', gap: 8}}><span style={{width: 6, height: 6, borderRadius: '50%', background: '#1a1a1a', flexShrink: 0, marginTop: 6}}/><span style={{fontSize: 13.5, color: '#333', lineHeight: 1.5, fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{m}</span></li>)}
+                                    {item.materials.map((m, i) => (
+                                        <li key={i} style={{display: 'flex', alignItems: 'flex-start', gap: 8}}>
+                                            <span style={{width: 6, height: 6, borderRadius: '50%', background: '#1a1a1a', flexShrink: 0, marginTop: 6}}/>
+                                            <span style={{fontSize: 13.5, color: '#333', lineHeight: 1.5, fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{m}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         )}
@@ -232,40 +236,58 @@ function TextPara({text, delay}: { text: string; delay: number }) {
     );
 }
 
-interface HomeS2Props {
+interface HomeS5Props {
     dict: HomeDictionary['s5'];
     lang: string;
 }
+
 // ── Main ───────────────────────────────────────────────────
-const HomeS5 = ({ dict , lang }: HomeS2Props) => {
+const HomeS5 = ({ dict, lang }: HomeS5Props) => {
     const [activeTab, setActiveTab] = useState(0);
     const [selectedItem, setSelectedItem] = useState<ProjectItem | null>(null);
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, {once: true, margin: '-40px'});
 
-    const items = TAB_DATA[activeTab] ?? [];
+    // Merge dict tab data with static images
+    const buildTabData = (tabIndex: number): ProjectItem[] => {
+        const dictTab = dict.tabData[tabIndex];
+        const images = TAB_IMAGES[tabIndex] ?? [];
+        if (!dictTab) return [];
+        return dictTab.map((item, i) => ({
+            ...item,
+            image: images[i] ?? '',
+        }));
+    };
+
+    const items = buildTabData(activeTab);
     const firstRow = items.slice(0, 3);
     const secondRow = items.slice(3);
 
     return (
         <div className="container py-16 overflow-hidden">
-            <motion.h2 ref={titleRef} initial={{opacity: 0, y: 20}} animate={titleInView ? {opacity: 1, y: 0} : {}} transition={{duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94]}} className="title_font font-semibold text-4xl md:text-5xl lg:text-5xl uppercase mb-10 tracking-tight text-[#1a1a1a]">
-                Реализованные проекты
+            <motion.h2
+                ref={titleRef}
+                initial={{opacity: 0, y: 20}}
+                animate={titleInView ? {opacity: 1, y: 0} : {}}
+                transition={{duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94]}}
+                className="title_font font-semibold text-4xl md:text-5xl lg:text-5xl uppercase mb-10 tracking-tight text-[#1a1a1a]"
+            >
+                {dict.title}
             </motion.h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-10">
-                {TEXTS.map((text, i) => <TextPara key={i} text={text} delay={i * 0.1}/>)}
+                <TextPara text={dict.text} delay={0}/>
             </div>
 
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 32, flexWrap: 'wrap', gap: 12}}>
-                {/* Табы — уникальный layoutId "s5-activeTab" */}
+                {/* Tabs */}
                 <motion.div
                     initial={{opacity: 0, y: 10}}
                     animate={titleInView ? {opacity: 1, y: 0} : {}}
                     transition={{duration: 0.5, delay: 0.14}}
                     style={{display: 'flex', gap: 4, padding: 4, borderRadius: 100, background: '#fff', width: 'fit-content'}}
                 >
-                    {TABS.map((tab, i) => (
+                    {dict.tabs.map((tab, i) => (
                         <button
                             key={tab}
                             onClick={() => setActiveTab(i)}
@@ -304,7 +326,7 @@ const HomeS5 = ({ dict , lang }: HomeS2Props) => {
                     style={{alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}}
                     className="hidden md:flex bg-transparent group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300"
                 >
-                    Все проекты
+                    {dict.allProjectsButton}
                     <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#009C89] transition-colors duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
                     </span>
@@ -350,7 +372,13 @@ const HomeS5 = ({ dict , lang }: HomeS2Props) => {
             </AnimatePresence>
 
             <AnimatePresence>
-                {selectedItem && <ProjectPopup item={selectedItem} onClose={() => setSelectedItem(null)}/>}
+                {selectedItem && (
+                    <ProjectPopup
+                        item={selectedItem}
+                        onClose={() => setSelectedItem(null)}
+                        popup={dict.popup}
+                    />
+                )}
             </AnimatePresence>
 
             <motion.button
@@ -360,7 +388,7 @@ const HomeS5 = ({ dict , lang }: HomeS2Props) => {
                 style={{display: 'flex', alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}}
                 className="bg-transparent mt-5 group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300"
             >
-                Все проекты
+                {dict.allProjectsButton}
                 <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#009C89] transition-colors duration-300">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
                 </span>

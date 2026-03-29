@@ -1,10 +1,8 @@
-
-
 // ===== REUSABLE TYPES =====
 export interface Stat {
     value: string;
     label: string;
-    title:string
+    title: string;
 }
 
 export interface Phone {
@@ -38,16 +36,36 @@ export interface HomeS4 {
     stats: Stat[];
 }
 
+// ── HomeS5 ────────────────────────────────────────────────────────────────────
+
+export interface HomeS5PopupDict {
+    year: string;
+    area: string;
+    materials: string;
+    systems: string;
+}
+
+export interface HomeS5ProjectItem {
+    title: string;
+    location: string;
+    listTitle: string;
+    list: string[];
+    description?: string;
+    year?: string;
+    area?: string;
+    materials?: string[];
+}
+
 export interface HomeS5 {
     title: string;
     text: string;
     tabs: string[];
-    popup: {
-        year: string;
-        area: string;
-        materials: string;
-    };
+    allProjectsButton: string;
+    popup: HomeS5PopupDict;
+    tabData: HomeS5ProjectItem[][];
 }
+
+// ── HomeS6 ────────────────────────────────────────────────────────────────────
 
 export interface HomeS6 {
     title: string;

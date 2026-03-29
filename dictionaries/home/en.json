@@ -22,77 +22,200 @@
     "subtitle": "We create technologies, aluminum products and solutions for the present and the future",
     "tabs": ["By product types", "Integrated solutions"],
     "byType": [
-      {
-        "title": "Rods",
-        "desc": "We offer extruded round, square, hexagonal, calibrated rods from 8 to 254 mm from various alloys"
-      },
-      {
-        "title": "Profiles",
-        "desc": "We produce aluminum profiles for various purposes: architectural-construction, interior, construction, standard, engineering and according to customer drawings"
-      },
-      {
-        "title": "Pipes",
-        "desc": "KraMZ produces pipes: drawn, extruded, rolled and coil-drawn"
-      },
-      {
-        "title": "Strip",
-        "desc": "KraMZ rolling production is based on a Quarto 500 cold rolling mill and a continuous strip rolling unit"
-      },
-      {
-        "title": "Stampings",
-        "desc": "KraMZ rolled products are represented by plates, GRETS strip, thin and standard strip"
-      }
+      { "title": "Rods", "desc": "We offer extruded round, square, hexagonal, calibrated rods from 8 to 254 mm from various alloys" },
+      { "title": "Profiles", "desc": "We produce aluminum profiles for various purposes: architectural-construction, interior, construction, standard, engineering and according to customer drawings" },
+      { "title": "Pipes", "desc": "KraMZ produces pipes: drawn, extruded, rolled and coil-drawn" },
+      { "title": "Strip", "desc": "KraMZ rolling production is based on a Quarto 500 cold rolling mill and a continuous strip rolling unit" },
+      { "title": "Stampings", "desc": "KraMZ rolled products are represented by plates, GRETS strip, thin and standard strip" }
     ],
     "solutions": [
-      {
-        "title": "Construction",
-        "desc": "We offer both ready-made architectural and construction systems and custom solutions for customer needs"
-      },
-      {
-        "title": "Infrastructure",
-        "desc": "KraMZ is the first among manufacturers of aluminum bridges and infrastructure solutions"
-      },
-      {
-        "title": "Transport",
-        "desc": "KraMZ products are actively used for the production of a wide range of vehicles"
-      },
-      {
-        "title": "Comfortable environment",
-        "desc": "The plant produces and supplies products for the improvement of urban and suburban environments"
-      }
+      { "title": "Construction", "desc": "We offer both ready-made architectural and construction systems and custom solutions for customer needs" },
+      { "title": "Infrastructure", "desc": "KraMZ is the first among manufacturers of aluminum bridges and infrastructure solutions" },
+      { "title": "Transport", "desc": "KraMZ products are actively used for the production of a wide range of vehicles" },
+      { "title": "Comfortable environment", "desc": "The plant produces and supplies products for the improvement of urban and suburban environments" }
     ]
   },
   "s4": {
     "title": "Advantages",
     "text": "KraMZ is one of the largest manufacturers and engineering centers of aluminum products and solutions in Russia and CIS",
     "stats": [
-      { "value": "01",
-        "title": "Полный цикл производства",
-        "label": "Вертикальная интеграция — от хлопка до готовой продукции с контролем качества на каждом этапе." },
-      { "value": "02","title": "Высокое качество", "label": "Современное оборудование и стандарты обеспечивают стабильность и соответствие международным требованиям." },
-      { "value": "03",
-        "title": "Экспортная ориентация",
-        "label": "Развитое международное сотрудничество и опыт работы с глобальными рынками." },
-      { "value": "04",
-        "title": "Надёжное партнёрство",
-        "label": "Долгосрочные отношения, основанные на доверии и выполнении обязательств." },
-      { "value": "04",
-        "title": "Инновации и развитие",
-        "label": "Внедрение современных технологий и постоянная оптимизация производственных процессов." },
-      { "value": "05",
-        "title": "Устойчивое производство",
-        "label": "Экологическая ответственность и эффективное использование ресурсов." }
+      { "value": "01", "title": "Full Production Cycle", "label": "Vertical integration — from raw material to finished product with quality control at every stage." },
+      { "value": "02", "title": "High Quality", "label": "Modern equipment and standards ensure stability and compliance with international requirements." },
+      { "value": "03", "title": "Export Orientation", "label": "Developed international cooperation and experience working with global markets." },
+      { "value": "04", "title": "Reliable Partnership", "label": "Long-term relationships based on trust and fulfillment of obligations." },
+      { "value": "04", "title": "Innovation & Development", "label": "Implementation of modern technologies and continuous optimization of production processes." },
+      { "value": "05", "title": "Sustainable Production", "label": "Environmental responsibility and efficient use of resources." }
     ]
   },
   "s5": {
     "title": "Completed Projects",
     "text": "Facilities where KraMZ systems were used during construction",
     "tabs": ["Construction", "Transport", "Infrastructure"],
+    "allProjectsButton": "All projects",
     "popup": {
       "year": "Year",
       "area": "Area",
-      "materials": "Materials"
-    }
+      "materials": "Materials",
+      "systems": "Systems"
+    },
+    "tabData": [
+      [
+        {
+          "title": "Siberian Federal University",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Aluminum facade systems", "Transparent structures", "Roofing profiles"],
+          "description": "The largest university complex in Siberia. KraMZ aluminum facade systems were used, providing high thermal insulation and durability in Siberian climate conditions.",
+          "year": "2006",
+          "area": "140,000 m²",
+          "materials": ["Aluminum profile AD31", "Facade systems series KMZ-500"]
+        },
+        {
+          "title": "Ivan Yarygин Sports Palace",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Load-bearing aluminum structures", "Roofing systems"],
+          "description": "A multifunctional sports complex designed for international competitions.",
+          "year": "2007",
+          "area": "25,000 m²",
+          "materials": ["Load-bearing profile series NP-200", "Roofing panels"]
+        },
+        {
+          "title": "Vzletny Residential District",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Window systems", "Balcony railings", "Facade elements"],
+          "description": "Premium residential quarter using modern aluminum window and facade systems manufactured by KraMZ.",
+          "year": "2015",
+          "area": "85,000 m²",
+          "materials": ["Window profile series OP-72", "Aluminum railings"]
+        },
+        {
+          "title": "Planeta Shopping & Entertainment Center",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Skylights", "Ventilated curtain facades", "Aluminum partitions"],
+          "description": "One of the largest shopping centers in Krasnoyarsk.",
+          "year": "2013",
+          "area": "120,000 m²",
+          "materials": ["Facade systems series KMZ-600", "Skylights FS-300"]
+        },
+        {
+          "title": "First Tower Business Center",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Structural glazing", "Aluminum curtain walls", "Entrance groups"],
+          "description": "Modern class-A high-rise business center.",
+          "year": "2019",
+          "area": "45,000 m²",
+          "materials": ["Structural glazing SO-160", "Aluminum profile AD31T1"]
+        }
+      ],
+      [
+        {
+          "title": "Krasnoyarsk Main Railway Station",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Platform canopies", "Facade systems", "Roofing structures"],
+          "description": "Reconstruction of the city's main railway station.",
+          "year": "2011",
+          "area": "18,500 m²",
+          "materials": ["Canopy structures series NK-400", "Roofing profile KP-150"]
+        },
+        {
+          "title": "Metro Bridge over the Yenisei River",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Load-bearing aluminum elements", "Safety railings", "Decorative panels"],
+          "description": "A unique engineering structure — a combined bridge for metro and road traffic.",
+          "year": "2021",
+          "area": "—",
+          "materials": ["Aluminum panels AP-300", "Railings series OG-200"]
+        },
+        {
+          "title": "Krasnoyarsk Airport (Yemelyanovo)",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Terminal facades", "Transparent roofs", "Transition galleries"],
+          "description": "New terminal of the international airport.",
+          "year": "2022",
+          "area": "55,000 m²",
+          "materials": ["Facade system FS-800", "Transparent roof SK-200"]
+        },
+        {
+          "title": "Northern Bus Terminal",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Platform canopies", "Window systems", "Facade panels"],
+          "description": "Modern bus terminal with developed infrastructure.",
+          "year": "2018",
+          "area": "8,200 m²",
+          "materials": ["Canopy structures NK-300", "Window profile OP-60"]
+        },
+        {
+          "title": "Shakhterov Street Overpass",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Railings", "Noise barriers", "Decorative elements"],
+          "description": "Modern overpass with KraMZ aluminum noise barrier screens.",
+          "year": "2020",
+          "area": "—",
+          "materials": ["Noise barriers SHE-500", "Railings PO-120"]
+        }
+      ],
+      [
+        {
+          "title": "Regional Clinical Hospital",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Medical partitions", "Facade systems", "Window units"],
+          "description": "The largest medical complex in the region.",
+          "year": "2016",
+          "area": "95,000 m²",
+          "materials": ["Partition system PS-100", "Medical profile MP-80"]
+        },
+        {
+          "title": "Yenisei Stadium",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Tribune canopies", "Facade systems", "Lighting masts"],
+          "description": "Reconstructed stadium with modern infrastructure.",
+          "year": "2018",
+          "area": "35,000 m²",
+          "materials": ["Canopy systems KS-600", "Facade profile FP-200"]
+        },
+        {
+          "title": "Yenisei River Embankment",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Railings", "Canopies", "Small architectural forms"],
+          "description": "Landscaping of the city's central embankment.",
+          "year": "2019",
+          "area": "—",
+          "materials": ["Railings series OG-180", "Canopy structures NK-250"]
+        },
+        {
+          "title": "Siberia Technopark",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Structural facades", "Aluminum floor systems", "Engineering systems"],
+          "description": "Innovative technopark for high-tech productions.",
+          "year": "2021",
+          "area": "28,000 m²",
+          "materials": ["Structural facade SF-900", "Aluminum floors AP-400"]
+        },
+        {
+          "title": "My Documents MFC",
+          "location": "Krasnoyarsk",
+          "listTitle": "Systems used",
+          "list": ["Entrance groups", "Glazed curtain walls", "Office partitions"],
+          "description": "Network of multifunctional government service centers.",
+          "year": "2017",
+          "area": "4,500 m²",
+          "materials": ["Curtain wall system VS-160", "Partitions series PS-80"]
+        }
+      ]
+    ]
   },
   "s6": {
     "title": "PEOPLE ARE OUR\nGREATEST VALUE",
