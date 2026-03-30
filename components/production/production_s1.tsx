@@ -53,7 +53,7 @@ const ProductionS1 = ({ dict, commonDict }: ProductionS1Props) => {
     return (
         <div className="py-32 container">
             <div className="pb-8 md:pb-10">
-                <h1 className="other_font uppercase font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2B362D]">
+                <h1 className="other_font uppercase font-medium text-xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2B362D]">
                     {dict.title}
                 </h1>
                 <p className="other_font w-full mt-4 md:w-1/2 text-sm md:text-base text-[#2B362D]">

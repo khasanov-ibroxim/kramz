@@ -11,7 +11,7 @@ const ProductionS4 = ({ dict }: ProductionS4Props) => {
             <div className="container">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div>
-                        <h3 className={"text-[#2B362D] text-5xl uppercase mb-10 font-semibold"}>{dict.title}</h3>
+                        <h3 className={"text-[#2B362D] text-xl md:text-5xl uppercase mb-10 font-semibold"}>{dict.title}</h3>
                         {dict.paragraphs.map((p:string, i:number) => (
                             <React.Fragment key={i}><p>{p}</p>{i < dict.paragraphs.length - 1 && <br />}</React.Fragment>
                         ))}

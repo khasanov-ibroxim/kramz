@@ -40,8 +40,8 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
     const displayTotal = String(items.length).padStart(2, '0');
 
     return (
-        <div className="bg-[#9DBFB8]">
-            <div className="pt-16 py-0 md:pt-0 md:py-32 container">
+        <div className="bg-[#9DBFB8] pt-16">
+            <div className=" py-0 md:pt-0 md:py-32 container">
                 <h1 className="other_font uppercase font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2B362D] mb-8">
                     {dict.title}
                 </h1>
