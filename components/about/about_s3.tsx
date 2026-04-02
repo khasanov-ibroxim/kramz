@@ -3,17 +3,11 @@ import React, {useState} from 'react';
 import {motion, AnimatePresence, Variants} from 'framer-motion';
 import {ChevronUp, ChevronLeft, ChevronRight} from 'lucide-react';
 import Image, {StaticImageData} from 'next/image';
-import i1 from "@/assets/about/about_s3/1.png"
-import i2 from "@/assets/about/about_s3/2.png"
-import i3 from "@/assets/about/about_s3/3.png"
-import i4 from "@/assets/about/about_s3/4.png"
-import i5 from "@/assets/about/about_s3/6.png"
-import i6 from "@/assets/about/about_s3/7.png"
-import i7 from "@/assets/about/about_s3/8.png"
+import i1 from "@/assets/about/about_s3/DSC04379.jpg"
+
 import type {AboutDictionary} from '@/lib/dictionary';
 
-// Images mapped by index (order matches history periods)
-const PERIOD_IMAGES: (StaticImageData)[] = [i1, i2, i3, i4, i5, i6, i7];
+
 
 interface AboutS3Props {
     dict: AboutDictionary['s3'];
@@ -65,7 +59,7 @@ const AboutS3 = ({dict}: AboutS3Props) => {
                             </div>
 
                             <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-sm">
-                                <Image src={i6} alt={dict.title} className="w-full h-full object-cover"/>
+                                <Image src={i1} alt={dict.title} className="w-full h-full object-cover"/>
                             </div>
                         </motion.div>
                     </AnimatePresence>

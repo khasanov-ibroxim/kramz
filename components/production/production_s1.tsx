@@ -1,40 +1,55 @@
 "use client"
 import React from 'react';
 import { motion } from 'framer-motion';
+import type { StaticImageData } from 'next/image';
 import type { ProductionDictionary, CommonDictionary } from '@/lib/dictionary';
+
+import i1 from "@/assets/production/production_s1/DSC04440.jpg"
+import i2 from "@/assets/production/production_s1/DSC04319.jpg"
+import i3 from "@/assets/production/production_s1/DSC04308.jpg"
+import i4 from "@/assets/production/production_s1/DSC04176.jpg"
 
 interface ProductionS1Props {
     dict: ProductionDictionary['s1'];
     commonDict: CommonDictionary;
 }
 
-const Card = ({ card }: { card: { title: string; description: string | string[] } }) => {
+const cardImages: StaticImageData[] = [i1, i2, i3, i4];
+
+const Card = ({ card, image }: { card: { title: string; description: string | string[] }; image?: StaticImageData }) => {
     return (
         <motion.div whileHover="hover" initial="rest" animate="rest"
                     className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#50D873]/10 border border-black/[0.07] cursor-pointer">
+
+            {image && (
+                <motion.img
+                    src={image.src}
+                    alt={card.title}
+                    variants={{ rest: { scale: 1.08 }, hover: { scale: 1 } }}
+                    transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
+                    className="absolute inset-0 w-full h-full object-cover object-center z-0"
+                />
+            )}
+
             <motion.div
-                variants={{ rest: { opacity: 0, scale: 1.12 }, hover: { opacity: 1, scale: 1 } }}
-                transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="absolute inset-0 bg-cover bg-center z-0"
-                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80)` }}
-            />
-            <motion.div
-                variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+                variants={{ rest: { opacity: image ? 0.45 : 0 }, hover: { opacity: 1 } }}
                 transition={{ duration: 0.45 }}
                 className="absolute inset-0 z-[1] bg-gradient-to-t from-black/80 via-black/25 to-black/5"
             />
+
             <div className="absolute inset-0 z-[2] flex flex-col justify-end p-5 md:p-7">
                 <motion.h3
-                    variants={{ rest: { color: '#2B362D' }, hover: { color: '#ffffff' } }}
+                    variants={{ rest: { color: image ? '#ffffff' : '#2B362D' }, hover: { color: '#ffffff' } }}
                     transition={{ duration: 0.3 }}
                     className="text-base md:text-lg font-bold leading-tight mb-2"
                 >{card.title}</motion.h3>
                 <motion.p
-                    variants={{ rest: { color: '#5a6b5c' }, hover: { color: 'rgba(255,255,255,0.85)' } }}
+                    variants={{ rest: { color: image ? 'rgba(255,255,255,0.75)' : '#5a6b5c' }, hover: { color: 'rgba(255,255,255,0.85)' } }}
                     transition={{ duration: 0.3 }}
                     className="text-xs md:text-sm leading-relaxed"
                 >{Array.isArray(card.description) ? card.description.join(' · ') : card.description}</motion.p>
             </div>
+
             <motion.div
                 variants={{ rest: { opacity: 0, scale: 0.7 }, hover: { opacity: 1, scale: 1 } }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
@@ -70,13 +85,13 @@ const ProductionS1 = ({ dict, commonDict }: ProductionS1Props) => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="h-[240px] md:h-[300px]"><Card card={first} /></div>
-                <div className="h-[240px] md:h-[300px]"><Card card={second} /></div>
+                <div className="h-[240px] md:h-[300px]"><Card card={first} image={cardImages[0]} /></div>
+                <div className="h-[240px] md:h-[300px]"><Card card={second} image={cardImages[1]} /></div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {rest.map((card:ProductionDictionary['s1']['cards'][number]) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
+                {rest.map((card: ProductionDictionary['s1']['cards'][number], idx: number) => (
                     <div key={card.title} className="h-[200px] md:h-[220px]">
-                        <Card card={card} />
+                        <Card card={card} image={cardImages[idx + 2]} />
                     </div>
                 ))}
             </div>

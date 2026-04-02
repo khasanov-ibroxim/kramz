@@ -1,11 +1,11 @@
 "use client"
 import React, {useRef, useState} from 'react';
 import {motion, useInView, AnimatePresence} from 'framer-motion';
-import i1 from "@/assets/home/home_s3/1.jpg"
-import i2 from "@/assets/home/home_s3/2.jpg"
-import i3 from "@/assets/home/home_s3/3.jpg"
-import i4 from "@/assets/home/home_s3/4.jpg"
-import i5 from "@/assets/home/home_s3/5.jpg"
+import i1 from "@/assets/home/home_s3/716da3ecb5500d70b1b469f8dd6fb673.jpg"
+import i2 from "@/assets/home/home_s3/DSC04366.jpg"
+import i3 from "@/assets/home/home_s3/DSC04280.jpg"
+import i4 from "@/assets/home/home_s3/8e6a4fdfdde60f974dd7ada2a582ae61.jpg"
+import i5 from "@/assets/home/home_s3/file_00000000ea94720aa889984c2a0a7718.jpg"
 import i6 from "@/assets/home/home_s3/6.jpg"
 import i7 from "@/assets/home/home_s3/7.jpg"
 import i8 from "@/assets/home/home_s3/8.jpg"

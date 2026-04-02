@@ -1,28 +1,41 @@
 "use client"
 import React from 'react';
 import { motion } from "framer-motion";
+import type { StaticImageData } from 'next/image';
 import type { ProductionDictionary, CommonDictionary } from '@/lib/dictionary';
+
+import i1 from "@/assets/production/production_s5/DSC04386.jpg"
+import i2 from "@/assets/production/production_s5/DSC04410.jpg"
+import i3 from "@/assets/production/production_s5/DSC04299.jpg"
+import i4 from "@/assets/production/production_s5/DSC04166.jpg"
 
 interface ProductionS5Props {
     dict: ProductionDictionary['s5'];
     commonDict: CommonDictionary;
 }
 
-const Card = ({ card }: { card: { title: string; description: string[] } }) => {
+const cardImages: StaticImageData[] = [i1, i2, i3, i4];
+
+const Card = ({ card, image }: { card: { title: string; description: string[] }; image: StaticImageData }) => {
     return (
         <motion.div whileHover="hover" initial="rest" animate="rest"
                     className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#50D873]/10 border border-black/[0.07] cursor-pointer">
-            <motion.div
+
+            {/* Rasm — faqat hover da ko'rinadi */}
+            <motion.img
+                src={image.src}
+                alt={card.title}
                 variants={{ rest: { opacity: 0, scale: 1.12 }, hover: { opacity: 1, scale: 1 } }}
                 transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="absolute inset-0 bg-cover bg-center z-0"
-                style={{ backgroundImage: `url(https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80)` }}
+                className="absolute inset-0 w-full h-full object-cover object-center z-0"
             />
+
             <motion.div
                 variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
                 transition={{ duration: 0.45 }}
                 className="absolute inset-0 z-[1] bg-gradient-to-b from-black/80 via-black/25 to-black/30"
             />
+
             <div className="absolute z-[2] flex flex-col justify-end p-5 md:p-7">
                 <motion.h3
                     variants={{ rest: { color: '#50D873' }, hover: { color: '#ffffff' } }}
@@ -39,6 +52,7 @@ const Card = ({ card }: { card: { title: string; description: string[] } }) => {
                     </ul>
                 ))}
             </div>
+
             <motion.div
                 variants={{ rest: { opacity: 0, scale: 0.7 }, hover: { opacity: 1, scale: 1 } }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
@@ -62,12 +76,12 @@ const ProductionS5 = ({ dict, commonDict }: ProductionS5Props) => {
                 </h1>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="h-[240px] md:h-[300px]"><Card card={first} /></div>
-                <div className="h-[240px] md:h-[300px]"><Card card={second} /></div>
+                <div className="h-[240px] md:h-[300px]"><Card card={first} image={cardImages[0]} /></div>
+                <div className="h-[240px] md:h-[300px]"><Card card={second} image={cardImages[1]} /></div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="h-[240px] md:h-[300px]"><Card card={third} /></div>
-                <div className="h-[240px] md:h-[300px]"><Card card={fourth} /></div>
+                <div className="h-[240px] md:h-[300px]"><Card card={third} image={cardImages[2]} /></div>
+                <div className="h-[240px] md:h-[300px]"><Card card={fourth} image={cardImages[3]} /></div>
             </div>
             <button style={{ display: 'flex', alignItems: 'center', gap: 10, borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500 }}
                     className="bg-transparent w-[180px] justify-between px-3 py-2 mt-10 group hover:bg-[#50D873] text-black hover:text-white transition-colors duration-300">

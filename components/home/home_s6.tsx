@@ -53,9 +53,7 @@ const HomeS6 = ({ dict }: HomeS6Props) => {
                     </motion.div>
                 </div>
 
-                <div className="relative z-20 w-full md:w-[50%] flex-shrink-0 h-[55vh] md:h-full order-2 md:order-2 transform scale-125">
-                    <Image src={watermaker_s6} alt="factory" fill className="object-contain object-bottom" />
-                </div>
+
             </div>
         </section>
     );

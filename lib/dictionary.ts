@@ -2,14 +2,14 @@ import type { Locale } from '@/i18n-config';
 
 import type { HomeDictionary as HomeDictionaryType } from '@/lib/types';
 
-const validLocales = ['uz', 'ru', 'en'];
+const validLocales = [ 'ru', 'en'];
 // ── Loaders ──────────────────────────────────────────────────────────────────
 
 export const getCommonDictionary = async (locale: Locale) =>
     (await import(`@/dictionaries/common/${locale}.json`)).default;
 
 export const getHomeDictionary = async (locale: Locale) => {
-    const safeLocale = validLocales.includes(locale) ? locale : 'uz';
+    const safeLocale = validLocales.includes(locale) ? locale : 'ru';
 
     return (await import(`@/dictionaries/home/${safeLocale}.json`)).default;
 };

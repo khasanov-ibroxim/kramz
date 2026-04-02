@@ -2,7 +2,7 @@
 import React, {useRef} from 'react';
 import {motion, useInView} from "framer-motion";
 import Image from "next/image";
-import watermaker_s6 from "@/assets/production/production_s2/watermaker_p_s2.png";
+import watermaker_s6 from "@/assets/production/production_s2/DSC04194.jpg";
 import type {ProductionDictionary} from "@/lib/dictionary";
 
 interface Production2Props {
@@ -14,22 +14,22 @@ const ProductionS2 = ({dict}:Production2Props) => {
 
     return (
         <section ref={ref} className="relative overflow-hidden">
-            <div className="relative w-full h-[80vh] bg-[#50D873] flex flex-col md:flex-row items-center">
+            <div className="relative w-full h-[90vh] bg-[#50D873] flex flex-col md:flex-row items-center">
 
                 {/* Gradient overlay */}
                 <div
                     className="
-                        absolute inset-0 z-10
-                        bg-gradient-to-l
-                        from-[#00474A]
-                        via-[#00474A]
+                        absolute inset-0 z-20
+                        bg-gradient-to-r
+                        from-[#00474A]/70
+                        via-[#00474A]/50
                         to-transparent
                     "
                 />
 
 
                 <div className="
-                    absolute top-5 md:top-10 z-20
+                    absolute top-5 md:top-10 z-30
                     w-full
                     p-6 md:p-10
                     text-white
