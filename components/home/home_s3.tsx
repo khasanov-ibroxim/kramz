@@ -33,7 +33,7 @@ function ProductCard({item, index}: { item: { title: string; desc: string; img: 
                        hover:bg-[#E8F2F0] group transition-colors duration-300 min-w-[280px]"
         >
             <div className="flex items-center gap-1.5">
-                <h3 className="title_font text-[#009C89] text-[21px] font-bold tracking-tight leading-tight">
+                <h3 className="title_font text-[#50D873] text-[21px] font-bold tracking-tight leading-tight">
                     {item.title}
                 </h3>
             </div>
@@ -119,7 +119,7 @@ const HomeS3 = ({ dict }: HomeS3Props) => {
                             {activeTab === i && (
                                 <motion.div
                                     layoutId="s3-activeTab"
-                                    className="absolute inset-0 bg-[#009C89] rounded-full"
+                                    className="absolute inset-0 bg-[#50D873] rounded-full"
                                 />
                             )}
                             <span className={`relative z-10 ${activeTab === i ? "text-white" : "text-black"}`}>

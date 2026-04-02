@@ -24,10 +24,10 @@ const ProductionS4 = ({ dict }: ProductionS4Props) => {
                                     <p>{cert.subtitle}</p>
                                 </div>
 
-                                <button className="flex items-center justify-between gap-2.5 rounded-full border border-white/[0.5] bg-transparent max-w-[150px] py-1 px-3 mt-5 group hover:bg-[#009C89] text-white transition-colors duration-300 text-sm font-medium cursor-pointer">
+                                <button className="flex items-center justify-between gap-2.5 rounded-full border border-white/[0.5] bg-transparent max-w-[150px] py-1 px-3 mt-5 group hover:bg-[#50D873] text-white transition-colors duration-300 text-sm font-medium cursor-pointer">
                                     {dict.downloadButton}
-                                    <span className="w-[34px] h-[34px] rounded-full flex items-center justify-center bg-[#009C89] group-hover:bg-white transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right stroke-white group-hover:stroke-[#009C89]">
+                                    <span className="w-[34px] h-[34px] rounded-full flex items-center justify-center bg-[#50D873] group-hover:bg-white transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right stroke-white group-hover:stroke-[#50D873]">
                         <path d="m9 18 6-6-6-6"/>
                     </svg>
                 </span>

@@ -11,7 +11,7 @@ interface ProductionS1Props {
 const Card = ({ card }: { card: { title: string; description: string | string[] } }) => {
     return (
         <motion.div whileHover="hover" initial="rest" animate="rest"
-                    className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#009C89]/10 border border-black/[0.07] cursor-pointer">
+                    className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#50D873]/10 border border-black/[0.07] cursor-pointer">
             <motion.div
                 variants={{ rest: { opacity: 0, scale: 1.12 }, hover: { opacity: 1, scale: 1 } }}
                 transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -59,10 +59,10 @@ const ProductionS1 = ({ dict, commonDict }: ProductionS1Props) => {
                 <p className="other_font w-full mt-4 md:w-1/2 text-sm md:text-base text-[#2B362D]">
                     {dict.subtitle}
                 </p>
-                <button className="flex items-center gap-2.5 rounded-full border border-black/[0.12] bg-transparent min-w-[150px] py-1 px-2 mt-5 group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300 text-sm font-medium cursor-pointer">
+                <button className="flex items-center gap-2.5 rounded-full border border-black/[0.12] bg-transparent min-w-[150px] py-1 px-2 mt-5 group hover:bg-[#50D873] text-black hover:text-white transition-colors duration-300 text-sm font-medium cursor-pointer">
                     {dict.button}
-                    <span className="w-[34px] h-[34px] rounded-full flex items-center justify-center bg-[#009C89] group-hover:bg-white transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right stroke-white group-hover:stroke-[#009C89]">
+                    <span className="w-[34px] h-[34px] rounded-full flex items-center justify-center bg-[#50D873] group-hover:bg-white transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right stroke-white group-hover:stroke-[#50D873]">
                             <path d="m9 18 6-6-6-6" />
                         </svg>
                     </span>

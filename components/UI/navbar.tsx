@@ -113,7 +113,7 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                             position: 'fixed',
                             top: 0, right: 0, bottom: 0,
                             width: '100%', maxWidth: 420,
-                            background: '#009C89',
+                            background: '#50D873',
                             zIndex: 9990,
                             display: 'flex',
                             flexDirection: 'column',
@@ -145,7 +145,7 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                                         fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                                         textDecoration: 'none',
                                         background: l === lang ? '#fff' : 'transparent',
-                                        color: l === lang ? '#009C89' : 'rgba(255,255,255,0.65)',
+                                        color: l === lang ? '#50D873' : 'rgba(255,255,255,0.65)',
                                         border: l === lang ? 'none' : '1.5px solid rgba(255,255,255,0.3)',
                                         transition: 'all 0.2s',
                                     }}>{l}</SweepLink>
@@ -355,7 +355,7 @@ export default function Navbar({ lang }: NavbarProps) {
                         }}>
                             Скачать каталог
                             <span style={{
-                                background: '#009C89', color: '#fff',
+                                background: '#50D873', color: '#fff',
                                 borderRadius: 5, padding: '2px 6px',
                                 fontSize: 10, fontWeight: 700, letterSpacing: '0.05em',
                             }}>PDF</span>
@@ -392,7 +392,7 @@ export default function Navbar({ lang }: NavbarProps) {
                                     fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                                     textDecoration: 'none',
                                     background: l === lang ? (showBg ? '#1a1a1a' : '#fff') : 'transparent',
-                                    color: l === lang ? (showBg ? '#fff' : '#009C89') : textColor,
+                                    color: l === lang ? (showBg ? '#fff' : '#50D873') : textColor,
                                     border: l === lang ? 'none' : `1.5px solid ${borderColor}`,
                                     opacity: l === lang ? 1 : 0.65,
                                     transition: 'all 0.3s',
@@ -414,7 +414,7 @@ export default function Navbar({ lang }: NavbarProps) {
                         }}>
                             Скачать каталог
                             <span style={{
-                                background: '#009C89', color: '#fff',
+                                background: '#50D873', color: '#fff',
                                 borderRadius: 4, padding: '1px 5px',
                                 fontSize: 9, fontWeight: 700,
                             }}>PDF</span>

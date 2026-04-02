@@ -15,7 +15,7 @@ const HomeS6 = ({ dict }: HomeS6Props) => {
 
     return (
         <section ref={ref} className="relative overflow-hidden h-screen ">
-            <div className="relative w-full h-screen bg-[#009C89] flex flex-col md:flex-row items-center ">
+            <div className="relative w-full h-screen bg-[#50D873] flex flex-col md:flex-row items-center ">
                 <div className="absolute inset-0 z-10 bg-gradient-to-l from-[#00474A] via-[#00474A] to-transparent" />
 
                 <div className="relative z-20 w-full md:w-[70%] p-6 md:p-10 text-white order-2 md:order-1 left-0 lg:left-40">
@@ -44,7 +44,7 @@ const HomeS6 = ({ dict }: HomeS6Props) => {
                     >
                         <button className="other_font inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-white/35 bg-transparent text-white text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#000]/50 hover:border-transparent">
                             {dict.button}
-                            <span className="w-8 h-8 bg-[#009C89] rounded-full flex items-center justify-center flex-shrink-0">
+                            <span className="w-8 h-8 bg-[#50D873] rounded-full flex items-center justify-center flex-shrink-0">
                                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>

@@ -33,14 +33,14 @@ function StatCard({ stat, index }: { stat: { value: string; title:string, label:
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: (index % 3) * 0.09, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ '--hover-bg': '#009C89' } as React.CSSProperties}
+            style={{ '--hover-bg': '#50D873' } as React.CSSProperties}
             className={[
                 "relative group",
                 "flex flex-col items-start justify-start text-left",
                 "rounded-2xl",
                 "p-5 sm:p-7 md:p-8 lg:p-10",
                 "[transition:background-color_0.35s_ease]",
-                "hover:bg-[#009C89]",
+                "hover:bg-[#50D873]",
                 "min-h-[140px] sm:min-h-[160px]",
             ].join(' ')}
         >
@@ -54,7 +54,7 @@ function StatCard({ stat, index }: { stat: { value: string; title:string, label:
             <div className={[
                 "title_font font-bold leading-none tracking-tight mb-3",
                 "text-2xl sm:text-3xl md:text-4xl",
-                "text-[#009C89] group-hover:text-white",
+                "text-[#50D873] group-hover:text-white",
                 "[transition:color_0.35s_ease]",
             ].join(' ')}>
                 {stat.value}

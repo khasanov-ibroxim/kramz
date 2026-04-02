@@ -19,7 +19,7 @@ const AboutS6 = ({ dict, commonDict }: AboutS6Props) => {
                     <button style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 20px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.30)', cursor: 'pointer', fontSize: 14, fontWeight: 500 }}
                             className="bg-transparent mt-5 group hover:bg-[#fff] text-black max-w-[200px] transition-colors duration-300">
                         {commonDict.buttons.details}
-                        <span style={{ width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="bg-[#009C89] transition-colors duration-300">
+                        <span style={{ width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="bg-[#50D873] transition-colors duration-300">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right stroke-white"><path d="m9 18 6-6-6-6" /></svg>
                         </span>
                     </button>

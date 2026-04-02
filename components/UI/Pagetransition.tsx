@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const BRAND = '#009C89';
+const BRAND = '#50D873';
 const EASE = [0.76, 0, 0.24, 1] as const;
 const SWEEP_DURATION = 550;
 

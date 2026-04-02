@@ -39,19 +39,19 @@ const HomeS7 = ({ dict }: HomeS7Props) => {
                             >
                                 <button className="other_font group inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#1C3A35]/30 bg-transparent text-[#1C3A35] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#009383] hover:text-white">
                                     {dict.buttons.feedback}
-                                    <span className="w-8 h-8 rounded-full group-hover:bg-white bg-[#009C89] flex items-center justify-center flex-shrink-0">
+                                    <span className="w-8 h-8 rounded-full group-hover:bg-white bg-[#50D873] flex items-center justify-center flex-shrink-0">
                                         <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
-                                            <path d="M3 8H13M13 8L8 3M13 8L8 13" className="stroke-white group-hover:stroke-[#009C89]" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <path d="M3 8H13M13 8L8 3M13 8L8 13" className="stroke-white group-hover:stroke-[#50D873]" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
                                     </span>
                                 </button>
 
                                 <button className="other_font group inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#1C3A35]/30 bg-transparent text-[#1C3A35] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#009383] hover:text-white">
                                     {dict.buttons.directions}
-                                    <span className="w-8 h-8 rounded-full group-hover:bg-white bg-[#009C89] flex items-center justify-center flex-shrink-0">
+                                    <span className="w-8 h-8 rounded-full group-hover:bg-white bg-[#50D873] flex items-center justify-center flex-shrink-0">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" className="stroke-white group-hover:stroke-[#009C89]" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                            <circle cx="12" cy="10" r="3" className="stroke-white group-hover:stroke-[#009C89]" strokeWidth="2"/>
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" className="stroke-white group-hover:stroke-[#50D873]" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                            <circle cx="12" cy="10" r="3" className="stroke-white group-hover:stroke-[#50D873]" strokeWidth="2"/>
                                         </svg>
                                     </span>
                                 </button>

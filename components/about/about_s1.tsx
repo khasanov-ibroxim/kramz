@@ -15,7 +15,7 @@ const AboutS1 = ({ dict }: AboutS1Props) => {
 
     return (
         <section ref={ref} className="relative overflow-hidden h-[50vh] lg:h-screen">
-            <div className="relative w-full h-screen bg-[#009C89] flex flex-col md:flex-row items-center">
+            <div className="relative w-full h-screen bg-[#50D873] flex flex-col md:flex-row items-center">
                 <div className="absolute inset-0 z-10 bg-gradient-to-l from-[#00474A] via-[#00474A] to-transparent" />
 
                 <div className="absolute top-5 md:top-10 z-20 w-full p-6 md:p-10 text-white order-2 md:order-1 left-0 lg:left-40">

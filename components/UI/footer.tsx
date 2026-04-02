@@ -39,7 +39,7 @@ const Footer = ({ dict }: FooterProps) => {
                                     <li key={j}>
                                         <a
                                             href={item.link}
-                                            className="other_font text-[14px] text-[#555] hover:text-[#009C89] transition"
+                                            className="other_font text-[14px] text-[#555] hover:text-[#50D873] transition"
                                         >
                                             {item.title}
                                         </a>
@@ -62,7 +62,7 @@ const Footer = ({ dict }: FooterProps) => {
 
                         <a
                             href="#"
-                            className="other_font text-[#009C89] text-[14px] flex items-center gap-1 hover:opacity-70 transition-opacity duration-200 mt-1"
+                            className="other_font text-[#50D873] text-[14px] flex items-center gap-1 hover:opacity-70 transition-opacity duration-200 mt-1"
                         >
                             {footer.viewOnMap}
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
@@ -84,14 +84,14 @@ const Footer = ({ dict }: FooterProps) => {
 
                     <button className="other_font inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#1C1C1C]/25 bg-transparent text-[#1C1C1C] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#1C1C1C]/5">
                         {footer.suppliers}
-                        <span className="w-8 h-8 rounded-full bg-[#009C89] flex items-center justify-center text-white text-[10px] font-bold">
+                        <span className="w-8 h-8 rounded-full bg-[#50D873] flex items-center justify-center text-white text-[10px] font-bold">
                             PDF
                         </span>
                     </button>
 
                     <button className="other_font inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#1C1C1C]/25 bg-transparent text-[#1C1C1C] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#1C1C1C]/5">
                         {footer.orderProducts}
-                        <span className="w-8 h-8 rounded-full bg-[#009C89] flex items-center justify-center">
+                        <span className="w-8 h-8 rounded-full bg-[#50D873] flex items-center justify-center">
                             <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                                 <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             </svg>

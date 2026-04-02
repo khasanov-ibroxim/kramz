@@ -51,7 +51,7 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
                     {(['image', 'video'] as const).map((t) => (
                         <button key={t} onClick={() => handleTabChange(t)}
                                 className={`other_font relative px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 cursor-pointer ${tab === t ? 'text-white' : 'text-[#2B362D]'}`}>
-                            {tab === t && <motion.span layoutId="tab-bg" className="absolute inset-0 bg-[#009C89] rounded-full" transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }} />}
+                            {tab === t && <motion.span layoutId="tab-bg" className="absolute inset-0 bg-[#50D873] rounded-full" transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }} />}
                             <span className="relative z-10">{dict.tabs[t]}</span>
                         </button>
                     ))}
@@ -86,7 +86,7 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
                         return (
                             <motion.button key={item.id} onClick={() => setActiveIndex(globalIndex)}
                                            whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
-                                           className={`relative rounded-xl overflow-hidden cursor-pointer border-2 transition-colors duration-200 ${isActive ? 'border-[#009C89]' : 'border-transparent'}`}
+                                           className={`relative rounded-xl overflow-hidden cursor-pointer border-2 transition-colors duration-200 ${isActive ? 'border-[#50D873]' : 'border-transparent'}`}
                                            style={{ aspectRatio: '16/10', width: 'calc(25% - 9px)' }}
                             >
                                 <img src={thumb} alt="" className="w-full h-full object-cover" />
@@ -102,7 +102,7 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
                                         </div>
                                     </>
                                 )}
-                                {isActive && <motion.div layoutId="thumb-active" className="absolute inset-0 border-2 border-[#009C89] rounded-xl pointer-events-none" />}
+                                {isActive && <motion.div layoutId="thumb-active" className="absolute inset-0 border-2 border-[#50D873] rounded-xl pointer-events-none" />}
                             </motion.button>
                         );
                     })}
@@ -116,11 +116,11 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
                         <span>{displayTotal}</span>
                     </span>
                     <button onClick={handlePrev} disabled={activeIndex === 0}
-                            className="w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer disabled:opacity-30 hover:bg-[#009C89] hover:border-[#009C89] transition-colors duration-200">
+                            className="w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer disabled:opacity-30 hover:bg-[#50D873] hover:border-[#50D873] transition-colors duration-200">
                         <ChevronLeft size={18} color="#fff"/>
                     </button>
                     <button onClick={handleNext} disabled={activeIndex === items.length - 1}
-                            className="w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer disabled:opacity-30 hover:bg-[#009C89] hover:border-[#009C89] transition-colors duration-200">
+                            className="w-10 h-10 rounded-full border border-white flex items-center justify-center cursor-pointer disabled:opacity-30 hover:bg-[#50D873] hover:border-[#50D873] transition-colors duration-200">
                         <ChevronRight size={18} color="#fff"/>
                     </button>
                 </div>

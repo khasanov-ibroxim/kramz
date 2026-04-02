@@ -74,7 +74,7 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                             onClick={() => setActiveTab(i)}
                             className={`px-5 py-2 rounded-full text-sm transition ${
                                 activeTab === i
-                                    ? 'bg-[#009C89] text-white'
+                                    ? 'bg-[#50D873] text-white'
                                     : 'text-black'
                             }`}
                         >

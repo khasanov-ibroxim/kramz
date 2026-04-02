@@ -159,7 +159,7 @@ const ContactS2 = () => {
                                     {/* Circle button */}
                                     <span
                                         className="w-9 h-9 rounded-full flex items-center justify-center shadow-md transition-colors duration-200 shrink-0"
-                                        style={{ background: isActive ? '#009C89' : '#1a1a1a' }}
+                                        style={{ background: isActive ? '#50D873' : '#1a1a1a' }}
                                     >
                                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                                             <path d="M7 1V13M1 7H13" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
@@ -193,7 +193,7 @@ const ContactS2 = () => {
                                                 </div>
                                                 <button
                                                     onClick={() => setActiveMarker(null)}
-                                                    className="w-7 h-7 rounded-full bg-[#009C89] flex items-center justify-center cursor-pointer shrink-0 hover:bg-[#007a6b] transition-colors duration-200 mt-0.5"
+                                                    className="w-7 h-7 rounded-full bg-[#50D873] flex items-center justify-center cursor-pointer shrink-0 hover:bg-[#007a6b] transition-colors duration-200 mt-0.5"
                                                 >
                                                     <X size={12} className="text-white" />
                                                 </button>
@@ -217,7 +217,7 @@ const ContactS2 = () => {
                         href={MAP_URL}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="other_font text-[9px] md:text-[11px] font-bold text-[#2B362D] uppercase tracking-wide hover:text-[#009C89] transition-colors duration-200"
+                        className="other_font text-[9px] md:text-[11px] font-bold text-[#2B362D] uppercase tracking-wide hover:text-[#50D873] transition-colors duration-200"
                     >
                         Проложить маршрут
                     </a>

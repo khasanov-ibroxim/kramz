@@ -141,13 +141,13 @@ function ProjectPopup({item, onClose, popup}: {
                         <div style={{display: 'flex', gap: 12, flexWrap: 'wrap', marginBottom: 24}}>
                             {item.year && (
                                 <div style={{background: '#F4F8F7', borderRadius: 12, padding: '10px 18px', display: 'flex', flexDirection: 'column', gap: 2}}>
-                                    <span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.year}</span>
+                                    <span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#50D873', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.year}</span>
                                     <span style={{fontSize: 18, fontWeight: 700, color: '#1a1a1a', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', letterSpacing: '-0.02em'}}>{item.year}</span>
                                 </div>
                             )}
                             {item.area && item.area.trim() !== '—' && (
                                 <div style={{background: '#F4F8F7', borderRadius: 12, padding: '10px 18px', display: 'flex', flexDirection: 'column', gap: 2}}>
-                                    <span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.area}</span>
+                                    <span style={{fontSize: 11, fontWeight: 600, letterSpacing: '0.08em', color: '#50D873', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.area}</span>
                                     <span style={{fontSize: 18, fontWeight: 700, color: '#1a1a1a', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', letterSpacing: '-0.02em'}}>{item.area}</span>
                                 </div>
                             )}
@@ -157,11 +157,11 @@ function ProjectPopup({item, onClose, popup}: {
                     <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16}}>
                         {item.list.length > 0 && (
                             <div style={{background: '#F4F8F7', borderRadius: 14, padding: '18px 20px'}}>
-                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{item.listTitle || popup.systems}</p>
+                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#50D873', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{item.listTitle || popup.systems}</p>
                                 <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8}}>
                                     {item.list.map((l, i) => (
                                         <li key={i} style={{display: 'flex', alignItems: 'flex-start', gap: 8}}>
-                                            <span style={{width: 6, height: 6, borderRadius: '50%', background: '#009C89', flexShrink: 0, marginTop: 6}}/>
+                                            <span style={{width: 6, height: 6, borderRadius: '50%', background: '#50D873', flexShrink: 0, marginTop: 6}}/>
                                             <span style={{fontSize: 13.5, color: '#333', lineHeight: 1.5, fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{l}</span>
                                         </li>
                                     ))}
@@ -170,7 +170,7 @@ function ProjectPopup({item, onClose, popup}: {
                         )}
                         {item.materials && item.materials.length > 0 && (
                             <div style={{background: '#F4F8F7', borderRadius: 14, padding: '18px 20px'}}>
-                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#009C89', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.materials}</p>
+                                <p style={{margin: '0 0 12px', fontSize: 11, fontWeight: 700, letterSpacing: '0.1em', color: '#50D873', textTransform: 'uppercase', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'}}>{popup.materials}</p>
                                 <ul style={{margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 8}}>
                                     {item.materials.map((m, i) => (
                                         <li key={i} style={{display: 'flex', alignItems: 'flex-start', gap: 8}}>
@@ -310,7 +310,7 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                             {activeTab === i && (
                                 <motion.div
                                     layoutId="s5-activeTab"
-                                    style={{position: 'absolute', inset: 0, background: '#009C89', borderRadius: 100, zIndex: -1}}
+                                    style={{position: 'absolute', inset: 0, background: '#50D873', borderRadius: 100, zIndex: -1}}
                                     transition={{duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94]}}
                                 />
                             )}
@@ -324,11 +324,11 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                     animate={titleInView ? {opacity: 1, x: 0} : {}}
                     transition={{duration: 0.5, delay: 0.2}}
                     style={{alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}}
-                    className="hidden md:flex bg-transparent group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300"
+                    className="hidden md:flex bg-transparent group hover:bg-[#50D873] text-black hover:text-white transition-colors duration-300"
                 >
                     {dict.allProjectsButton}
-                    <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#009C89] transition-colors duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
+                    <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#50D873] transition-colors duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#50D873] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
                     </span>
                 </motion.button>
             </div>
@@ -365,7 +365,7 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                             ))}
                         </div>
                         <div className="flex justify-center gap-1.5 mt-2">
-                            {items.map((_, i) => <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#009C89]/30"/>)}
+                            {items.map((_, i) => <div key={i} className="w-1.5 h-1.5 rounded-full bg-[#50D873]/30"/>)}
                         </div>
                     </div>
                 </motion.div>
@@ -386,11 +386,11 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                 animate={titleInView ? {opacity: 1, x: 0} : {}}
                 transition={{duration: 0.5, delay: 0.2}}
                 style={{display: 'flex', alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}}
-                className="bg-transparent mt-5 group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300"
+                className="bg-transparent mt-5 group hover:bg-[#50D873] text-black hover:text-white transition-colors duration-300"
             >
                 {dict.allProjectsButton}
-                <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#009C89] transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
+                <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#50D873] transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#50D873] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
                 </span>
             </motion.button>
         </div>

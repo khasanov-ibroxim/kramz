@@ -1,5 +1,0 @@
-<svg class="header__logo-svg-mobile" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs><symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 207" id="logo-bg-white">
-<path d="M40.3333 206.388H0L112.75 0H165V156.321H125.01L114.583 175.593H185.625V0H220V207H63.0208L107.021 125.424H130.625V40.6862L40.3333 206.388Z"></path>
-</symbol></defs>
-                        <use href="#logo-bg-white"></use>
-                    </svg>

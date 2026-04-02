@@ -23,7 +23,7 @@ function Card({ card, index, isActive, onMouseEnter, onMouseLeave }: {
                     transition={{ duration: 0.5, delay: (index % 3) * 0.08 + Math.floor(index / 3) * 0.1, ease: EASE }}
                     onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}
                     className={["relative overflow-hidden rounded-2xl p-7 flex flex-col gap-5 cursor-default transition-colors duration-300",
-                        isActive ? 'bg-[#009C89]' : 'bg-white'].join(' ')}
+                        isActive ? 'bg-[#50D873]' : 'bg-white'].join(' ')}
         >
             <h3 className={["other_font font-bold text-[22px] leading-snug relative z-10 transition-colors duration-300",
                 isActive ? 'text-white' : 'text-[#1a1a1a]'].join(' ')}>{card.title}</h3>

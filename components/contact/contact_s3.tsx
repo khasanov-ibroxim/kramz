@@ -101,7 +101,7 @@ const ContactS3 = () => {
                                         placeholder={placeholder}
                                         value={form[key as keyof typeof form]}
                                         onChange={e => handleChange(key, e.target.value)}
-                                        className={`other_font w-full bg-transparent border-b py-4 text-sm text-[#2B362D] placeholder-[#2B362D] outline-none transition-colors duration-200 focus:border-[#009C89] ${
+                                        className={`other_font w-full bg-transparent border-b py-4 text-sm text-[#2B362D] placeholder-[#2B362D] outline-none transition-colors duration-200 focus:border-[#50D873] ${
                                             errors[key] ? 'border-red-400' : 'border-[#2B362D]/20'
                                         }`}
                                     />
@@ -121,7 +121,7 @@ const ContactS3 = () => {
                                         if (errors.agreed) setErrors(prev => ({ ...prev, agreed: '' }));
                                     }}
                                     className={`mt-0.5 w-5 h-5 shrink-0 rounded border-2 flex items-center justify-center transition-colors duration-200 cursor-pointer ${
-                                        agreed ? 'bg-[#009C89] border-[#009C89]' : errors.agreed ? 'border-red-400' : 'border-[#2B362D]/30'
+                                        agreed ? 'bg-[#50D873] border-[#50D873]' : errors.agreed ? 'border-red-400' : 'border-[#2B362D]/30'
                                     }`}
                                 >
                                     {agreed && (
@@ -132,9 +132,9 @@ const ContactS3 = () => {
                                 </div>
                                 <span className="other_font text-xs text-[#2B362D]/80 leading-relaxed">
                             Я подтверждаю ознакомление и даю{' '}
-                                    <a href="#" className="text-[#009C89] hover:underline">Согласие на обработку моих персональных данных</a>
+                                    <a href="#" className="text-[#50D873] hover:underline">Согласие на обработку моих персональных данных</a>
                                     {' '}в соответствии с ФЗ от 27.07.2006 №152-ФЗ в порядке и на условиях, указанных в{' '}
-                                    <a href="#" className="text-[#009C89] hover:underline">Политике обработки персональных данных</a>
+                                    <a href="#" className="text-[#50D873] hover:underline">Политике обработки персональных данных</a>
                         </span>
                             </label>
                             {errors.agreed && (
@@ -148,13 +148,13 @@ const ContactS3 = () => {
                             <button
                                 onClick={handleSubmit}
                                 disabled={status === 'loading'}
-                                className="flex items-center gap-2 rounded-full border border-black/12 bg-transparent py-2 pl-5 pr-2 group hover:bg-[#009C89] hover:border-[#009C89] transition-colors duration-300 cursor-pointer disabled:opacity-60"
+                                className="flex items-center gap-2 rounded-full border border-black/12 bg-transparent py-2 pl-5 pr-2 group hover:bg-[#50D873] hover:border-[#50D873] transition-colors duration-300 cursor-pointer disabled:opacity-60"
                             >
                         <span className="other_font text-sm font-medium text-[#2B362D] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
                             {status === 'loading' ? 'Отправка...' : 'Отправить'}
                         </span>
-                                <span className="w-9 h-9 rounded-full bg-[#009C89] group-hover:bg-white flex items-center justify-center transition-colors duration-300 shrink-0">
-                            <ChevronRight size={18} className="stroke-white group-hover:stroke-[#009C89] transition-colors duration-300" strokeWidth={2.5} />
+                                <span className="w-9 h-9 rounded-full bg-[#50D873] group-hover:bg-white flex items-center justify-center transition-colors duration-300 shrink-0">
+                            <ChevronRight size={18} className="stroke-white group-hover:stroke-[#50D873] transition-colors duration-300" strokeWidth={2.5} />
                         </span>
                             </button>
 
@@ -176,7 +176,7 @@ const ContactS3 = () => {
                                     />
                                     <button
                                         onClick={refreshCaptcha}
-                                        className="text-[#2B362D]/40 hover:text-[#009C89] transition-colors duration-200 cursor-pointer"
+                                        className="text-[#2B362D]/40 hover:text-[#50D873] transition-colors duration-200 cursor-pointer"
                                         title="Обновить"
                                     >
                                         <RefreshCw size={14} />
@@ -193,7 +193,7 @@ const ContactS3 = () => {
                             <motion.p
                                 initial={{ opacity: 0, y: 4 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                className="other_font text-sm text-[#009C89] mt-2"
+                                className="other_font text-sm text-[#50D873] mt-2"
                             >
                                 ✓ Сообщение успешно отправлено!
                             </motion.p>

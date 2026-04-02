@@ -11,7 +11,7 @@ interface ProductionS5Props {
 const Card = ({ card }: { card: { title: string; description: string[] } }) => {
     return (
         <motion.div whileHover="hover" initial="rest" animate="rest"
-                    className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#009C89]/10 border border-black/[0.07] cursor-pointer">
+                    className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#50D873]/10 border border-black/[0.07] cursor-pointer">
             <motion.div
                 variants={{ rest: { opacity: 0, scale: 1.12 }, hover: { opacity: 1, scale: 1 } }}
                 transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -25,7 +25,7 @@ const Card = ({ card }: { card: { title: string; description: string[] } }) => {
             />
             <div className="absolute z-[2] flex flex-col justify-end p-5 md:p-7">
                 <motion.h3
-                    variants={{ rest: { color: '#009C89' }, hover: { color: '#ffffff' } }}
+                    variants={{ rest: { color: '#50D873' }, hover: { color: '#ffffff' } }}
                     transition={{ duration: 0.3 }}
                     className="text-base md:text-lg font-bold leading-tight mb-2"
                 >{card.title}</motion.h3>
@@ -70,10 +70,10 @@ const ProductionS5 = ({ dict, commonDict }: ProductionS5Props) => {
                 <div className="h-[240px] md:h-[300px]"><Card card={fourth} /></div>
             </div>
             <button style={{ display: 'flex', alignItems: 'center', gap: 10, borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500 }}
-                    className="bg-transparent w-[180px] justify-between px-3 py-2 mt-10 group hover:bg-[#009C89] text-black hover:text-white transition-colors duration-300">
+                    className="bg-transparent w-[180px] justify-between px-3 py-2 mt-10 group hover:bg-[#50D873] text-black hover:text-white transition-colors duration-300">
                 {dict.btn}
-                <span style={{ width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="group-hover:bg-white bg-[#009C89] transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#009C89] stroke-white"><path d="m9 18 6-6-6-6" /></svg>
+                <span style={{ width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="group-hover:bg-white bg-[#50D873] transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#50D873] stroke-white"><path d="m9 18 6-6-6-6" /></svg>
                 </span>
             </button>
         </div>

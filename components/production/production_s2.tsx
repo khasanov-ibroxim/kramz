@@ -14,7 +14,7 @@ const ProductionS2 = ({dict}:Production2Props) => {
 
     return (
         <section ref={ref} className="relative overflow-hidden">
-            <div className="relative w-full h-[80vh] bg-[#009C89] flex flex-col md:flex-row items-center">
+            <div className="relative w-full h-[80vh] bg-[#50D873] flex flex-col md:flex-row items-center">
 
                 {/* Gradient overlay */}
                 <div

@@ -62,7 +62,7 @@ const ContactS1 = () => {
                         transition={{ duration: 0.25, delay: i * 0.05 }}
                         className="border-b border-black/10 pb-4 flex items-center gap-4"
                     >
-                        <span className="text-[#009C89]">{contact.icon}</span>
+                        <span className="text-[#50D873]">{contact.icon}</span>
                         <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
                             <p className="other_font text-xs text-black/40 uppercase tracking-wide w-24">
                                 {contact.label}
@@ -71,7 +71,7 @@ const ContactS1 = () => {
                                 href={contact.href}
                                 target={contact.href.startsWith('http') ? '_blank' : undefined}
                                 rel="noopener noreferrer"
-                                className="other_font text-sm text-[#2B362D] hover:text-[#009C89] transition-colors duration-200"
+                                className="other_font text-sm text-[#2B362D] hover:text-[#50D873] transition-colors duration-200"
                             >
                                 {contact.value}
                             </a>
