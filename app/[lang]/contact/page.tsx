@@ -2,8 +2,13 @@ import React from 'react';
 import ContactS1 from "@/components/contact/contact_s1";
 import ContactS2 from "@/components/contact/contact_s2";
 import ContactS3 from "@/components/contact/contact_s3";
+import {getCommonDictionary, getContactDictionary} from "@/lib/dictionary";
+import {Locale} from "@/i18n-config";
 
-const Page = () => {
+const Page = async ({params}: { params: Promise<{ lang: string }> }) => {
+    const {lang} = await params;
+    const dict = await getContactDictionary(lang as Locale);
+    const common = await getCommonDictionary(lang as Locale);
     return (
         <div className="mt-[140px]">
             <ContactS1/>

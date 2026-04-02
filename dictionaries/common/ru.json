@@ -43,13 +43,15 @@
       "contacts": {
         "title": "Контакты",
         "links": [
-          { "title": "+7 391 226 70 99", "link": "tel:+73912267099" },
-          { "title": "info@gurlanglobalteks.uz", "link": "mailto:info@gurlanglobalteks.uz" },
-          { "title": "Telegram", "link": "https://t.me/ggt_inc" }
+          { "title": "+998 97 857 00 05", "link": "tel:+998978570005" },
+          { "title": "gurlanglobal@gmail.com", "link": "mailto:gurlanglobal@gmail.com" },
+          { "title": "Telegram", "link": "https://t.me/ggt_inc" },
+          { "title": "Whatsapp", "link": "https://wa.me/998978570005" },
+          { "title": "Instagram", "link": "https://www.instagram.com/ggt_textile/" }
         ]
       }
     },
-    "address": "660111, Красноярск, ул.\nПограничников, 42",
+    "address": "Республика Узбекистан,Хорезмская область,Гурленский район,ул.Мустакиллик,5",
     "viewOnMap": "Посмотреть на карте",
     "suppliers": "Каталог ",
     "orderProducts": "Заказать продукцию"

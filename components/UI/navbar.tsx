@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { sweepNavigate } from '@/components/UI/Pagetransition';
+import logo from "@/assets/Gurlan_global-03.png"
+import Image from "next/image";
 
 interface NavbarProps {
     lang: string;
@@ -20,22 +22,7 @@ const NAV_LINKS = [
 
 const LOCALES = ['en', 'ru'] as const;
 
-// ── Logo ───────────────────────────────────────────────────
-function Logo({ color = '#1a1a1a', size = 36 }: { color?: string; size?: number }) {
-    const h = size;
-    const w = Math.round(size * (220 / 207));
-    return (
-        <svg
-            width={w} height={h}
-            viewBox="0 0 220 207"
-            fill={color}
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ display: 'block', transition: 'fill 0.4s' }}
-        >
-            <path d="M40.3333 206.388H0L112.75 0H165V156.321H125.01L114.583 175.593H185.625V0H220V207H63.0208L107.021 125.424H130.625V40.6862L40.3333 206.388Z" />
-        </svg>
-    );
-}
+
 
 // ── Phone icon ─────────────────────────────────────────────
 function PhoneIcon({ color = '#1a1a1a' }: { color?: string }) {
@@ -136,9 +123,9 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                     >
                         {/* Top bar */}
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 36 }}>
-                            <SweepLink href={`/${lang}`} onClick={onClose}>
-                                <Logo color="#fff" size={32} />
-                            </SweepLink>
+                            {/*<SweepLink href={`/${lang}`} onClick={onClose}>*/}
+                            {/*    <Image src={logo} alt={"Sad"} width={32} height={32}/>*/}
+                            {/*</SweepLink>*/}
 
                             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                                 <button style={{
@@ -294,29 +281,31 @@ export default function Navbar({ lang }: NavbarProps) {
             >
                 <div style={{
                     width: '100%',
-                    padding: '0 clamp(16px, 4vw, 56px)',
                     height: 72,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
                     gap: 16,
                     boxSizing: 'border-box',
-                }}>
+                }}
+                     className={"px-0 md:px-5"}
+                >
 
-                    {/* LOGO */}
+
                     <SweepLink
                         href={`/${lang}`}
                         style={{
-                            display: 'flex', alignItems: 'center', gap: 14,
+                            display: 'flex', alignItems: 'center', gap: 0,
                             textDecoration: 'none', flexShrink: 0,
                         }}
                     >
-                        <Logo color={textColor} size={34} />
-                        <div className="hidden lg:block" style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', lineHeight: 1.3, transition: 'color 0.4s' }}>
-                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>Gurlan</div>
-                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}>Global Teks</div>
-                            <div style={{ fontSize: 9.5, fontWeight: 700, letterSpacing: '0.1em', color: textColor }}></div>
-                        </div>
+                        <Image
+                            src={logo}
+                            alt={"Gurlan Global Teks"}
+                            width={200}
+                            height={102}
+                            style={{ height: 44, width: 'auto', objectFit: 'contain' }}
+                        />
                     </SweepLink>
 
                     {/* DESKTOP NAV */}
@@ -454,7 +443,7 @@ export default function Navbar({ lang }: NavbarProps) {
             <style>{`
                 .nav-desktop { display: flex !important; }
                 .nav-mobile  { display: none  !important; }
-                @media (max-width: 900px) {
+                @media (max-width: 1100px) {
                     .nav-desktop { display: none  !important; }
                     .nav-mobile  { display: flex  !important; }
                 }

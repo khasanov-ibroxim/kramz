@@ -1,1 +1,60 @@
-{}
+{
+  "s1": {
+    "tabs": [
+      { "id": "clients",    "label": "Clients" },
+      { "id": "general",   "label": "General" },
+      { "id": "suppliers", "label": "Suppliers" },
+      { "id": "applicants","label": "Applicants" },
+      { "id": "dealers",   "label": "Official dealers and representatives" }
+    ],
+    "phone": "Phone:",
+    "email": "E-mail:"
+  },
+  "s2": {
+    "title": "Directions",
+    "loading": "Loading map...",
+    "routeButton": "Get directions",
+    "markers": [
+      {
+        "label": "Commercial Directorate",
+        "popup": { "title": "Commercial Directorate", "hoursLabel": "Working hours:", "hours": "Mon–Fri: 8:00–17:00" }
+      },
+      {
+        "label": "Plant administration",
+        "popup": { "title": "Plant administration", "hoursLabel": "Working hours:", "hours": "Mon–Fri: 8:00–17:00" }
+      },
+      {
+        "label": "Pass office",
+        "popup": { "title": "Freight transport entry point", "hoursLabel": "Working hours:", "hours": "24/7, no days off" }
+      }
+    ]
+  },
+  "s3": {
+    "title": "Contact us",
+    "fields": {
+      "name":    "[ Name / organization ]*",
+      "email":   "[ E-mail ]*",
+      "phone":   "[ Phone ]*",
+      "message": "[ Message ]*"
+    },
+    "consent": {
+      "text": "I confirm that I have read and give",
+      "link1": "Consent to the processing of my personal data",
+      "middle": "in accordance with Federal Law of 27.07.2006 No.152-FZ in the manner and on the terms specified in the",
+      "link2": "Personal Data Processing Policy"
+    },
+    "captcha": {
+      "placeholder": "Enter answer",
+      "refreshTitle": "Refresh"
+    },
+    "success": "✓ Message sent successfully!",
+    "error": "Sending error. Please try again.",
+    "validation": {
+      "required": "Required field",
+      "invalidEmail": "Invalid e-mail",
+      "consentRequired": "Consent is required",
+      "captchaRequired": "Enter the answer",
+      "captchaWrong": "Wrong answer"
+    }
+  }
+}

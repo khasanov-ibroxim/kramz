@@ -8,23 +8,24 @@ import AboutS5 from "@/components/about/about_s5";
 import AboutS6 from "@/components/about/about_s6";
 import AboutS7 from "@/components/about/about_s7";
 import HomeS7 from "@/components/home/home_s7";
-import {getCommonDictionary, getHomeDictionary} from "@/lib/dictionary";
+import {getAboutDictionary, getCommonDictionary, getHomeDictionary} from "@/lib/dictionary";
 import {Locale} from "@/i18n-config";
 
 const Page = async ({ params }: { params: Promise<{ lang: string }> }) => {
     const { lang } = await params;
     const dictHome   = await getHomeDictionary(lang as Locale);
+    const dict   = await getAboutDictionary(lang as Locale);
     const common = await getCommonDictionary(lang as Locale);
     return (
         <>
-            <AboutHeader/>
-            <AboutS1/>
-            <AboutS2/>
-            <AboutS3/>
-            <AboutS4/>
-            <AboutS5/>
-            <AboutS6/>
-            <AboutS7/>
+            <AboutHeader dict={dict.header}/>
+            <AboutS1 dict={dict.s1}/>
+            <AboutS2 dict={dict.s2}/>
+            <AboutS3 dict={dict.s3}/>
+            <AboutS4 dict={dict.s4}/>
+            <AboutS5 dict={dict.s5}/>
+            <AboutS6 dict={dict.s6} commonDict={common}/>
+            <AboutS7 dict={dict.s7} commonDict={common}/>
             <HomeS7       dict={dictHome.s7} commonDict={common} />
         </>
     );

@@ -1,1 +1,119 @@
-{}
+{
+  "header": {
+    "title": "About Us"
+  },
+  "s1": {
+    "title": "Aluminum solutions\nfor the present and future",
+    "text": "KraMZ is one of the largest manufacturers and engineering centers of aluminum products and solutions in Russia and CIS"
+  },
+  "s2": {
+    "title": "Bringing client ideas to life",
+    "text": "Our main focus at work is people, clients and safety",
+    "cards": [
+      {
+        "value": "Mission",
+        "label": "To care for the employees and clients of the company, constantly improving working conditions and perfecting service"
+      },
+      {
+        "value": "Goal",
+        "label": "Strengthening positions in Russian and international markets by expanding the product portfolio and continuously improving manufacturing and engineering technologies"
+      },
+      {
+        "value": "Vision",
+        "label": "Inspired by a common idea, company employees are shaping a new tomorrow, in which advanced technologies allow creating a better world"
+      }
+    ]
+  },
+  "s3": {
+    "title": "History",
+    "period": "2020 — настоящее время",
+    "description": [
+      "Основанная в 2020 году в Хорезмской области, Gurlan Global Teks с самого начала ориентировалась на создание современной текстильной экосистемы полного цикла.",
+      "Объединение всех этапов производства, внедрение технологий и развитие экспортных направлений позволили компании в короткие сроки занять устойчивые позиции на рынке.",
+      "Сегодня Gurlan Global Teks — это динамично развивающийся промышленный кластер с фокусом на качество, инновации и международное сотрудничество."
+    ]
+  },
+  "s4": {
+    "title": "KraMZ Management",
+    "team": [
+      { "name": "Oleg Vladimirovich Buts",          "role": "General Director" },
+      { "name": "Inga Viktorovna Nikitina",          "role": "Commercial Director" },
+      { "name": "Egor Sergeevich Lebedev",           "role": "Director of Strategic Production Development" },
+      { "name": "Vyacheslav Yuryevich Maydurov",     "role": "Technical Director" },
+      { "name": "Anna Sergeevna Burkátskaya",        "role": "HR Director" }
+    ]
+  },
+  "s5": {
+    "title": "Production Areas",
+    "subtitle": "Krasnoyarsk Metallurgical Plant is the largest enterprise for deep processing of aluminum and aluminum alloys east of the Urals",
+    "cards": [
+      {
+        "title": "Smelting production",
+        "description": "Production of aluminum rod Ø 9.5 mm and the full range of aluminum alloys, including high-alloy series 2000, 5000, 7000"
+      },
+      {
+        "title": "Pressing production",
+        "description": "Production of extrusion products from hard- and easy-deformed alloys: pipes, rods, profiles"
+      },
+      {
+        "title": "Rolling production",
+        "description": "The rolling section is focused on the production of coiled strip and plate"
+      },
+      {
+        "title": "Forging and stamping production",
+        "description": "Manufacturing of forgings and stampings for various industries and automotive wheel stampings from 14 to 20 inches"
+      },
+      {
+        "title": "Tool production",
+        "description": "KraMZ has its own base for designing press tooling for in-house production"
+      },
+      {
+        "title": "Aluminum Structures Center",
+        "description": "Wide-profile production allowing the manufacture of non-standard aluminum structures of any complexity and dimensions"
+      }
+    ]
+  },
+  "s6": {
+    "title": "Sustainable Development",
+    "text": "We strive to use the principles of sustainable development in all areas of our activities"
+  },
+  "s7": {
+    "title": "Documents",
+    "tabs": [
+      {
+        "label": "Occupational health and industrial safety",
+        "docs": [
+          { "title": "Occupational health policy",                        "size": "714.93 KB", "type": "PDF", "file": "/docs/policy_labor.pdf" },
+          { "title": "Industrial and fire safety policy",                 "size": "679.24 KB", "type": "PDF", "file": "/docs/policy_fire.pdf" },
+          { "title": "SOUT summary statement 2021",                      "size": "3.79 MB",   "type": "PDF", "file": "/docs/sout_2021.pdf" },
+          { "title": "SOUT summary statement 2020",                      "size": "2.14 MB",   "type": "PDF", "file": "/docs/sout_2020.pdf" },
+          { "title": "SOUT summary statement 2019",                      "size": "1.87 MB",   "type": "PDF", "file": "/docs/sout_2019.pdf" },
+          { "title": "SOUT summary statement 2018",                      "size": "1.52 MB",   "type": "PDF", "file": "/docs/sout_2018.pdf" },
+          { "title": "Occupational health regulations",                   "size": "890.00 KB", "type": "PDF", "file": "/docs/ohrana_truda.pdf" },
+          { "title": "Fire safety instructions",                          "size": "540.12 KB", "type": "PDF", "file": "/docs/fire_instruction.pdf" }
+        ]
+      },
+      {
+        "label": "Ecology and environment",
+        "docs": [
+          { "title": "Enterprise environmental policy",                   "size": "620.00 KB", "type": "PDF", "file": "/docs/ecology_policy.pdf" },
+          { "title": "Environmental activity report 2023",                "size": "4.20 MB",   "type": "PDF", "file": "/docs/ecology_2023.pdf" },
+          { "title": "Environmental protection program",                  "size": "1.10 MB",   "type": "PDF", "file": "/docs/ecology_program.pdf" },
+          { "title": "Pollutant emission permit",                         "size": "980.00 KB", "type": "PDF", "file": "/docs/emission_permit.pdf" },
+          { "title": "Water resource monitoring 2022",                    "size": "2.30 MB",   "type": "PDF", "file": "/docs/water_2022.pdf" }
+        ]
+      },
+      {
+        "label": "Certificates, licenses and standards",
+        "docs": [
+          { "title": "ISO 9001:2015 Certificate",                        "size": "512.00 KB", "type": "PDF", "file": "/docs/iso_9001.pdf" },
+          { "title": "ISO 14001:2015 Certificate",                       "size": "498.00 KB", "type": "PDF", "file": "/docs/iso_14001.pdf" },
+          { "title": "Production activity license",                       "size": "340.00 KB", "type": "PDF", "file": "/docs/license.pdf" },
+          { "title": "GOST R compliance certificate",                     "size": "720.00 KB", "type": "PDF", "file": "/docs/gost.pdf" },
+          { "title": "Testing laboratory accreditation",                  "size": "1.05 MB",   "type": "PDF", "file": "/docs/lab_accreditation.pdf" },
+          { "title": "Registration certificate",                          "size": "280.00 KB", "type": "PDF", "file": "/docs/registration.pdf" }
+        ]
+      }
+    ]
+  }
+}
