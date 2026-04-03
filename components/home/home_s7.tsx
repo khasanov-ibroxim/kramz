@@ -2,13 +2,15 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from "framer-motion";
 import type { HomeDictionary, CommonDictionary } from '@/lib/dictionary';
+import Link from "next/link";
 
 interface HomeS7Props {
     dict: HomeDictionary['s7'];
     commonDict: CommonDictionary;
+    lang: string;
 }
 
-const HomeS7 = ({ dict }: HomeS7Props) => {
+const HomeS7 = ({ dict , lang}: HomeS7Props) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: '-60px' });
 
@@ -37,16 +39,16 @@ const HomeS7 = ({ dict }: HomeS7Props) => {
                                 transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.25 }}
                                 className="flex flex-wrap gap-4"
                             >
-                                <button className="other_font group inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#50D873]/30 bg-transparent text-[#fff] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#009383] hover:text-white">
+                                <Link href={`/${lang}/contact`} className="other_font group inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#50D873]/30 bg-transparent text-[#fff] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#009383] hover:text-white">
                                     {dict.buttons.feedback}
                                     <span className="w-8 h-8 rounded-full group-hover:bg-white bg-[#50D873] flex items-center justify-center flex-shrink-0">
                                         <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                                             <path d="M3 8H13M13 8L8 3M13 8L8 13" className="stroke-white group-hover:stroke-[#50D873]" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
                                     </span>
-                                </button>
+                                </Link>
 
-                                <button className="other_font group inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#50D873]/30 bg-transparent text-[#fff] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#009383] hover:text-white">
+                                <a href={"https://maps.app.goo.gl/v2xx9pVsNwsc8D5U6"} className="other_font group inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-[#50D873]/30 bg-transparent text-[#fff] text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#009383] hover:text-white">
                                     {dict.buttons.directions}
                                     <span className="w-8 h-8 rounded-full group-hover:bg-white bg-[#50D873] flex items-center justify-center flex-shrink-0">
                                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
@@ -54,7 +56,7 @@ const HomeS7 = ({ dict }: HomeS7Props) => {
                                             <circle cx="12" cy="10" r="3" className="stroke-white group-hover:stroke-[#50D873]" strokeWidth="2"/>
                                         </svg>
                                     </span>
-                                </button>
+                                </a>
                             </motion.div>
                         </div>
 

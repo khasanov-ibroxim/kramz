@@ -4,12 +4,14 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import watermaker_s6 from "@/assets/home/home_s6/watermaker_s6.png";
 import type { HomeDictionary } from '@/lib/dictionary';
+import Link from "next/link";
 
 interface HomeS6Props {
     dict: HomeDictionary['s6'];
+    lang:string
 }
 
-const HomeS6 = ({ dict }: HomeS6Props) => {
+const HomeS6 = ({ dict , lang}: HomeS6Props) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: '-60px' });
 
@@ -42,14 +44,14 @@ const HomeS6 = ({ dict }: HomeS6Props) => {
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.4 }}
                     >
-                        <button className="other_font inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-white/35 bg-transparent text-white text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#000]/50 hover:border-transparent">
+                        <Link href={`/${lang}/contact`} className="other_font inline-flex items-center gap-4 pl-6 pr-2 py-2 rounded-full border border-white/35 bg-transparent text-white text-[14px] font-medium cursor-pointer transition-all duration-300 hover:bg-[#000]/50 hover:border-transparent">
                             {dict.button}
                             <span className="w-8 h-8 bg-[#50D873] rounded-full flex items-center justify-center flex-shrink-0">
                                 <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
                                     <path d="M3 8H13M13 8L8 3M13 8L8 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                             </span>
-                        </button>
+                        </Link>
                     </motion.div>
                 </div>
 

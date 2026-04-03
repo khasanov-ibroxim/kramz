@@ -9,16 +9,16 @@ interface LinkItem {
 
 interface FooterProps {
     dict: CommonDictionary;
+    lang: string;
 }
 
-const Footer = ({ dict }: FooterProps) => {
+const Footer = ({ dict ,lang}: FooterProps) => {
     const { footer } = dict;
     const addressLines = footer.address?.split('\n') ?? [];
 
     const navLinks = [
         { title: footer.columns.about.title,    children: footer.columns.about.links },
         { title: footer.columns.clients.title,  children: footer.columns.clients.links },
-        { title: footer.columns.career.title,   children: footer.columns.career.links },
         { title: footer.columns.contacts.title, children: footer.columns.contacts.links },
     ];
 
@@ -38,7 +38,7 @@ const Footer = ({ dict }: FooterProps) => {
                                 {col.children.map((item: LinkItem, j: number) => (
                                     <li key={j}>
                                         <a
-                                            href={item.link}
+                                            href={`/${lang}/${item.link}`}
                                             className="other_font text-[14px] text-[#555] hover:text-[#50D873] transition"
                                         >
                                             {item.title}
@@ -52,7 +52,7 @@ const Footer = ({ dict }: FooterProps) => {
                     {/* ✅ ADDRESS QAYTDI */}
                     <div className="flex flex-col gap-3">
                         <h2 className={"other_font text-[#1C1C1C] font-semibold text-[15px]"}>{dict.footer.address_title}</h2>
-                        <p className="other_font text-[14px] text-[#555] hover:text-[#50D873] transition">
+                        <p className="other_font text-[14px] text-[#555]  transition">
                             {addressLines.map((line:string, i:number) => (
                                 <React.Fragment key={i}>
                                     {line}

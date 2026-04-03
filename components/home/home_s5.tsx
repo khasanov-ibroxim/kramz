@@ -331,7 +331,8 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                     ))}
                 </motion.div>
 
-                <motion.button
+                <motion.a
+                    href={`/${lang}/contact`}
                     initial={{opacity: 0, x: 10}}
                     animate={titleInView ? {opacity: 1, x: 0} : {}}
                     transition={{duration: 0.5, delay: 0.2}}
@@ -342,7 +343,7 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                     <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#50D873] transition-colors duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#50D873] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
                     </span>
-                </motion.button>
+                </motion.a>
             </div>
 
             <AnimatePresence mode="wait">
@@ -421,18 +422,6 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                 )}
             </AnimatePresence>
 
-            <motion.button
-                initial={{opacity: 0, x: 10}}
-                animate={titleInView ? {opacity: 1, x: 0} : {}}
-                transition={{duration: 0.5, delay: 0.2}}
-                style={{display: 'flex', alignItems: 'center', gap: 10, padding: '10px 10px 10px 22px', borderRadius: 100, border: '1.5px solid rgba(0,0,0,0.12)', cursor: 'pointer', fontSize: 14, fontWeight: 500}}
-                className="bg-transparent mt-5 group hover:bg-[#50D873] text-black hover:text-white transition-colors duration-300"
-            >
-                {dict.allProjectsButton}
-                <span style={{width: 34, height: 34, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="group-hover:bg-white bg-[#50D873] transition-colors duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right group-hover:stroke-[#50D873] stroke-white"><path d="m9 18 6-6-6-6"/></svg>
-                </span>
-            </motion.button>
         </div>
     );
 };

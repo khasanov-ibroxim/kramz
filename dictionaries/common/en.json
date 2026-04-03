@@ -18,10 +18,11 @@
   "footer": {
     "columns": {
       "about": {
-        "title": "О компании",
+        "title": "Меню",
         "links": [
-          { "title": "О компании", "link": "/about" },
-          { "title": "Производство", "link": "/production" }
+          { "title": "Главная", "link": "" },
+          { "title": "О компании", "link": "about" },
+          { "title": "Производство", "link": "production" }
         ]
       },
       "clients": {
@@ -29,15 +30,6 @@
         "links": [
           { "title": "Продукция", "link": "/products" },
           { "title": "Услуги", "link": "/services" }
-        ]
-      },
-      "career": {
-        "title": "Карьера",
-        "links": [
-          { "title": "Вакансии", "link": "/jobs" },
-          { "title": "Профессионалам", "link": "/career" },
-          { "title": "Студентам", "link": "/students" },
-          { "title": "Забота о персонале", "link": "/care" }
         ]
       },
       "contacts": {

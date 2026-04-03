@@ -24,7 +24,7 @@ const Page = async ({ params }: { params: Promise<{ lang: string }> }) => {
             <ProductionS4 dict={dict.s4}/>
             <ProductionS5 dict={dict.s5} commonDict={common}/>
             <ProductionS6 dict={dict.s6}/>
-            <HomeS7       dict={dictHome.s7} commonDict={common} />
+            <HomeS7 dict={dictHome.s7} commonDict={common} lang={lang} />
         </>
     );
 };
