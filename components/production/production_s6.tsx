@@ -4,11 +4,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
 import type { ProductionDictionary } from '@/lib/dictionary';
-import i1 from "@/assets/production/production_s6/DSC09809.jpg"
-import i2 from "@/assets/production/production_s6/DSC09847.jpg"
-import i3 from "@/assets/production/production_s6/DSC09857.jpg"
-import i4 from "@/assets/production/production_s6/DSC09906.jpg"
-import i5 from "@/assets/production/production_s6/DSC09921.jpg"
+import i1 from "@/assets/production/production_s6/IMG_0406.jpg"
+import i2 from "@/assets/production/production_s6/IMG_0408.jpg"
+import i3 from "@/assets/production/production_s6/IMG_0410.jpg"
+import i4 from "@/assets/production/production_s6/IMG_0416.jpg"
+import i5 from "@/assets/production/production_s6/IMG_0417.jpg"
+import i6 from "@/assets/production/production_s6/IMG_0418.jpg"
+import i7 from "@/assets/production/production_s6/IMG_0420.jpg"
 
 interface ProductionS6Props {
     dict: ProductionDictionary['s6'];
@@ -20,6 +22,8 @@ const IMAGES: { id: number; src: StaticImageData; thumb: StaticImageData }[] = [
     { id: 3, src: i3, thumb: i3 },
     { id: 4, src: i4, thumb: i4 },
     { id: 5, src: i5, thumb: i5 },
+    { id: 6, src: i6, thumb: i6 },
+    { id: 7, src: i7, thumb: i7 },
 ];
 
 const VIDEOS = [
@@ -64,12 +68,12 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
     const displayTotal = String(items.length).padStart(2, '0');
 
     return (
-        <div className="bg-[#9DBFB8] py-16 md:py-24">
+        <div className="bg-[#0D3E29] py-16 md:py-24">
             <div className="container">
 
                 {/* Header row */}
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
-                    <h1 className="other_font uppercase font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#2B362D]">
+                    <h1 className="other_font uppercase font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#fff]">
                         {dict.title}
                     </h1>
 
@@ -120,7 +124,7 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
                                     {tab === 'video' && (
                                         <div className="absolute inset-0 flex items-center justify-center bg-black/30">
                                             <div className="w-7 h-7 rounded-full bg-white/80 flex items-center justify-center">
-                                                <Play size={12} className="text-[#2B362D] ml-0.5" fill="#2B362D" />
+                                                <Play size={12} className="text-[#fff] ml-0.5" fill="#2B362D" />
                                             </div>
                                         </div>
                                     )}

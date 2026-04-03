@@ -40,7 +40,7 @@ function StatCard({ stat, index, total }: {
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.5, delay: col * 0.09, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className={["relative flex flex-col items-center justify-center text-center p-8 md:p-10",
-                        stat.highlight ? "bg-[#50D873] rounded-2xl" : "rounded-2xl"].join(" ")}
+                        stat.highlight ? "bg-[#0d3e29] rounded-2xl" : "rounded-2xl"].join(" ")}
         >
             {!stat.highlight && (
                 <>

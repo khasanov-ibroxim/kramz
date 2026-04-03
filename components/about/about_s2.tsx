@@ -37,8 +37,8 @@ function StatCard({ stat, index, total, hoveredIndex, onMouseEnter, onMouseLeave
     const isHovered = hoveredIndex === index;
 
     const bg = isFirst
-        ? (anyNonFirstHovered ? 'bg-transparent' : 'bg-[#50D873]')
-        : (isHovered ? 'bg-[#50D873]' : 'bg-transparent');
+        ? (anyNonFirstHovered ? 'bg-transparent' : 'bg-[#0d3e29]')
+        : (isHovered ? 'bg-[#0d3e29]' : 'bg-transparent');
 
     const textColor = isFirst
         ? (anyNonFirstHovered ? 'text-[#1a1a1a]' : 'text-white')

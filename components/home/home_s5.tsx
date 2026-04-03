@@ -4,11 +4,11 @@ import {AnimatePresence, motion, useInView} from "framer-motion";
 import {StaticImageData} from "next/image";
 import Image from "next/image";
 
-import i0_1 from "@/assets/home/home_s5/0_1.jpg"
-import i0_2 from "@/assets/home/home_s5/0_2.jpg"
-import i0_3 from "@/assets/home/home_s5/0_3.jpg"
-import i0_4 from "@/assets/home/home_s5/0_4.png"
-import i0_5 from "@/assets/home/home_s5/0_5.png"
+import i0_1 from "@/assets/home/home_s5/turkey.png"
+import i0_2 from "@/assets/home/home_s5/russia.png"
+import i0_3 from "@/assets/home/home_s5/china.png"
+import i0_4 from "@/assets/home/home_s5/afg.png"
+import i0_5 from "@/assets/home/home_s5/belarus.png"
 
 import i1_1 from "@/assets/home/home_s5/1_1.jpg"
 import i1_2 from "@/assets/home/home_s5/1_2.jpg"
@@ -76,10 +76,9 @@ function OptimizedImage({src, alt, fill, priority = false, sizes, style}: {
                 fill={fill}
                 priority={priority}
                 sizes={sizes}
-                quality={75}
+
                 placeholder={typeof src === 'object' ? 'blur' : 'empty'}
                 style={{
-                    objectFit: 'cover',
                     transition: 'opacity 0.35s ease, transform 0.5s ease',
                     opacity: loaded ? 1 : 0,
                     ...style,
@@ -291,6 +290,7 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                         <button
                             key={tab}
                             onClick={() => setActiveTab(i)}
+                            disabled={true}
                             style={{
                                 position: 'relative',
                                 padding: '10px 16px',

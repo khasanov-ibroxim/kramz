@@ -51,7 +51,8 @@ const Footer = ({ dict }: FooterProps) => {
 
                     {/* ✅ ADDRESS QAYTDI */}
                     <div className="flex flex-col gap-3">
-                        <p className="other_font text-[#1C1C1C] font-semibold text-[15px] leading-[1.4]">
+                        <h2 className={"other_font text-[#1C1C1C] font-semibold text-[15px]"}>{dict.footer.address_title}</h2>
+                        <p className="other_font text-[14px] text-[#555] hover:text-[#50D873] transition">
                             {addressLines.map((line:string, i:number) => (
                                 <React.Fragment key={i}>
                                     {line}

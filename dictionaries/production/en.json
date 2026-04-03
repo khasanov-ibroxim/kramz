@@ -67,8 +67,15 @@
       "We support our clients' desire to increase social responsibility and are ready to move in this direction together!"
     ],
     "certificates": [
-      { "title": "ISO 9001:2015", "subtitle": "Compliance certificate" },
-      { "title": "ISO 14001:2015", "subtitle": "Compliance certificate" }
+      { "title": "OEKO-TEX®", "subtitle": "Сертификат безопасности текстильной продукции" ,
+        "pdf_name": "oeko"
+      },
+      { "title": "WRAP", "subtitle": "Сертификат социальной ответственности производства",
+        "pdf_name": "wrap" },
+      { "title": "ISO 9001", "subtitle": "Система менеджмента качества",
+        "pdf_name": "iso"},
+      { "title": "SEDEX", "subtitle": "Стандарт этичной и ответственной деловой практики",
+        "pdf_name": "sedex" }
     ],
     "downloadButton": "Download"
   },

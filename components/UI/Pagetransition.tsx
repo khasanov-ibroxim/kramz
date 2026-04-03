@@ -4,7 +4,7 @@ import { useEffect, useState, useRef, useCallback } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const BRAND = '#50D873';
+const BRAND = '#0D3E29';
 const EASE = [0.76, 0, 0.24, 1] as const;
 const SWEEP_DURATION = 550;
 
@@ -86,9 +86,9 @@ function BrandText({ exiting, align }: { exiting: boolean; align: 'right' | 'cen
     return (
         <div style={{ textAlign: align, position: 'relative', zIndex: 1 }}>
             {[
-                { text: 'КРАСНОЯРСКИЙ',     opacity: 0.45 },
-                { text: 'МЕТАЛЛУРГИЧЕСКИЙ', opacity: 0.72 },
-                { text: 'ЗАВОД',            opacity: 1.0  },
+                { text: 'Gurlan',     opacity: 0.45 },
+                { text: 'Global', opacity: 0.72 },
+                { text: 'Teks',            opacity: 1.0  },
             ].map(({ text, opacity }, i) => (
                 <motion.div
                     key={text}

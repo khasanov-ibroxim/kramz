@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import home_header from "@/assets/about/header/about_header.jpg";
+import home_header from "@/assets/about/header/DSC04412.jpg";
 
 interface AboutHeaderProps {
     dict: { title: string };

@@ -84,10 +84,10 @@ const ContactS3 = () => {
     ];
 
     return (
-        <div className="py-16 bg-[#A4C2BF]">
+        <div className="py-16 bg-[#0D3E29] ">
             <div className="container">
                 <div className="h-screen flex flex-col items-start justify-center ">
-                    <h1 className="other_font uppercase font-bold text-4xl md:text-5xl lg:text-6xl text-[#2B362D] mb-12">
+                    <h1 className="other_font uppercase font-bold text-4xl md:text-5xl lg:text-6xl text-[#fff] mb-12">
                         Свяжитесь с нами
                     </h1>
 
@@ -101,8 +101,8 @@ const ContactS3 = () => {
                                         placeholder={placeholder}
                                         value={form[key as keyof typeof form]}
                                         onChange={e => handleChange(key, e.target.value)}
-                                        className={`other_font w-full bg-transparent border-b py-4 text-sm text-[#2B362D] placeholder-[#2B362D] outline-none transition-colors duration-200 focus:border-[#50D873] ${
-                                            errors[key] ? 'border-red-400' : 'border-[#2B362D]/20'
+                                        className={`other_font w-full bg-transparent border-b py-4 text-sm text-[#fff] placeholder-[#fff] outline-none transition-colors duration-200 focus:border-[#50D873] ${
+                                            errors[key] ? 'border-red-400' : 'border-[#fff]/20'
                                         }`}
                                     />
                                 </div>
@@ -121,7 +121,7 @@ const ContactS3 = () => {
                                         if (errors.agreed) setErrors(prev => ({ ...prev, agreed: '' }));
                                     }}
                                     className={`mt-0.5 w-5 h-5 shrink-0 rounded border-2 flex items-center justify-center transition-colors duration-200 cursor-pointer ${
-                                        agreed ? 'bg-[#50D873] border-[#50D873]' : errors.agreed ? 'border-red-400' : 'border-[#2B362D]/30'
+                                        agreed ? 'bg-[#50D873] border-[#50D873]' : errors.agreed ? 'border-red-400' : 'border-[#fff]/30'
                                     }`}
                                 >
                                     {agreed && (
@@ -130,7 +130,7 @@ const ContactS3 = () => {
                                         </svg>
                                     )}
                                 </div>
-                                <span className="other_font text-xs text-[#2B362D]/80 leading-relaxed">
+                                <span className="other_font text-xs text-[#fff]/80 leading-relaxed">
                             Я подтверждаю ознакомление и даю{' '}
                                     <a href="#" className="text-[#50D873] hover:underline">Согласие на обработку моих персональных данных</a>
                                     {' '}в соответствии с ФЗ от 27.07.2006 №152-ФЗ в порядке и на условиях, указанных в{' '}

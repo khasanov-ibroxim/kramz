@@ -19,7 +19,7 @@ const cardImages: StaticImageData[] = [i1, i2, i3, i4];
 const Card = ({ card, image }: { card: { title: string; description: string[] }; image: StaticImageData }) => {
     return (
         <motion.div whileHover="hover" initial="rest" animate="rest"
-                    className="relative w-full h-full rounded-[20px] overflow-hidden bg-[#50D873]/10 border border-black/[0.07] cursor-pointer">
+                    className="relative p-10 w-full h-full rounded-[20px] overflow-hidden bg-[#0D3E29] border border-black/[0.07] cursor-pointer">
 
             {/* Rasm — faqat hover da ko'rinadi */}
             <motion.img
@@ -40,14 +40,14 @@ const Card = ({ card, image }: { card: { title: string; description: string[] };
                 <motion.h3
                     variants={{ rest: { color: '#50D873' }, hover: { color: '#ffffff' } }}
                     transition={{ duration: 0.3 }}
-                    className="text-base md:text-lg font-bold leading-tight mb-2"
+                    className="text-base md:text-xl font-bold leading-tight mb-5"
                 >{card.title}</motion.h3>
                 {card.description.map((item, index) => (
                     <ul key={index} className="list-disc">
                         <motion.li
-                            variants={{ rest: { color: '#5a6b5c' }, hover: { color: 'rgba(255,255,255,0.85)' } }}
+                            variants={{ rest: { color: '#fff' }, hover: { color: 'rgba(255,255,255,0.85)' } }}
                             transition={{ duration: 0.3 }}
-                            className="text-xs md:text-sm leading-relaxed"
+                            className="text-xs md:text-sm leading-relaxed text-white"
                         >{item}</motion.li>
                     </ul>
                 ))}

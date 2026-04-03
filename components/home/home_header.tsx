@@ -1,6 +1,6 @@
 "use client"
 import React from 'react';
-import home_header from "@/assets/home/home_header/DSC04308.jpg"
+import home_header from "@/assets/home/home_header/DSC04122.jpg"
 import Image from "next/image";
 
 interface HomeHeaderProps {
