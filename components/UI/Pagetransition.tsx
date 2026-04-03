@@ -47,36 +47,7 @@ function WatermarkSVG({ exiting }: { exiting: boolean }) {
                 overflow: 'hidden', zIndex: 0,
             }}
         >
-            <svg
-                width="100%" height="100%"
-                viewBox="0 0 1681 1471"
-                fill="none"
-                preserveAspectRatio="xMidYMid slice"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
-            >
-                <defs>
-                    <linearGradient id="grad-loader-watermark" x1="1420.1" x2="1341.5" y1="1493.86" y2="31.8811" gradientUnits="userSpaceOnUse">
-                        <stop stopColor="#B5DDD6" stopOpacity="0" />
-                        <stop offset="0.588542" stopColor="#A5D9CC" stopOpacity="1" />
-                        <stop offset="1" stopColor="#B5DDD1" stopOpacity="0" />
-                    </linearGradient>
-                    <linearGradient id="grad-loader-reveal" x1="0" y1="1471" x2="0" y2="0" gradientUnits="userSpaceOnUse">
-                        <stop offset="0" stopColor="white" stopOpacity="0" />
-                        <stop offset="0.45" stopColor="white" stopOpacity="1" />
-                        <stop offset="1" stopColor="white" stopOpacity="0.55" />
-                    </linearGradient>
-                    <mask id="mask-loader-reveal">
-                        <rect width="1681" height="1471" fill="url(#grad-loader-reveal)" />
-                    </mask>
-                </defs>
-                <path
-                    opacity="0.2"
-                    d="M308.183 1466.53H0L861.513 0H1260.75V1110.76H955.193L875.521 1247.71H1418.34V0H1681V1470.87H481.536L817.736 891.22H998.094V289.103L308.183 1466.53Z"
-                    fill="url(#grad-loader-watermark)"
-                    mask="url(#mask-loader-reveal)"
-                />
-            </svg>
+
         </motion.div>
     );
 }

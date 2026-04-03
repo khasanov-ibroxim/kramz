@@ -3,36 +3,18 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-const MAP_CENTER: [number, number] = [41.3148581, 69.2452711];
+const MAP_CENTER: [number, number] = [41.840569, 60.394338];
 const MAP_ZOOM = 16;
-const MAP_URL = "https://www.google.com/maps/dir/?api=1&destination=41.3148581,69.2452711";
+const MAP_URL = "https://www.google.com/maps/dir/?api=1&destination=41.840569,60.394338";
 const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(MAP_URL)}`;
 
 const MARKERS = [
     {
         id: 1,
-        label: 'Коммерческая дирекция',
-        pos: { x: 28, y: 44 },
+        label: 'Gurlan Global Teks',
+        pos: { x: 45, y: 48 },
         popup: {
-            title: 'Коммерческая дирекция',
-            hours: 'Пн–Пт: 8:00–17:00',
-        },
-    },
-    {
-        id: 2,
-        label: 'Заводоуправление',
-        pos: { x: 26, y: 54 },
-        popup: {
-            title: 'Заводоуправление',
-            hours: 'Пн–Пт: 8:00–17:00',
-        },
-    },
-    {
-        id: 3,
-        label: 'Бюро пропусков',
-        pos: { x: 50, y: 48 },
-        popup: {
-            title: 'Пункт проезда для грузового транспорта',
+            title: 'Республика Узбекистан,Хорезмская область,Гурленский район,ул.Мустакиллик,5',
             hours: 'Круглосуточно, без выходных',
         },
     },

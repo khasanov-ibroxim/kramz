@@ -62,7 +62,8 @@ const Footer = ({ dict }: FooterProps) => {
                         </p>
 
                         <a
-                            href="#"
+                            target={"_blank"}
+                            href="https://maps.app.goo.gl/v2xx9pVsNwsc8D5U6"
                             className="other_font text-[#50D873] text-[14px] flex items-center gap-1 hover:opacity-70 transition-opacity duration-200 mt-1"
                         >
                             {footer.viewOnMap}

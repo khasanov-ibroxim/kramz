@@ -50,8 +50,9 @@
   "s5": {
     "title": "Completed Projects",
     "text": "Facilities where KraMZ systems were used during construction",
-    "tabs": ["Construction", "Transport", "Infrastructure"],
+    "tabs": ["Все", "Турция", "Россия", "Китай", "Афганистан", "Беларусь"],
     "allProjectsButton": "All projects",
+    "allTabLabel": "Все",
     "popup": {
       "year": "Year",
       "area": "Area",
@@ -61,158 +62,54 @@
     "tabData": [
       [
         {
-          "title": "Siberian Federal University",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Aluminum facade systems", "Transparent structures", "Roofing profiles"],
-          "description": "The largest university complex in Siberia. KraMZ aluminum facade systems were used, providing high thermal insulation and durability in Siberian climate conditions.",
+          "title": "Ключевой экспортный рынок текстильной продукции",
+          "location": "Турция",
+          "listTitle": "Применённые системы",
+          "list": ["Алюминиевые фасадные системы", "Светопрозрачные конструкции", "Кровельные профили"],
+          "description": "Крупнейший университетский комплекс Сибири. При строительстве применялись фасадные алюминиевые системы КраМЗа, обеспечивающие высокую теплоизоляцию и долговечность в условиях сибирского климата.",
           "year": "2006",
-          "area": "140,000 m²",
-          "materials": ["Aluminum profile AD31", "Facade systems series KMZ-500"]
+          "area": "140 000 м²",
+          "materials": ["Алюминиевый профиль АД31", "Фасадные системы серии КМЗ-500"]
         },
         {
-          "title": "Ivan Yarygин Sports Palace",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Load-bearing aluminum structures", "Roofing systems"],
-          "description": "A multifunctional sports complex designed for international competitions.",
+          "title": "Стабильное партнёрство и регулярные поставки",
+          "location": "Россия",
+          "listTitle": "Применённые системы",
+          "list": ["Несущие алюминиевые конструкции", "Кровельные системы"],
+          "description": "Многофункциональный спортивный комплекс, рассчитанный на проведение соревнований международного уровня.",
           "year": "2007",
-          "area": "25,000 m²",
-          "materials": ["Load-bearing profile series NP-200", "Roofing panels"]
+          "area": "25 000 м²",
+          "materials": ["Несущий профиль серии НП-200", "Кровельные панели"]
         },
         {
-          "title": "Vzletny Residential District",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Window systems", "Balcony railings", "Facade elements"],
-          "description": "Premium residential quarter using modern aluminum window and facade systems manufactured by KraMZ.",
+          "title": "Сотрудничество в рамках международной торговли",
+          "location": "Китай",
+          "listTitle": "Применённые системы",
+          "list": ["Оконные системы", "Балконные ограждения", "Фасадные элементы"],
+          "description": "Жилой квартал премиум-класса с применением современных алюминиевых оконных и фасадных систем производства КраМЗа.",
           "year": "2015",
-          "area": "85,000 m²",
-          "materials": ["Window profile series OP-72", "Aluminum railings"]
+          "area": "85 000 м²",
+          "materials": ["Оконный профиль серии ОП-72", "Алюминиевые ограждения"]
         },
         {
-          "title": "Planeta Shopping & Entertainment Center",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Skylights", "Ventilated curtain facades", "Aluminum partitions"],
-          "description": "One of the largest shopping centers in Krasnoyarsk.",
+          "title": "Развивающееся направление экспорта",
+          "location": "Афганистан",
+          "listTitle": "Применённые системы",
+          "list": ["Световые фонари", "Навесные вентилируемые фасады", "Алюминиевые перегородки"],
+          "description": "Один из крупнейших торговых центров Красноярска.",
           "year": "2013",
-          "area": "120,000 m²",
-          "materials": ["Facade systems series KMZ-600", "Skylights FS-300"]
+          "area": "120 000 м²",
+          "materials": ["Фасадные системы серии КМЗ-600", "Световые фонари ФС-300"]
         },
         {
-          "title": "First Tower Business Center",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Structural glazing", "Aluminum curtain walls", "Entrance groups"],
-          "description": "Modern class-A high-rise business center.",
+          "title": "Надёжные деловые связи и поставки продукции",
+          "location": "Беларусь",
+          "listTitle": "Применённые системы",
+          "list": ["Структурное остекление", "Алюминиевые витражи", "Входные группы"],
+          "description": "Современный высотный бизнес-центр класса А.",
           "year": "2019",
-          "area": "45,000 m²",
-          "materials": ["Structural glazing SO-160", "Aluminum profile AD31T1"]
-        }
-      ],
-      [
-        {
-          "title": "Krasnoyarsk Main Railway Station",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Platform canopies", "Facade systems", "Roofing structures"],
-          "description": "Reconstruction of the city's main railway station.",
-          "year": "2011",
-          "area": "18,500 m²",
-          "materials": ["Canopy structures series NK-400", "Roofing profile KP-150"]
-        },
-        {
-          "title": "Metro Bridge over the Yenisei River",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Load-bearing aluminum elements", "Safety railings", "Decorative panels"],
-          "description": "A unique engineering structure — a combined bridge for metro and road traffic.",
-          "year": "2021",
-          "area": "—",
-          "materials": ["Aluminum panels AP-300", "Railings series OG-200"]
-        },
-        {
-          "title": "Krasnoyarsk Airport (Yemelyanovo)",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Terminal facades", "Transparent roofs", "Transition galleries"],
-          "description": "New terminal of the international airport.",
-          "year": "2022",
-          "area": "55,000 m²",
-          "materials": ["Facade system FS-800", "Transparent roof SK-200"]
-        },
-        {
-          "title": "Northern Bus Terminal",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Platform canopies", "Window systems", "Facade panels"],
-          "description": "Modern bus terminal with developed infrastructure.",
-          "year": "2018",
-          "area": "8,200 m²",
-          "materials": ["Canopy structures NK-300", "Window profile OP-60"]
-        },
-        {
-          "title": "Shakhterov Street Overpass",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Railings", "Noise barriers", "Decorative elements"],
-          "description": "Modern overpass with KraMZ aluminum noise barrier screens.",
-          "year": "2020",
-          "area": "—",
-          "materials": ["Noise barriers SHE-500", "Railings PO-120"]
-        }
-      ],
-      [
-        {
-          "title": "Regional Clinical Hospital",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Medical partitions", "Facade systems", "Window units"],
-          "description": "The largest medical complex in the region.",
-          "year": "2016",
-          "area": "95,000 m²",
-          "materials": ["Partition system PS-100", "Medical profile MP-80"]
-        },
-        {
-          "title": "Yenisei Stadium",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Tribune canopies", "Facade systems", "Lighting masts"],
-          "description": "Reconstructed stadium with modern infrastructure.",
-          "year": "2018",
-          "area": "35,000 m²",
-          "materials": ["Canopy systems KS-600", "Facade profile FP-200"]
-        },
-        {
-          "title": "Yenisei River Embankment",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Railings", "Canopies", "Small architectural forms"],
-          "description": "Landscaping of the city's central embankment.",
-          "year": "2019",
-          "area": "—",
-          "materials": ["Railings series OG-180", "Canopy structures NK-250"]
-        },
-        {
-          "title": "Siberia Technopark",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Structural facades", "Aluminum floor systems", "Engineering systems"],
-          "description": "Innovative technopark for high-tech productions.",
-          "year": "2021",
-          "area": "28,000 m²",
-          "materials": ["Structural facade SF-900", "Aluminum floors AP-400"]
-        },
-        {
-          "title": "My Documents MFC",
-          "location": "Krasnoyarsk",
-          "listTitle": "Systems used",
-          "list": ["Entrance groups", "Glazed curtain walls", "Office partitions"],
-          "description": "Network of multifunctional government service centers.",
-          "year": "2017",
-          "area": "4,500 m²",
-          "materials": ["Curtain wall system VS-160", "Partitions series PS-80"]
+          "area": "45 000 м²",
+          "materials": ["Структурное остекление СО-160", "Алюминиевый профиль АД31Т1"]
         }
       ]
     ]

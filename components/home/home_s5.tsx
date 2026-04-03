@@ -76,7 +76,6 @@ function OptimizedImage({src, alt, fill, priority = false, sizes, style}: {
                 fill={fill}
                 priority={priority}
                 sizes={sizes}
-
                 placeholder={typeof src === 'object' ? 'blur' : 'empty'}
                 style={{
                     transition: 'opacity 0.35s ease, transform 0.5s ease',
@@ -242,23 +241,37 @@ interface HomeS5Props {
 
 // ── Main ───────────────────────────────────────────────────
 const HomeS5 = ({ dict, lang }: HomeS5Props) => {
+    // activeTab === 0 → "Все/All" (barcha itemlar)
+    // activeTab > 0 → dict.tabs[activeTab] nomi bilan location filter
     const [activeTab, setActiveTab] = useState(0);
     const [selectedItem, setSelectedItem] = useState<ProjectItem | null>(null);
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, {once: true, margin: '-40px'});
 
-    // Merge dict tab data with static images
-    const buildTabData = (tabIndex: number): ProjectItem[] => {
-        const dictTab = dict.tabData[tabIndex];
-        const images = TAB_IMAGES[tabIndex] ?? [];
-        if (!dictTab) return [];
-        return dictTab.map((item, i) => ({
-            ...item,
-            image: images[i] ?? '',
-        }));
+    // Barcha tab'lardan barcha itemlarni rasmlar bilan birlashtirish
+    const buildAllItems = (): ProjectItem[] => {
+        const result: ProjectItem[] = [];
+        Object.keys(TAB_IMAGES).forEach((key) => {
+            const tabIndex = Number(key);
+            const dictTab = dict.tabData[tabIndex];
+            const images = TAB_IMAGES[tabIndex] ?? [];
+            if (!dictTab) return;
+            dictTab.forEach((item, i) => {
+                result.push({ ...item, image: images[i] ?? '' });
+            });
+        });
+        return result;
     };
 
-    const items = buildTabData(activeTab);
+    const allItems = buildAllItems();
+
+    // Tab 0 = "Все/All" → hammasi, boshqa tablar → location bo'yicha filter
+    // dict.tabs[0] = "Все" (yoki "All")
+    // dict.tabs[1] = "Турция" (yoki "Turkey") — item.location bilan mos kelishi kerak
+    const items = activeTab === 0
+        ? allItems
+        : allItems.filter((item) => item.location === dict.tabs[activeTab]);
+
     const firstRow = items.slice(0, 3);
     const secondRow = items.slice(3);
 
@@ -290,7 +303,6 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                         <button
                             key={tab}
                             onClick={() => setActiveTab(i)}
-                            disabled={true}
                             style={{
                                 position: 'relative',
                                 padding: '10px 16px',
@@ -334,20 +346,43 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
             </div>
 
             <AnimatePresence mode="wait">
-                <motion.div key={activeTab} initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}} exit={{opacity: 0, y: -10}} transition={{duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94]}}>
+                <motion.div
+                    key={activeTab}
+                    initial={{opacity: 0, y: 10}}
+                    animate={{opacity: 1, y: 0}}
+                    exit={{opacity: 0, y: -10}}
+                    transition={{duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94]}}
+                >
                     <div className="hidden md:flex flex-col gap-4">
                         {firstRow.length > 0 && (
                             <div className="grid grid-cols-3 gap-4">
                                 {firstRow.map((item, i) => (
-                                    <ProductCard key={`${activeTab}-${i}`} item={item} index={i} priority={activeTab === 0} onClick={() => setSelectedItem(item)}/>
+                                    <ProductCard
+                                        key={`${activeTab}-${item.location}-${i}`}
+                                        item={item}
+                                        index={i}
+                                        priority={activeTab === 0}
+                                        onClick={() => setSelectedItem(item)}
+                                    />
                                 ))}
                             </div>
                         )}
                         {secondRow.length > 0 && (
-                            <div className={`grid gap-4 ${secondRow.length === 3 ? 'grid-cols-3' : secondRow.length === 2 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+                            <div className={`grid gap-4 ${secondRow.length === 3 ? 'grid-cols-3' : secondRow.length === 2 ? 'grid-cols-2' : 'grid-cols-2'}`}>
                                 {secondRow.map((item, i) => (
-                                    <ProductCard key={`${activeTab}-${i + firstRow.length}`} item={item} index={i + firstRow.length} priority={false} onClick={() => setSelectedItem(item)}/>
+                                    <ProductCard
+                                        key={`${activeTab}-${item.location}-${i + firstRow.length}`}
+                                        item={item}
+                                        index={i + firstRow.length}
+                                        priority={false}
+                                        onClick={() => setSelectedItem(item)}
+                                    />
                                 ))}
+                            </div>
+                        )}
+                        {items.length === 0 && (
+                            <div style={{textAlign: 'center', padding: '60px 0', color: '#aaa', fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif', fontSize: 15}}>
+                                —
                             </div>
                         )}
                     </div>
@@ -359,8 +394,13 @@ const HomeS5 = ({ dict, lang }: HomeS5Props) => {
                             style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}
                         >
                             {items.map((item, i) => (
-                                <div key={`${activeTab}-mobile-${i}`} className="snap-start flex-shrink-0 w-[78vw] max-w-[320px]">
-                                    <ProductCard item={item} index={i} priority={i === 0 && activeTab === 0} onClick={() => setSelectedItem(item)}/>
+                                <div key={`${activeTab}-mobile-${item.location}-${i}`} className="snap-start flex-shrink-0 w-[78vw] max-w-[320px]">
+                                    <ProductCard
+                                        item={item}
+                                        index={i}
+                                        priority={i === 0 && activeTab === 0}
+                                        onClick={() => setSelectedItem(item)}
+                                    />
                                 </div>
                             ))}
                         </div>

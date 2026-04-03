@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { sweepNavigate } from '@/components/UI/Pagetransition';
 import logo from "@/assets/Gurlan_global-03.png"
 import Image from "next/image";
+import Link from "next/link";
 
 interface NavbarProps {
     lang: string;
@@ -361,7 +362,7 @@ export default function Navbar({ lang }: NavbarProps) {
                             }}>PDF</span>
                         </button>
 
-                        <button style={{
+                        <Link href={`/${lang}/contact`} style={{
                             display: 'flex', alignItems: 'center', gap: 7,
                             padding: '8px 16px', borderRadius: 24,
                             border: `1.5px solid ${borderColor}`,
@@ -370,9 +371,9 @@ export default function Navbar({ lang }: NavbarProps) {
                             transition: 'border-color 0.4s, color 0.4s',
                         }}>
                             Связаться с нами
-                        </button>
+                        </Link>
 
-                        <button style={{
+                        <a href={"tel:+998978570005"} style={{
                             width: 36, height: 36, borderRadius: '50%',
                             border: `1.5px solid ${borderColor}`,
                             background: 'transparent',
@@ -380,7 +381,7 @@ export default function Navbar({ lang }: NavbarProps) {
                             cursor: 'pointer', transition: 'border-color 0.4s',
                         }}>
                             <PhoneIcon color={textColor} />
-                        </button>
+                        </a>
 
                         {/* Lang */}
                         <div style={{ display: 'flex', gap: 4, marginLeft: 2 }}>

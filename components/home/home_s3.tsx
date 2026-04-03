@@ -59,8 +59,6 @@ const HomeS3 = ({ dict }: HomeS3Props) => {
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, {once: true, margin: '-40px'});
 
-    // 🔥 dict dan olish
-    const TABS = dict.tabs;
 
     const TAB_DATA = [
         dict.byType.map((item, i) => ({
@@ -103,31 +101,7 @@ const HomeS3 = ({ dict }: HomeS3Props) => {
                     {dict.subtitle}
                 </motion.p>
 
-                {/* Tabs */}
-                <motion.div
-                    initial={{opacity: 0, y: 10}}
-                    animate={titleInView ? {opacity: 1, y: 0} : {}}
-                    transition={{duration: 0.5, delay: 0.14}}
-                    className="flex gap-1 mb-8 p-1 rounded-full w-fit bg-white"
-                >
-                    {TABS.map((tab, i) => (
-                        <button
-                            key={tab}
-                            onClick={() => setActiveTab(i)}
-                            className="relative px-5 sm:px-8 py-3 rounded-full text-[14px] sm:text-[16px] font-medium cursor-pointer other_font"
-                        >
-                            {activeTab === i && (
-                                <motion.div
-                                    layoutId="s3-activeTab"
-                                    className="absolute inset-0 bg-[#50D873] rounded-full"
-                                />
-                            )}
-                            <span className={`relative z-10 ${activeTab === i ? "text-white" : "text-black"}`}>
-                                {tab}
-                            </span>
-                        </button>
-                    ))}
-                </motion.div>
+
 
                 {/* Grid */}
                 <AnimatePresence mode="wait">
