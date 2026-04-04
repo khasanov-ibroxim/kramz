@@ -62,9 +62,9 @@ function SmallCard({ member, image, delay }: {
 const AboutS4 = ({ dict }: AboutS4Props) => {
     const [large, ...rest] = dict.team;
     return (
-        <div className="relative py-16 bg-[#A3C1BE] rounded-2xl overflow-hidden">
+        <div className="relative py-16 bg-[#0D3E29] rounded-2xl overflow-hidden">
             <div className="container mx-auto px-6 lg:px-10">
-                <h1 className="mt-10 other_font font-semibold text-5xl uppercase text-[#2B362D] mb-16">{dict.title}</h1>
+                <h1 className="mt-10 other_font font-semibold text-5xl uppercase text-[#fff] mb-16">{dict.title}</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="md:row-span-2 h-full">
                         <LargeCard member={large} image={TEAM_IMAGES[0]} delay={0} />
