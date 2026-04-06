@@ -2,11 +2,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image, {StaticImageData} from 'next/image';
-import i1 from "@/assets/about/about_s4/1.png"
-import i2 from "@/assets/about/about_s4/2.png"
-import i3 from "@/assets/about/about_s4/3.png"
-import i4 from "@/assets/about/about_s4/4.png"
-import i5 from "@/assets/about/about_s4/5.png"
+import i1 from "@/assets/about/about_s4/Ismailov_Ismail.jpg"
+import i2 from "@/assets/about/about_s4/Ismailov_Javlon.jpg"
+import i3 from "@/assets/about/about_s4/Ismailov_Temur.jpg"
+import i4 from "@/assets/about/about_s4/Samandarov_Temur.jpg"
+import i5 from "@/assets/about/about_s4/Sherzod_Kurbanov.jpg"
 import type { AboutDictionary } from '@/lib/dictionary';
 
 const TEAM_IMAGES = [i1, i2, i3, i4, i5];
@@ -66,8 +66,8 @@ const AboutS4 = ({ dict }: AboutS4Props) => {
             <div className="container mx-auto px-6 lg:px-10">
                 <h1 className="mt-10 other_font font-semibold text-5xl uppercase text-[#fff] mb-16">{dict.title}</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="md:row-span-2 h-full">
-                        <LargeCard member={large} image={TEAM_IMAGES[0]} delay={0} />
+                    <div className="md:row-span-1 h-full">
+                        <SmallCard member={large} image={TEAM_IMAGES[0]} delay={0} />
                     </div>
                     {rest.map((member:AboutDictionary['s4']['member'], i:number) => (
                         <SmallCard key={member.name} member={member} image={TEAM_IMAGES[i + 1]} delay={0.1 + i * 0.08} />
