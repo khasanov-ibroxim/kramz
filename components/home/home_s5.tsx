@@ -6,9 +6,7 @@ import Image from "next/image";
 
 import i0_1 from "@/assets/home/home_s5/turkey.png"
 import i0_2 from "@/assets/home/home_s5/russia.png"
-import i0_3 from "@/assets/home/home_s5/china.png"
-import i0_4 from "@/assets/home/home_s5/afg.png"
-import i0_5 from "@/assets/home/home_s5/belarus.png"
+
 
 import i1_1 from "@/assets/home/home_s5/1_1.jpg"
 import i1_2 from "@/assets/home/home_s5/1_2.jpg"
@@ -25,9 +23,7 @@ import type {HomeDictionary} from "@/lib/dictionary";
 
 // Images are kept as StaticImageData — only text comes from dict
 const TAB_IMAGES: Record<number, StaticImageData[]> = {
-    0: [i0_1, i0_2, i0_3, i0_4, i0_5],
-    1: [i1_1, i1_2, i1_3, i1_4, i1_5],
-    2: [i2_1, i2_2, i2_3, i2_4, i2_5],
+    0: [i0_1, i0_2],
 };
 
 interface ProjectItem {

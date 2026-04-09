@@ -50,7 +50,7 @@ function SmallCard({ member, image, delay }: {
                     transition={{ duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="bg-white/60 rounded-2xl overflow-hidden flex flex-row items-start gap-4 p-5"
         >
-            <Image src={image} alt={member.name} className="w-[110px] h-[120px] rounded-xl"/>
+            <Image src={image} alt={member.name} className="w-[110px] h-[120px] rounded-xl object-contain"/>
             <div>
                 <p className="other_font font-bold text-[20px] text-[#2B362D] leading-snug">{member.name}</p>
                 <p className="other_font text-[16px] text-black/50 leading-snug">{member.role}</p>

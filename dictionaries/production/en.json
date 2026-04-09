@@ -105,10 +105,10 @@
     ]
   },
   "s6": {
-    "title": "Production Gallery",
+    "title": "АССОРТИМЕНТ ПРОДУКЦИИ",
     "tabs": {
-      "image": "Images",
-      "video": "Video"
+      "men": "Мужская",
+      "women": "Женская"
     }
   }
 }

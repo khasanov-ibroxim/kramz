@@ -15,7 +15,7 @@ const AboutS1 = ({ dict }: AboutS1Props) => {
 
     return (
         <section ref={ref} className="relative overflow-hidden">
-            <div className="relative w-full h-[50vh] bg-[#50D873] flex flex-col md:flex-row items-center">
+            <div className="relative w-full h-[55vh] bg-[#50D873] flex flex-col md:flex-row items-center">
 
                 {/* Gradient overlay */}
                 <div

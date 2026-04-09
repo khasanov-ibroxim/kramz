@@ -1,36 +1,90 @@
 "use client"
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Play, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import type { StaticImageData } from 'next/image';
 import type { ProductionDictionary } from '@/lib/dictionary';
-import i1 from "@/assets/production/production_s6/IMG_0406.jpg"
-import i2 from "@/assets/production/production_s6/IMG_0408.jpg"
-import i3 from "@/assets/production/production_s6/IMG_0410.jpg"
-import i4 from "@/assets/production/production_s6/IMG_0416.jpg"
-import i5 from "@/assets/production/production_s6/IMG_0417.jpg"
-import i6 from "@/assets/production/production_s6/IMG_0418.jpg"
-import i7 from "@/assets/production/production_s6/IMG_0420.jpg"
+
+// ── Мужская (Men's) images ────────────────────────────────────────────
+import m1 from "@/assets/production/production_s6/men/1.jpg"
+import m2 from "@/assets/production/production_s6/men/2.jpg"
+import m3 from "@/assets/production/production_s6/men/3.jpg"
+import m4 from "@/assets/production/production_s6/men/4.jpg"
+import m5 from "@/assets/production/production_s6/men/5.jpg"
+import m6 from "@/assets/production/production_s6/men/6.jpg"
+import m7 from "@/assets/production/production_s6/men/7.jpg"
+import m8 from "@/assets/production/production_s6/men/8.jpg"
+import m9 from "@/assets/production/production_s6/men/9.jpg"
+import m10 from "@/assets/production/production_s6/men/10.jpg"
+import m11 from "@/assets/production/production_s6/men/11.jpg"
+import m12 from "@/assets/production/production_s6/men/12.jpg"
+import m13 from "@/assets/production/production_s6/men/13.jpg"
+import m14 from "@/assets/production/production_s6/men/14.jpg"
+
+
+// ── Женская (Women's) images ──────────────────────────────────────────
+import w1 from "@/assets/production/production_s6/women/1.jpg"
+import w2 from "@/assets/production/production_s6/women/2.jpg"
+import w3 from "@/assets/production/production_s6/women/3.jpg"
+import w4 from "@/assets/production/production_s6/women/4.jpg"
+import w5 from "@/assets/production/production_s6/women/5.jpg"
+import w6 from "@/assets/production/production_s6/women/6.jpg"
+import w7 from "@/assets/production/production_s6/women/7.jpg"
+import w8 from "@/assets/production/production_s6/women/8.jpg"
+import w9 from "@/assets/production/production_s6/women/9.jpg"
+import w10 from "@/assets/production/production_s6/women/10.jpg"
+import w11 from "@/assets/production/production_s6/women/11.jpg"
+import w12 from "@/assets/production/production_s6/women/12.jpg"
+import w13 from "@/assets/production/production_s6/women/13.jpg"
+import w14 from "@/assets/production/production_s6/women/14.jpg"
+import w15 from "@/assets/production/production_s6/women/15.jpg"
+
 
 interface ProductionS6Props {
     dict: ProductionDictionary['s6'];
 }
 
-const IMAGES: { id: number; src: StaticImageData }[] = [
-    { id: 1, src: i1 },
-    { id: 2, src: i2 },
-    { id: 3, src: i3 },
-    { id: 4, src: i4 },
-    { id: 5, src: i5 },
-    { id: 6, src: i6 },
-    { id: 7, src: i7 },
+type TabKey = 'men' | 'women';
+
+const MEN_IMAGES: { id: number; src: StaticImageData }[] = [
+    { id: 1, src: m1 },
+    { id: 2, src: m2 },
+    { id: 3, src: m3 },
+    { id: 4, src: m4 },
+    { id: 5, src: m5 },
+    { id: 6, src: m6 },
+    { id: 7, src: m7 },
+    { id: 8, src: m8 },
+    { id: 9, src: m9 },
+    { id: 10, src: m10 },
+    { id: 11, src: m11 },
+    { id: 12, src: m12 },
+    { id: 13, src: m13 },
+    { id: 14, src: m14 },
 ];
 
-const VIDEOS = [
-    { id: 1, title: 'Производство — обзор цехов', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-    { id: 2, title: 'Прядильный цех', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
-    { id: 3, title: 'Швейный цех', src: 'https://www.youtube.com/embed/dQw4w9WgXcQ' },
+const WOMEN_IMAGES: { id: number; src: StaticImageData }[] = [
+    { id: 1, src: w1 },
+    { id: 2, src: w2 },
+    { id: 3, src: w3 },
+    { id: 4, src: w4 },
+    { id: 5, src: w5 },
+    { id: 6, src: w6 },
+    { id: 7, src: w7 },
+    { id: 8, src: w8 },
+    { id: 9, src: w9 },
+    { id: 10, src: w10 },
+    { id: 11, src: w11 },
+    { id: 12, src: w12 },
+    { id: 13, src: w13 },
+    { id: 14, src: w14 },
+    { id: 15, src: w15 },
 ];
+
+const GALLERY: Record<TabKey, { id: number; src: StaticImageData }[]> = {
+    men: MEN_IMAGES,
+    women: WOMEN_IMAGES,
+};
 
 /* ─── Image Modal ─────────────────────────────────────────────── */
 const ImageModal = ({
@@ -38,7 +92,7 @@ const ImageModal = ({
                         startIndex,
                         onClose,
                     }: {
-    images: typeof IMAGES;
+    images: { id: number; src: StaticImageData }[];
     startIndex: number;
     onClose: () => void;
 }) => {
@@ -99,10 +153,11 @@ const ImageModal = ({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                // Clicking the dark backdrop closes the modal
                 className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
                 onClick={onClose}
             >
-                {/* Close */}
+                {/* Close button */}
                 <button
                     onClick={onClose}
                     className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors"
@@ -137,12 +192,11 @@ const ImageModal = ({
                     <ChevronRight size={22} color="#fff" />
                 </button>
 
-                {/* Image */}
+                {/* Image wrapper — does NOT stopPropagation so clicking black area closes modal */}
                 <div
                     className="relative w-full h-full flex items-center justify-center overflow-hidden px-16"
                     onTouchStart={handleTouchStart}
                     onTouchEnd={handleTouchEnd}
-                    onClick={(e) => e.stopPropagation()}
                 >
                     <AnimatePresence custom={direction} mode="wait">
                         <motion.div
@@ -155,24 +209,26 @@ const ImageModal = ({
                             transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
                             className="absolute inset-0 flex items-center justify-center px-16"
                         >
+                            {/* stopPropagation only on the image itself */}
                             <img
                                 src={images[current].src.src}
                                 alt=""
                                 className="max-w-full max-h-full object-contain rounded-2xl select-none"
-                                style={{ maxHeight: 'calc(100vh - 100px)' }}
+                                style={{ maxHeight: 'calc(90vh - 100px)' }}
                                 draggable={false}
+                                onClick={(e) => e.stopPropagation()}
                             />
                         </motion.div>
                     </AnimatePresence>
                 </div>
 
-                {/* Dot indicators */}
-                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-1.5">
+                {/* Thumbnail strip */}
+                <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                     {images.map((_, i) => (
                         <button
                             key={i}
-                            onClick={(e) => { e.stopPropagation(); setDirection(i > current ? 1 : -1); setCurrent(i); }}
-                            className={`rounded-full transition-all duration-300 ${i === current ? 'w-5 h-1.5 bg-[#50D873]' : 'w-1.5 h-1.5 bg-white/40 hover:bg-white/70'}`}
+                            onClick={(e) => { e.stopPropagation(); setCurrent(i); }}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${i === current ? 'bg-[#50D873] scale-125' : 'bg-white/40 hover:bg-white/70'}`}
                         />
                     ))}
                 </div>
@@ -181,70 +237,58 @@ const ImageModal = ({
     );
 };
 
-/* ─── Video tab ─────────────────────────────────────────────────── */
-const VideoGrid = () => {
-    const [active, setActive] = useState(0);
-
-    return (
-        <div className="flex flex-col lg:flex-row gap-6">
-            {/* Main player */}
-            <div className="flex-1">
-                <AnimatePresence mode="wait">
-                    <motion.div
-                        key={active}
-                        initial={{ opacity: 0, scale: 0.98 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.98 }}
-                        transition={{ duration: 0.3 }}
-                        className="rounded-2xl overflow-hidden bg-black w-full"
-                        style={{ aspectRatio: '16/9' }}
-                    >
-                        <iframe
-                            src={VIDEOS[active].src}
-                            title={VIDEOS[active].title}
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            className="w-full h-full"
-                        />
-                    </motion.div>
-                </AnimatePresence>
-                <p className="other_font mt-3 text-white/80 text-sm">{VIDEOS[active].title}</p>
-            </div>
-
-            {/* Video list */}
-            <div className="flex flex-row lg:flex-col gap-3 lg:w-[220px] overflow-x-auto lg:overflow-visible">
-                {VIDEOS.map((v, i) => {
-                    const videoId = v.src.split('/embed/')[1];
-                    const thumb = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
-                    return (
-                        <motion.button
-                            key={v.id}
-                            onClick={() => setActive(i)}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.97 }}
-                            className={`flex-shrink-0 rounded-xl overflow-hidden cursor-pointer relative transition-all ${i === active ? 'ring-2 ring-[#50D873] ring-offset-2 ring-offset-[#0D3E29]' : 'opacity-60 hover:opacity-90'}`}
-                            style={{ aspectRatio: '16/9', width: 200 }}
-                        >
-                            <img src={thumb} alt={v.title} className="w-full h-full object-cover" />
-                            <div className="absolute inset-0 flex items-center justify-center bg-black/30">
-                                <div className="w-8 h-8 rounded-full bg-white/80 flex items-center justify-center">
-                                    <Play size={13} fill="#2B362D" color="#2B362D" className="ml-0.5" />
-                                </div>
-                            </div>
-                        </motion.button>
-                    );
-                })}
-            </div>
-        </div>
-    );
-};
+/* ─── Image Gallery ─────────────────────────────────────────────── */
+const ImageGallery = ({
+                          images,
+                          onOpen,
+                      }: {
+    images: { id: number; src: StaticImageData }[];
+    onOpen: (index: number) => void;
+}) => (
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {images.map((img, i) => (
+            <motion.button
+                key={img.id}
+                onClick={() => onOpen(i)}
+                whileHover={{ scale: 1.03, y: -4 }}
+                whileTap={{ scale: 0.97 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-black/30"
+                style={{ aspectRatio: '9/16' }}
+            >
+                <img
+                    src={img.src.src}
+                    alt=""
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    draggable={false}
+                />
+                {/* Hover overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="other_font text-xs text-white/80">
+                        {String(i + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+                    </span>
+                </div>
+                {/* Green corner accent */}
+                <div className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#50D873] opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm shadow-[#50D873]/60" />
+            </motion.button>
+        ))}
+    </div>
+);
 
 /* ─── Main component ─────────────────────────────────────────────── */
 const ProductionS6 = ({ dict }: ProductionS6Props) => {
-    const [tab, setTab] = useState<'image' | 'video'>('image');
+    const [tab, setTab] = useState<TabKey>('men');
     const [modalIndex, setModalIndex] = useState<number | null>(null);
 
-    const handleTabChange = (t: 'image' | 'video') => setTab(t);
+    const tabs: { key: TabKey; label: string }[] = [
+        { key: 'men',   label: dict.tabs.men   },
+        { key: 'women', label: dict.tabs.women },
+    ];
+
+    const currentImages = GALLERY[tab];
 
     return (
         <div className="bg-[#0D3E29] py-16 md:py-24">
@@ -258,88 +302,47 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
 
                     {/* Tab switcher */}
                     <div className="flex items-center gap-1 bg-white/30 rounded-full p-1 w-fit">
-                        {(['image', 'video'] as const).map((t) => (
+                        {tabs.map(({ key, label }) => (
                             <button
-                                key={t}
-                                onClick={() => handleTabChange(t)}
+                                key={key}
+                                onClick={() => setTab(key)}
                                 className="other_font relative px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 cursor-pointer"
-                                style={{ color: tab === t ? '#fff' : '#2B362D' }}
+                                style={{ color: tab === key ? '#fff' : '#2B362D' }}
                             >
-                                {tab === t && (
+                                {tab === key && (
                                     <motion.span
                                         layoutId="tab-bg"
                                         className="absolute inset-0 bg-[#50D873] rounded-full"
                                         transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
                                     />
                                 )}
-                                <span className="relative z-10">{dict.tabs[t]}</span>
+                                <span className="relative z-10">{label}</span>
                             </button>
                         ))}
                     </div>
                 </div>
 
-                {/* Content */}
+                {/* Gallery */}
                 <AnimatePresence mode="wait">
-                    {tab === 'image' ? (
-                        <motion.div
-                            key="image-grid"
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -12 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            {/* Masonry-style card grid — all images vertical (portrait) */}
-                            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
-                                {IMAGES.map((img, i) => (
-                                    <motion.button
-                                        key={img.id}
-                                        onClick={() => setModalIndex(i)}
-                                        whileHover={{ scale: 1.03, y: -4 }}
-                                        whileTap={{ scale: 0.97 }}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ duration: 0.4, delay: i * 0.06 }}
-                                        className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-black/30"
-                                        style={{ aspectRatio: '9/16' }}
-                                    >
-                                        <img
-                                            src={img.src.src}
-                                            alt=""
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                            draggable={false}
-                                        />
-                                        {/* Hover overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                        <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <span className="other_font text-xs text-white/80">
-                                                {String(i + 1).padStart(2, '0')} / {String(IMAGES.length).padStart(2, '0')}
-                                            </span>
-                                        </div>
-
-                                        {/* Green corner accent */}
-                                        <div className="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-[#50D873] opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm shadow-[#50D873]/60" />
-                                    </motion.button>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ) : (
-                        <motion.div
-                            key="video-grid"
-                            initial={{ opacity: 0, y: 12 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -12 }}
-                            transition={{ duration: 0.3 }}
-                        >
-                            <VideoGrid />
-                        </motion.div>
-                    )}
+                    <motion.div
+                        key={tab}
+                        initial={{ opacity: 0, y: 12 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -12 }}
+                        transition={{ duration: 0.3 }}
+                    >
+                        <ImageGallery
+                            images={currentImages}
+                            onOpen={(i) => setModalIndex(i)}
+                        />
+                    </motion.div>
                 </AnimatePresence>
             </div>
 
             {/* Modal */}
             {modalIndex !== null && (
                 <ImageModal
-                    images={IMAGES}
+                    images={currentImages}
                     startIndex={modalIndex}
                     onClose={() => setModalIndex(null)}
                 />
