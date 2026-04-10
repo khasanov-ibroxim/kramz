@@ -2,11 +2,11 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import Image, {StaticImageData} from 'next/image';
-import i1 from "@/assets/about/about_s4/Ismailov_Ismail.jpg"
+import i3 from "@/assets/about/about_s4/Ismailov_Ismail.jpg"
 import i2 from "@/assets/about/about_s4/Ismailov_Javlon.jpg"
-import i3 from "@/assets/about/about_s4/Ismailov_Temur.jpg"
-import i4 from "@/assets/about/about_s4/Samandarov_Temur.jpg"
-import i5 from "@/assets/about/about_s4/Sherzod_Kurbanov.jpg"
+import i1 from "@/assets/about/about_s4/Ismailov_Temur.jpg"
+import i5 from "@/assets/about/about_s4/Samandarov_Temur.jpg"
+import i4 from "@/assets/about/about_s4/Sherzod_Kurbanov.jpg"
 import type { AboutDictionary } from '@/lib/dictionary';
 
 const TEAM_IMAGES = [i1, i2, i3, i4, i5];
