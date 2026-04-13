@@ -4,9 +4,9 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import type { AboutDictionary, CommonDictionary } from '@/lib/dictionary';
 
-import img1 from "@/assets/about/about_s3/1.png";
-import img2 from "@/assets/about/about_s3/2.png";
-import img3 from "@/assets/about/about_s3/3.png";
+import img1 from "@/assets/about/about_s7/vistvka_0_0.jpg";
+import img2 from "@/assets/about/about_s7/vistvka_0_1.jpg";
+import img3 from "@/assets/about/about_s7/vistvka_0_2.jpg";
 import img4 from "@/assets/about/about_s3/4.png";
 import img5 from "@/assets/about/about_s3/6.png";
 import img6 from "@/assets/about/about_s3/7.png";
@@ -66,6 +66,7 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                             className={`px-5 py-2 rounded-full text-sm transition ${
                                 activeTab === i ? 'bg-[#50D873] text-white' : 'text-black'
                             }`}
+                            disabled={tab.disabled}
                         >
                             {tab.label}
                         </button>
@@ -102,12 +103,15 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
 
                 <AnimatePresence>
                     {selectedIndex !== null && (
+                        // Qora backdrop — bosilsa modal yopiladi
                         <motion.div
                             className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
+                            onClick={() => setSelectedIndex(null)}
                         >
+                            {/* Yopish tugmasi */}
                             <button
                                 onClick={() => setSelectedIndex(null)}
                                 className="absolute top-6 right-6 text-white text-3xl z-50"
@@ -117,22 +121,25 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
 
                             {images.length > 1 && (
                                 <button
-                                    onClick={() =>
+                                    onClick={(e) => {
+                                        e.stopPropagation();
                                         setSelectedIndex((prev) =>
                                             prev === 0 ? images.length - 1 : (prev! - 1)
-                                        )
-                                    }
+                                        );
+                                    }}
                                     className="absolute left-6 text-white text-5xl z-50"
                                 >
                                     ‹
                                 </button>
                             )}
 
+                            {/* Rasm — stopPropagation, bosilsa modal yopilmaydi */}
                             <motion.div
                                 key={selectedIndex}
                                 drag="x"
                                 dragConstraints={{ left: 0, right: 0 }}
                                 dragElastic={0.7}
+                                onClick={(e) => e.stopPropagation()}
                                 onDragEnd={(_e, info) => {
                                     if (info.offset.x < -100 || info.velocity.x < -500) {
                                         setSelectedIndex((prev) =>
@@ -161,11 +168,12 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
 
                             {images.length > 1 && (
                                 <button
-                                    onClick={() =>
+                                    onClick={(e) => {
+                                        e.stopPropagation();
                                         setSelectedIndex((prev) =>
                                             prev === images.length - 1 ? 0 : (prev! + 1)
-                                        )
-                                    }
+                                        );
+                                    }}
                                     className="absolute right-6 text-white text-5xl z-50"
                                 >
                                     ›

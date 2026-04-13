@@ -5,14 +5,11 @@ import Image from "next/image";
 
 import img1 from "@/assets/home/home_header/DSC04122.jpg"
 import img2 from "@/assets/home/home_header/DSC04119.jpg"
-import img3 from "@/assets/home/home_header/DSC04447.jpg"
-import img4 from "@/assets/home/home_header/DSC04452.jpg"
+
 
 const IMAGES = [
     img1,
-    img2,
-    img3,
-    img4,
+    img2
 ];
 
 interface HomeHeaderProps {

@@ -78,41 +78,19 @@
     "text": "We strive to use the principles of sustainable development in all areas of our activities"
   },
   "s7": {
-    "title": "Documents",
+    "title": "Выставки",
     "tabs": [
       {
-        "label": "Occupational health and industrial safety",
-        "docs": [
-          { "title": "Occupational health policy",                        "size": "714.93 KB", "type": "PDF", "file": "/docs/policy_labor.pdf" },
-          { "title": "Industrial and fire safety policy",                 "size": "679.24 KB", "type": "PDF", "file": "/docs/policy_fire.pdf" },
-          { "title": "SOUT summary statement 2021",                      "size": "3.79 MB",   "type": "PDF", "file": "/docs/sout_2021.pdf" },
-          { "title": "SOUT summary statement 2020",                      "size": "2.14 MB",   "type": "PDF", "file": "/docs/sout_2020.pdf" },
-          { "title": "SOUT summary statement 2019",                      "size": "1.87 MB",   "type": "PDF", "file": "/docs/sout_2019.pdf" },
-          { "title": "SOUT summary statement 2018",                      "size": "1.52 MB",   "type": "PDF", "file": "/docs/sout_2018.pdf" },
-          { "title": "Occupational health regulations",                   "size": "890.00 KB", "type": "PDF", "file": "/docs/ohrana_truda.pdf" },
-          { "title": "Fire safety instructions",                          "size": "540.12 KB", "type": "PDF", "file": "/docs/fire_instruction.pdf" }
-        ]
+        "label": "Международные выставки",
+        "disabled": false
       },
       {
-        "label": "Ecology and environment",
-        "docs": [
-          { "title": "Enterprise environmental policy",                   "size": "620.00 KB", "type": "PDF", "file": "/docs/ecology_policy.pdf" },
-          { "title": "Environmental activity report 2023",                "size": "4.20 MB",   "type": "PDF", "file": "/docs/ecology_2023.pdf" },
-          { "title": "Environmental protection program",                  "size": "1.10 MB",   "type": "PDF", "file": "/docs/ecology_program.pdf" },
-          { "title": "Pollutant emission permit",                         "size": "980.00 KB", "type": "PDF", "file": "/docs/emission_permit.pdf" },
-          { "title": "Water resource monitoring 2022",                    "size": "2.30 MB",   "type": "PDF", "file": "/docs/water_2022.pdf" }
-        ]
+        "label": "Отраслевые мероприятия ",
+        "disabled": true
       },
       {
-        "label": "Certificates, licenses and standards",
-        "docs": [
-          { "title": "ISO 9001:2015 Certificate",                        "size": "512.00 KB", "type": "PDF", "file": "/docs/iso_9001.pdf" },
-          { "title": "ISO 14001:2015 Certificate",                       "size": "498.00 KB", "type": "PDF", "file": "/docs/iso_14001.pdf" },
-          { "title": "Production activity license",                       "size": "340.00 KB", "type": "PDF", "file": "/docs/license.pdf" },
-          { "title": "GOST R compliance certificate",                     "size": "720.00 KB", "type": "PDF", "file": "/docs/gost.pdf" },
-          { "title": "Testing laboratory accreditation",                  "size": "1.05 MB",   "type": "PDF", "file": "/docs/lab_accreditation.pdf" },
-          { "title": "Registration certificate",                          "size": "280.00 KB", "type": "PDF", "file": "/docs/registration.pdf" }
-        ]
+        "label": "Форумы и бизнес-встречи",
+        "disabled": true
       }
     ]
   }

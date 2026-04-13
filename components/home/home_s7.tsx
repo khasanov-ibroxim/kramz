@@ -26,7 +26,8 @@ const HomeS7 = ({ dict , lang}: HomeS7Props) => {
                                 initial={{ opacity: 0, y: 28 }}
                                 animate={inView ? { opacity: 1, y: 0 } : {}}
                                 transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.1 }}
-                                className="other_font text-[#fff] font-semibold uppercase text-3xl md:text-5xl leading-[1.05] tracking-[-0.01em]"
+                                className="other_font text-[#fff] font-semibold uppercase text-3xl md:text-5xl"
+                                style={{lineHeight: '4rem'}}
                             >
                                 {dict.title.split('\n').map((line, i) => (
                                     <React.Fragment key={i}>{line}{i === 0 && <br />}</React.Fragment>

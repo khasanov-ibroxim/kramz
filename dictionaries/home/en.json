@@ -3,18 +3,18 @@
     "title": "Professionals in aluminum products and solutions"
   },
   "s2": {
-    "title": "Key Indicators",
+    "title": "Ключевые показатели",
     "texts": [
-      "Krasnoyarsk Metallurgical Plant is the third largest and youngest of the major processing enterprises in Russia. The main productions are smelting, pressing and forging.",
-      "The current production of KraMZ LLC ensures the output of flat and round ingots, extruded profiles, rods and pipes, forgings and stampings from a wide range of aluminum alloys in accordance with the chemical composition of Russian and foreign standards."
+      "Gurlan Global Teks — современный текстильный кластер полного цикла, объединяющий выращивание хлопка, переработку сырья и производство готовой продукции. Компания ориентирована на международные стандарты качества, устойчивое развитие и внедрение инновационных технологий. Производственная модель обеспечивает полный контроль качества на каждом этапе — от сырья до готового изделия.",
+      "Производственная система компании направлена на эффективное использование ресурсов, автоматизацию процессов и стабильное качество продукции. Gurlan Global Teks активно развивает экспортные направления, сотрудничая с международными партнёрами и укрепляя позиции на глобальном рынке. Компания формирует устойчивую и конкурентоспособную производственную экосистему, соответствующую современным требованиям отрасли."
     ],
     "stats": [
-      { "value": "#1",           "label": "Among manufacturers of aluminum bridges and infrastructure solutions" },
-      { "value": "Top-3",        "label": "Among aluminum processing enterprises" },
-      { "value": "37 countries", "label": "KraMZ product delivery geography" },
-      { "value": ">130k t.",     "label": "per year. Company production capacity" },
-      { "value": "since 1969",   "label": "Experts in aluminum products and solutions" },
-      { "value": ">13 000",      "label": "Mastered nomenclatures of profiles, rods and pipes of various sections" }
+      { "value": "№1",           "label": "Вертикально интегрированное текстильное производство полного цикла" },
+      { "value": "ТОП-уровень",  "label": "Современные технологии ведущих мировых брендов оборудования" },
+      { "value": "2+ стран",    "label": "География экспортных поставок и международного сотрудничества" },
+      { "value": ">4000 тонн",   "label": "Годовая производственная мощность пряжи (KD и OE)" },
+      { "value": "с 2020 года",  "label": "Динамичное развитие и выход на международный рынок" },
+      { "value": "500+ сотрудников", "label": "Профессиональная команда предприятия" }
     ]
   },
   "s3": {
