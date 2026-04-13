@@ -1,23 +1,21 @@
 "use client"
 import React, { useRef } from 'react';
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
-import watermaker_s6 from "@/assets/home/home_s6/watermaker_s6.png";
 import type { HomeDictionary } from '@/lib/dictionary';
 import Link from "next/link";
 
 interface HomeS6Props {
     dict: HomeDictionary['s6'];
-    lang:string
+    lang: string;
 }
 
-const HomeS6 = ({ dict , lang}: HomeS6Props) => {
+const HomeS6 = ({ dict, lang }: HomeS6Props) => {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: '-60px' });
 
     return (
-        <section ref={ref} className="relative overflow-hidden h-screen ">
-            <div className="relative w-full h-screen bg-[#50D873] flex flex-col md:flex-row items-center ">
+        <section ref={ref} className="relative overflow-hidden h-screen">
+            <div className="relative w-full h-screen bg-[#50D873] flex flex-col md:flex-row items-center">
                 <div className="absolute inset-0 z-10 bg-gradient-to-l from-[#00474A] via-[#00474A] to-transparent" />
 
                 <div className="relative z-20 w-full md:w-[70%] p-6 md:p-10 text-white order-2 md:order-1 left-0 lg:left-40">
@@ -25,7 +23,7 @@ const HomeS6 = ({ dict , lang}: HomeS6Props) => {
                         initial={{ opacity: 0, y: 28 }}
                         animate={inView ? { opacity: 1, y: 0 } : {}}
                         transition={{ duration: 0.65, ease: [0.25, 0.46, 0.45, 0.94], delay: 0.2 }}
-                        className="title_font_bold  text-white font-extrabold uppercase mb-6 text-[clamp(36px,4.5vw,60px)] leading-[1.05] tracking-[-0.01em]"
+                        className="title_font_bold text-white font-extrabold uppercase mb-6 text-[clamp(36px,4.5vw,60px)] leading-[1.05] tracking-[-0.01em]"
                     >
                         {dict.title.split('\n').map((line, i) => (
                             <React.Fragment key={i}>{line}{i === 0 && <br />}</React.Fragment>
@@ -54,8 +52,6 @@ const HomeS6 = ({ dict , lang}: HomeS6Props) => {
                         </Link>
                     </motion.div>
                 </div>
-
-
             </div>
         </section>
     );

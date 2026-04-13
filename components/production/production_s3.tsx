@@ -7,9 +7,9 @@ interface ProductionS3Props {
     dict: ProductionDictionary['s3'];
 }
 
-function StatCard({ stat, index, total, hoveredIndex, onMouseEnter, onMouseLeave }: {
+function StatCard({ stat, index, hoveredIndex, onMouseEnter, onMouseLeave }: {
     stat: { value: string; unit: string; label: string; highlight?: boolean };
-    index: number; total: number;
+    index: number;
     hoveredIndex: number | null;
     onMouseEnter: (i: number) => void;
     onMouseLeave: () => void;
@@ -69,8 +69,8 @@ const ProductionS3 = ({ dict }: ProductionS3Props) => {
                 <p className="other_font w-full mt-4 md:w-1/2 text-sm md:text-base text-[#2B362D]">{dict.subtitle}</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 pt-4">
-                {dict.stats.map((stat:ProductionDictionary['s3']['stats'][number], i:number) => (
-                    <StatCard key={stat.value + i} stat={stat} index={i} total={dict.stats.length}
+                {dict.stats.map((stat: ProductionDictionary['s3']['stats'][number], i: number) => (
+                    <StatCard key={stat.value + i} stat={stat} index={i}
                               hoveredIndex={hoveredIndex}
                               onMouseEnter={setHoveredIndex}
                               onMouseLeave={() => setHoveredIndex(null)}

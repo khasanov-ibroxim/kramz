@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import type { Map as LeafletMap } from 'leaflet';
 
 const MAP_CENTER: [number, number] = [41.840569, 60.394338];
 const MAP_ZOOM = 16;
@@ -26,29 +27,23 @@ const mapStyles = `
 .leaflet-control-attribution { display: none !important; }
 `;
 
+type ReactLeaflet = typeof import('react-leaflet');
+
 const ContactS2 = () => {
     const [activeMarker, setActiveMarker] = useState<number | null>(null);
-    const [LeafletMap, setLeafletMap] = useState<any>(null);
+    const [LeafletMap, setLeafletMap] = useState<ReactLeaflet | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
-    const [isMobile, setIsMobile] = useState(false);
-
-    useEffect(() => {
-        const check = () => setIsMobile(window.innerWidth < 768);
-        check();
-        window.addEventListener('resize', check);
-        return () => window.removeEventListener('resize', check);
-    }, []);
 
     useEffect(() => {
         import('react-leaflet').then((rl) => {
             import('leaflet').then((L) => {
-                delete (L.default.Icon.Default.prototype as any)._getIconUrl;
+                delete (L.default.Icon.Default.prototype as unknown as Record<string, unknown>)._getIconUrl;
                 setLeafletMap(rl);
             });
         });
     }, []);
 
-    const handleMapReady = (map: any) => {
+    const handleMapReady = (map: LeafletMap | null) => {
         if (!map) return;
         map.dragging.disable();
         map.touchZoom.disable();
@@ -56,11 +51,12 @@ const ContactS2 = () => {
         map.scrollWheelZoom.disable();
         map.boxZoom.disable();
         map.keyboard.disable();
-        if (map.tap) map.tap.disable();
+        if ((map as LeafletMap & { tap?: { disable: () => void } }).tap) {
+            (map as LeafletMap & { tap?: { disable: () => void } }).tap?.disable();
+        }
     };
 
-    // Determine popup position — flip left if marker is on right side
-    const getPopupStyle = (marker: typeof MARKERS[0]) => {
+    const getPopupStyle = (marker: typeof MARKERS[0]): React.CSSProperties => {
         const isRight = marker.pos.x > 55;
         return {
             top: 'calc(100% + 8px)',
@@ -87,7 +83,6 @@ const ContactS2 = () => {
                 className="relative w-full rounded-2xl overflow-hidden"
                 style={{ height: 'clamp(340px, 52vw, 560px)' }}
             >
-                {/* Base map */}
                 {LeafletMap ? (
                     <LeafletMap.MapContainer
                         center={MAP_CENTER}
@@ -100,7 +95,7 @@ const ContactS2 = () => {
                         scrollWheelZoom={false}
                         boxZoom={false}
                         keyboard={false}
-                        ref={(map: any) => handleMapReady(map)}
+                        ref={(map) => handleMapReady(map)}
                     >
                         <LeafletMap.TileLayer
                             url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
@@ -127,18 +122,13 @@ const ContactS2 = () => {
                                     zIndex: isActive ? 10 : 1,
                                 }}
                             >
-                                {/* Desktop: label + button side by side */}
-                                {/* Mobile: only button, label shown in popup */}
                                 <button
                                     onClick={() => setActiveMarker(isActive ? null : marker.id)}
                                     className="flex items-center gap-2 cursor-pointer"
                                 >
-                                    {/* Label — hidden on mobile */}
                                     <span className="hidden md:block other_font text-sm font-medium text-[#2B362D] bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-sm whitespace-nowrap select-none">
                                         {marker.label}
                                     </span>
-
-                                    {/* Circle button */}
                                     <span
                                         className="w-9 h-9 rounded-full flex items-center justify-center shadow-md transition-colors duration-200 shrink-0"
                                         style={{ background: isActive ? '#50D873' : '#1a1a1a' }}
@@ -149,7 +139,6 @@ const ContactS2 = () => {
                                     </span>
                                 </button>
 
-                                {/* Popup — opens below marker */}
                                 <AnimatePresence>
                                     {isActive && (
                                         <motion.div
@@ -188,8 +177,9 @@ const ContactS2 = () => {
                     })}
                 </div>
 
-                {/* QR Code — bottom right */}
+                {/* QR Code */}
                 <div className="absolute bottom-3 right-3 z-[500] bg-white/95 backdrop-blur-sm rounded-xl p-2.5 md:p-3 flex flex-col items-center gap-1.5 shadow-md">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                         src={QR_URL}
                         alt="QR маршрут"
@@ -205,7 +195,6 @@ const ContactS2 = () => {
                     </a>
                 </div>
 
-                {/* Click outside to close */}
                 {activeMarker !== null && (
                     <div
                         className="absolute inset-0 z-[399]"

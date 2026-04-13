@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Map } from "lucide-react";
-import type {AboutDictionary, HomeDictionary} from '@/lib/dictionary';
+import type { AboutDictionary } from '@/lib/dictionary';
 
 interface AboutS2Props {
     dict: AboutDictionary['s2'];
@@ -94,7 +94,7 @@ const AboutS2 = ({ dict }: AboutS2Props) => {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pt-4">
-                    {dict.cards.map((card:AboutDictionary['s2']['cards'], i:number) => (
+                    {dict.cards.map((card: AboutDictionary['s2']['cards'], i: number) => (
                         <StatCard key={card.value} stat={card} index={i} total={dict.cards.length}
                                   hoveredIndex={hoveredIndex}
                                   onMouseEnter={setHoveredIndex}

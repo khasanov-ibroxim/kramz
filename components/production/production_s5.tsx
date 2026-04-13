@@ -66,7 +66,7 @@ const Card = ({ card, image }: { card: { title: string; description: string[] };
     );
 };
 
-const ProductionS5 = ({ dict, commonDict }: ProductionS5Props) => {
+const ProductionS5 = ({ dict }: ProductionS5Props) => {
     const [first, second, third, fourth] = dict.cards;
     return (
         <div className="container py-32">

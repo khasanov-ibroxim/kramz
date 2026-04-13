@@ -8,17 +8,6 @@ import i0_1 from "@/assets/home/home_s5/turkey.png"
 import i0_2 from "@/assets/home/home_s5/russia.png"
 
 
-import i1_1 from "@/assets/home/home_s5/1_1.jpg"
-import i1_2 from "@/assets/home/home_s5/1_2.jpg"
-import i1_3 from "@/assets/home/home_s5/1_3.jpg"
-import i1_4 from "@/assets/home/home_s5/1_4.jpg"
-import i1_5 from "@/assets/home/home_s5/1_5.jpg"
-
-import i2_1 from "@/assets/home/home_s5/2_1.png"
-import i2_2 from "@/assets/home/home_s5/2_2.jpg"
-import i2_3 from "@/assets/home/home_s5/2_3.jpg"
-import i2_4 from "@/assets/home/home_s5/2_4.png"
-import i2_5 from "@/assets/home/home_s5/2_5.jpg"
 import type {HomeDictionary} from "@/lib/dictionary";
 
 // Images are kept as StaticImageData — only text comes from dict

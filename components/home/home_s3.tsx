@@ -55,7 +55,7 @@ function ProductCard({item, index}: { item: { title: string; desc: string; img: 
 
 // ── Main ───────────────────────────────────────────────────
 const HomeS3 = ({ dict }: HomeS3Props) => {
-    const [activeTab, setActiveTab] = useState(0);
+    const [activeTab] = useState(0);
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, {once: true, margin: '-40px'});
 

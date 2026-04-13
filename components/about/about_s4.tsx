@@ -1,7 +1,8 @@
 "use client"
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import Image, {StaticImageData} from 'next/image';
+import Image from 'next/image';
+import type { StaticImageData } from 'next/image';
 import i3 from "@/assets/about/about_s4/Ismailov_Ismail.jpg"
 import i2 from "@/assets/about/about_s4/Ismailov_Javlon.jpg"
 import i1 from "@/assets/about/about_s4/Ismailov_Temur.jpg"
@@ -13,29 +14,6 @@ const TEAM_IMAGES = [i1, i2, i3, i4, i5];
 
 interface AboutS4Props {
     dict: AboutDictionary['s4'];
-}
-
-function LargeCard({ member, image, delay }: {
-    member: { name: string; role: string }; image: StaticImageData|string; delay: number;
-}) {
-    const ref = useRef(null);
-    const inView = useInView(ref, { once: true, margin: '-40px' });
-    return (
-        <motion.div ref={ref}
-                    initial={{ opacity: 0, y: 24 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="bg-white/60 rounded-2xl overflow-hidden flex flex-col row-span-2 h-full"
-        >
-            <div className="w-full flex-1 overflow-hidden">
-                <Image src={image} alt={member.name} className="w-full h-full md:aspect-[5/2] rounded-xl object-cover"/>
-            </div>
-            <div className="px-5 py-5">
-                <p className="other_font font-bold text-[20px] text-[#2B362D] leading-snug mb-1">{member.name}</p>
-                <p className="other_font text-[16px] text-black/50">{member.role}</p>
-            </div>
-        </motion.div>
-    );
 }
 
 function SmallCard({ member, image, delay }: {
@@ -50,7 +28,7 @@ function SmallCard({ member, image, delay }: {
                     transition={{ duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
                     className="bg-white/60 rounded-2xl overflow-hidden flex flex-row items-start gap-4 p-5"
         >
-            <Image src={image} alt={member.name} className="w-[110px] h-[120px] rounded-xl object-contain"/>
+            <Image src={image} alt={member.name} className="w-[110px] h-[120px] rounded-xl object-contain" />
             <div>
                 <p className="other_font font-bold text-[20px] text-[#2B362D] leading-snug">{member.name}</p>
                 <p className="other_font text-[16px] text-black/50 leading-snug">{member.role}</p>
@@ -69,7 +47,7 @@ const AboutS4 = ({ dict }: AboutS4Props) => {
                     <div className="md:row-span-1 h-full">
                         <SmallCard member={large} image={TEAM_IMAGES[0]} delay={0} />
                     </div>
-                    {rest.map((member:AboutDictionary['s4']['member'], i:number) => (
+                    {rest.map((member: AboutDictionary['s4']['member'], i: number) => (
                         <SmallCard key={member.name} member={member} image={TEAM_IMAGES[i + 1]} delay={0.1 + i * 0.08} />
                     ))}
                 </div>

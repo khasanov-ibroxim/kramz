@@ -63,7 +63,7 @@ const Card = ({ card, image }: { card: { title: string; description: string | st
     );
 };
 
-const ProductionS1 = ({ dict, commonDict }: ProductionS1Props) => {
+const ProductionS1 = ({ dict }: ProductionS1Props) => {
     const [first, second, ...rest] = dict.cards;
     return (
         <div className="py-32 container">

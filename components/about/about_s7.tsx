@@ -1,25 +1,21 @@
 "use client"
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Image, { StaticImageData } from 'next/image';
 import type { AboutDictionary, CommonDictionary } from '@/lib/dictionary';
 
-// 🔥 images
 import img1 from "@/assets/about/about_s3/1.png";
 import img2 from "@/assets/about/about_s3/2.png";
 import img3 from "@/assets/about/about_s3/3.png";
-
 import img4 from "@/assets/about/about_s3/4.png";
 import img5 from "@/assets/about/about_s3/6.png";
 import img6 from "@/assets/about/about_s3/7.png";
-
 import img7 from "@/assets/about/about_s3/8.png";
 
 const EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
-// 🔥 tab -> images
-const tabImages: Record<number, StaticImageData[]> = {
-    0: [img1, img2, img3,],
+const TAB_IMAGES: Record<number, StaticImageData[]> = {
+    0: [img1, img2, img3],
     1: [img4, img5, img6],
     2: [img7],
 };
@@ -31,13 +27,11 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
     const titleRef = useRef(null);
     const titleInView = useInView(titleRef, { once: true, margin: '-40px' });
 
-    const images = tabImages[activeTab] || [];
+    const images = useMemo(() => TAB_IMAGES[activeTab] ?? [], [activeTab]);
 
-    // 🔥 keyboard navigation
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
             if (selectedIndex === null) return;
-
             if (e.key === "Escape") setSelectedIndex(null);
             if (e.key === "ArrowRight")
                 setSelectedIndex((prev) => (prev! + 1) % images.length);
@@ -46,7 +40,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                     prev === 0 ? images.length - 1 : prev! - 1
                 );
         };
-
         window.addEventListener("keydown", handleKey);
         return () => window.removeEventListener("keydown", handleKey);
     }, [selectedIndex, images]);
@@ -55,7 +48,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
         <div className="relative py-16 bg-[#E9F0EF] rounded-2xl overflow-hidden">
             <div className="container mx-auto px-6 lg:px-10">
 
-                {/* TITLE */}
                 <motion.h2
                     ref={titleRef}
                     initial={{ opacity: 0, y: 20 }}
@@ -66,16 +58,13 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                     {dict.title}
                 </motion.h2>
 
-                {/* TABS */}
                 <div className="flex flex-wrap gap-2 mb-8 bg-white p-1 rounded-full w-fit">
-                    {dict.tabs.map((tab:AboutDictionary['s7']['tabs'], i:number) => (
+                    {dict.tabs.map((tab: AboutDictionary['s7']['tabs'], i: number) => (
                         <button
                             key={i}
                             onClick={() => setActiveTab(i)}
                             className={`px-5 py-2 rounded-full text-sm transition ${
-                                activeTab === i
-                                    ? 'bg-[#50D873] text-white'
-                                    : 'text-black'
+                                activeTab === i ? 'bg-[#50D873] text-white' : 'text-black'
                             }`}
                         >
                             {tab.label}
@@ -83,7 +72,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                     ))}
                 </div>
 
-                {/* IMAGES GRID */}
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={activeTab}
@@ -112,7 +100,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                     </motion.div>
                 </AnimatePresence>
 
-                {/* 🔥 MODAL GALLERY + SWIPE */}
                 <AnimatePresence>
                     {selectedIndex !== null && (
                         <motion.div
@@ -121,7 +108,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                         >
-                            {/* CLOSE */}
                             <button
                                 onClick={() => setSelectedIndex(null)}
                                 className="absolute top-6 right-6 text-white text-3xl z-50"
@@ -129,7 +115,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                                 ✕
                             </button>
 
-                            {/* LEFT */}
                             {images.length > 1 && (
                                 <button
                                     onClick={() =>
@@ -143,22 +128,18 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                                 </button>
                             )}
 
-                            {/* IMAGE + SWIPE */}
                             <motion.div
                                 key={selectedIndex}
                                 drag="x"
                                 dragConstraints={{ left: 0, right: 0 }}
                                 dragElastic={0.7}
-                                onDragEnd={(e, info) => {
+                                onDragEnd={(_e, info) => {
                                     if (info.offset.x < -100 || info.velocity.x < -500) {
-                                        // 👉 next
                                         setSelectedIndex((prev) =>
                                             prev === images.length - 1 ? 0 : prev! + 1
                                         );
                                     }
-
                                     if (info.offset.x > 100 || info.velocity.x > 500) {
-                                        // 👉 prev
                                         setSelectedIndex((prev) =>
                                             prev === 0 ? images.length - 1 : prev! - 1
                                         );
@@ -178,7 +159,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                                 />
                             </motion.div>
 
-                            {/* RIGHT */}
                             {images.length > 1 && (
                                 <button
                                     onClick={() =>
@@ -194,7 +174,6 @@ const AboutS7 = ({ dict }: { dict: AboutDictionary['s7']; commonDict: CommonDict
                         </motion.div>
                     )}
                 </AnimatePresence>
-
             </div>
         </div>
     );

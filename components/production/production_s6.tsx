@@ -2,7 +2,7 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import type { StaticImageData } from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import type { ProductionDictionary } from '@/lib/dictionary';
 
 // ── Мужская (Men's) images ────────────────────────────────────────────
@@ -136,12 +136,16 @@ const ImageModal = ({
     const handleTouchEnd = (e: React.TouchEvent) => {
         if (touchStart === null) return;
         const diff = touchStart - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) diff > 0 ? goNext() : goPrev();
+        if (Math.abs(diff) > 50) if (diff > 0) {
+            goNext();
+        } else {
+            goPrev();
+        }
         setTouchStart(null);
     };
 
     const variants = {
-        enter: (d: number) => ({ x: d > 0 ? '100%' : '-100%', opacity: 0 }),
+         enter: (d: number) => ({ x: d > 0 ? '100%' : '-100%', opacity: 0 }),
         center: { x: 0, opacity: 1 },
         exit: (d: number) => ({ x: d > 0 ? '-100%' : '100%', opacity: 0 }),
     };
@@ -210,7 +214,9 @@ const ImageModal = ({
                             className="absolute inset-0 flex items-center justify-center px-16"
                         >
                             {/* stopPropagation only on the image itself */}
-                            <img
+                            <Image
+                                width={300}
+                                height={300}
                                 src={images[current].src.src}
                                 alt=""
                                 className="max-w-full max-h-full object-contain rounded-2xl select-none"
@@ -258,7 +264,9 @@ const ImageGallery = ({
                 className="group relative rounded-2xl overflow-hidden cursor-pointer shadow-lg shadow-black/30"
                 style={{ aspectRatio: '9/16' }}
             >
-                <img
+                <Image
+                    width={300}
+                    height={300}
                     src={img.src.src}
                     alt=""
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
