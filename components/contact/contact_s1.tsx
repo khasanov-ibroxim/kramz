@@ -10,7 +10,7 @@ const contacts = [
         ],
     },
     {
-        title: "Telefon",
+        title: "Телефон",
         lines: [
             { text: "+998 97 857 00 05", href: "tel:+998978570005" },
         ],
