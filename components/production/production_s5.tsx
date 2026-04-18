@@ -21,7 +21,7 @@ const Card = ({ card, image }: { card: { title: string; description: string[] };
         <motion.div whileHover="hover" initial="rest" animate="rest"
                     className="relative p-10 w-full h-full rounded-[20px] overflow-hidden bg-[#0D3E29] border border-black/[0.07] cursor-pointer">
 
-            {/* Rasm — faqat hover da ko'rinadi */}
+
             <motion.img
                 src={image.src}
                 alt={card.title}
