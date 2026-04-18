@@ -5,9 +5,9 @@ import type { StaticImageData } from 'next/image';
 import type { ProductionDictionary, CommonDictionary } from '@/lib/dictionary';
 
 import i1 from "@/assets/production/production_s5/DSC04386.jpg"
-import i2 from "@/assets/production/production_s5/DSC04410.jpg"
-import i3 from "@/assets/production/production_s5/DSC04299.jpg"
-import i4 from "@/assets/production/production_s5/DSC04166.jpg"
+import i2 from "@/assets/production/production_s5/DSC04316.jpg"
+import i3 from "@/assets/production/production_s5/DSC01066.jpg"
+import i4 from "@/assets/production/production_s5/DSC04263.jpg"
 
 interface ProductionS5Props {
     dict: ProductionDictionary['s5'];

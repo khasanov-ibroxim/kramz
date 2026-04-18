@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from "next/image";
 
-import img1 from "@/assets/home/home_header/DSC04122.jpg"
-import img2 from "@/assets/home/home_header/DSC04119.jpg"
+import img1 from "@/assets/home/home_header/DSC04130.jpg"
+import img2 from "@/assets/home/home_header/DSC04173.jpg"
 
 
 const IMAGES = [

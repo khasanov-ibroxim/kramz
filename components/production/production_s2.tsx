@@ -2,7 +2,7 @@
 import React, {useRef} from 'react';
 import {motion, useInView} from "framer-motion";
 import Image from "next/image";
-import watermaker_s6 from "@/assets/production/production_s2/DSC04194.jpg";
+import watermaker_s6 from "@/assets/production/production_s2/DSC04180.jpg";
 import type {ProductionDictionary} from "@/lib/dictionary";
 
 interface Production2Props {

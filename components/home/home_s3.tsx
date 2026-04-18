@@ -2,14 +2,11 @@
 import React, {useRef, useState} from 'react';
 import {motion, useInView, AnimatePresence} from 'framer-motion';
 import i1 from "@/assets/home/home_s3/716da3ecb5500d70b1b469f8dd6fb673.jpg"
-import i2 from "@/assets/home/home_s3/DSC04366.jpg"
-import i3 from "@/assets/home/home_s3/DSC04280.jpg"
-import i4 from "@/assets/home/home_s3/8e6a4fdfdde60f974dd7ada2a582ae61.jpg"
-import i5 from "@/assets/home/home_s3/file_00000000ea94720aa889984c2a0a7718.jpg"
-import i6 from "@/assets/home/home_s3/6.jpg"
-import i7 from "@/assets/home/home_s3/7.jpg"
-import i8 from "@/assets/home/home_s3/8.jpg"
-import i9 from "@/assets/home/home_s3/9.jpg"
+import i2 from "@/assets/home/home_s3/DSC04412.jpg"
+import i3 from "@/assets/home/home_s3/DSC01061.jpg"
+import i4 from "@/assets/home/home_s3/image_2026-04-18_12-51-17.jpg"
+import i5 from "@/assets/home/home_s3/image_2026-04-18_12-55-49.jpg"
+
 import Image, {StaticImageData} from "next/image";
 import type {HomeDictionary} from "@/lib/dictionary";
 
@@ -65,10 +62,6 @@ const HomeS3 = ({ dict }: HomeS3Props) => {
             ...item,
             img: [i1, i2, i3, i4, i5][i]
         })),
-        dict.solutions.map((item, i) => ({
-            ...item,
-            img: [i6, i7, i8, i9][i]
-        }))
     ];
 
     const items = TAB_DATA[activeTab] ?? [];
