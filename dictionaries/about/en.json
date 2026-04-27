@@ -1,31 +1,31 @@
 {
   "header": {
-    "title": "About Us"
+    "title": "О компании"
   },
   "s1": {
-    "title": "Aluminum solutions\nfor the present and future",
-    "text": "KraMZ is one of the largest manufacturers and engineering centers of aluminum products and solutions in Russia and CIS"
+    "title": "Формируя современную текстильную индустрию",
+    "text": "Мы объединяем опыт, технологии и системный подход, чтобы формировать современное текстильное производство, отвечающее глобальным стандартам качества и устойчивого развития."
   },
   "s2": {
-    "title": "Bringing client ideas to life",
-    "text": "Our main focus at work is people, clients and safety",
+    "title": "Стратегия и ценности",
+    "text": "Системный подход к развитию, где технологии, ответственность и международные стандарты формируют основу деятельности компании.",
     "cards": [
       {
-        "value": "Mission",
-        "label": "To care for the employees and clients of the company, constantly improving working conditions and perfecting service"
+        "value": "Миссия",
+        "label": "Обеспечивать глобальный рынок качественным трикотажем через полную вертикальную интеграцию-от семени хлопка до финальной строчки."
       },
       {
-        "value": "Goal",
-        "label": "Strengthening positions in Russian and international markets by expanding the product portfolio and continuously improving manufacturing and engineering technologies"
+        "value": "Цель",
+        "label": "Укреплять позиции лидера текстильной отрасли Узбекистана, ежегодно наращивая экспортный потенциал."
       },
       {
-        "value": "Vision",
-        "label": "Inspired by a common idea, company employees are shaping a new tomorrow, in which advanced technologies allow creating a better world"
+        "value": "Видение",
+        "label": "Создание устойчивой текстильной экосистемы, соответствующей самым жестким мировым требованиям."
       }
     ]
   },
   "s3": {
-    "title": "History",
+    "title": "История развития ",
     "period": "2020 — настоящее время",
     "description": [
       "Основанная в 2020 году в Хорезмской области, Gurlan Global Teks с самого начала ориентировалась на создание современной текстильной экосистемы полного цикла.",
@@ -34,48 +34,65 @@
     ]
   },
   "s4": {
-    "title": "KraMZ Management",
+    "title": "Сила компании",
     "team": [
-      { "name": "Oleg Vladimirovich Buts",          "role": "General Director" },
-      { "name": "Inga Viktorovna Nikitina",          "role": "Commercial Director" },
-      { "name": "Egor Sergeevich Lebedev",           "role": "Director of Strategic Production Development" },
-      { "name": "Vyacheslav Yuryevich Maydurov",     "role": "Technical Director" },
-      { "name": "Anna Sergeevna Burkátskaya",        "role": "HR Director" }
+
+      {
+        "name": "Исмаилов Темур",
+        "role": "Учредитель"
+      },
+      {
+        "name": "Исмаилов Жавлон",
+        "role": "Директор"
+      },
+      {
+        "name": "Исмаилов Исмаил",
+        "role": "Начальник отдела по производству"
+      },
+
+      {
+        "name": "Курбонов Шерзод",
+        "role": "Начальник отдела по маркетингу и IT"
+      },
+      {
+        "name": "Самандаров Темур",
+        "role": "Директор по переработке хлопка"
+      }
     ]
   },
   "s5": {
-    "title": "Production Areas",
-    "subtitle": "Krasnoyarsk Metallurgical Plant is the largest enterprise for deep processing of aluminum and aluminum alloys east of the Urals",
+    "title": "Направления деятельности",
+    "subtitle": "Gurlan Global Teks — это интегрированная текстильная компания, объединяющая ключевые этапы производства в единую систему — от сырья до готовой продукции.",
     "cards": [
       {
-        "title": "Smelting production",
-        "description": "Production of aluminum rod Ø 9.5 mm and the full range of aluminum alloys, including high-alloy series 2000, 5000, 7000"
+        "title": "Выращивание хлопка",
+        "description": "Собственные поля гарантируют 100% контроль сырья и стабильную себестоимость, защищая ваш бизнес от резких рыночных колебаний цен на хлопок."
       },
       {
-        "title": "Pressing production",
-        "description": "Production of extrusion products from hard- and easy-deformed alloys: pipes, rods, profiles"
+        "title": "Производство пряжи",
+        "description": "Оборудование Rieter и Saurer обеспечивает производство 4000 тонн пряжи, гарантируя её высокую прочность и отсутствие дефектов в готовой продукции."
       },
       {
-        "title": "Rolling production",
-        "description": "The rolling section is focused on the production of coiled strip and plate"
+        "title": "Крашение и отделка",
+        "description": "Мощность 3500 тонн в год и красители OEKO-TEX гарантируют безупречную стойкость цвета, мягкость полотна и полную экологическую безопасность продукции."
       },
       {
-        "title": "Forging and stamping production",
-        "description": "Manufacturing of forgings and stampings for various industries and automotive wheel stampings from 14 to 20 inches"
+        "title": "Производство тканей",
+        "description": "Выпуск широкого ассортимента трикотажа: от кулирки до футера. Собственное производство позволяет оперативно создавать качественные полотна под любые требования заказчика."
       },
       {
-        "title": "Tool production",
-        "description": "KraMZ has its own base for designing press tooling for in-house production"
+        "title": "Швейное производство",
+        "description": "Два современных комплекса мощностью 6 млн изделий в год работают по системе СТМ, обеспечивая безупречный крой и промышленный масштаб исполнения."
       },
       {
-        "title": "Aluminum Structures Center",
-        "description": "Wide-profile production allowing the manufacture of non-standard aluminum structures of any complexity and dimensions"
+        "title": "Готовая продукция",
+        "description": "Вертикальный цикл «от поля до пошива» гарантирует вам лучшую цену на рынке, прозрачное качество и стабильные сроки поставок."
       }
     ]
   },
   "s6": {
-    "title": "Sustainable Development",
-    "text": "We strive to use the principles of sustainable development in all areas of our activities"
+    "title": "Устойчивое развитие",
+    "text": "Вертикальная интеграция Gurlan Global Teks защищает ваш бизнес от дефицита сырья и резких скачков цен. Мы гарантируем 100% прозрачность производства и стабильное качество, подтвержденное международными сертификатами OEKO-TEX и SEDEX. Ваша репутация-в надежных руках."
   },
   "s7": {
     "title": "Выставки",

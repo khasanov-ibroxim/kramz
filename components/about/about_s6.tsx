@@ -10,7 +10,7 @@ interface AboutS6Props {
 
 const AboutS6 = ({ dict, commonDict }: AboutS6Props) => {
     return (
-        <div className="relative w-full h-[70vh] overflow-hidden ">
+        <div className="relative w-full h-[80vh] overflow-hidden ">
             <Image src={bg} alt="sustainable" className="absolute w-full h-full z-10 object-cover"/>
             <div className="container">
                 <div className=" absolute z-20 flex flex-col w-full h-full justify-start top-24 items-start overflow-hidden">
