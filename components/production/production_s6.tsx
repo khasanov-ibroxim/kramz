@@ -44,7 +44,7 @@ interface ProductionS6Props {
     dict: ProductionDictionary['s6'];
 }
 
-type TabKey = 'men' | 'women';
+type TabKey = 'men' | 'women' | "paint" | "fabric" | "yarn";
 
 const MEN_IMAGES: { id: number; src: StaticImageData }[] = [
     { id: 1, src: m1 },
@@ -84,6 +84,9 @@ const WOMEN_IMAGES: { id: number; src: StaticImageData }[] = [
 const GALLERY: Record<TabKey, { id: number; src: StaticImageData }[]> = {
     men: MEN_IMAGES,
     women: WOMEN_IMAGES,
+    paint: WOMEN_IMAGES,
+    fabric: WOMEN_IMAGES,
+    yarn: WOMEN_IMAGES,
 };
 
 /* ─── Image Modal ─────────────────────────────────────────────── */
@@ -294,6 +297,9 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
     const tabs: { key: TabKey; label: string }[] = [
         { key: 'men',   label: dict.tabs.men   },
         { key: 'women', label: dict.tabs.women },
+        { key: 'paint', label: dict.tabs.paint },
+        { key: 'fabric', label: dict.tabs.fabric },
+        { key: 'yarn', label: dict.tabs.yarn},
     ];
 
     const currentImages = GALLERY[tab];

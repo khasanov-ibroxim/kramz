@@ -4,6 +4,17 @@ import { motion, useInView } from 'framer-motion';
 import watermarker from "@/assets/loadingElement.svg"
 import Image from "next/image";
 import type {HomeDictionary} from "@/lib/dictionary";
+import { Factory, ShieldCheck, Globe, Handshake, Lightbulb, Leaf, type LucideIcon } from "lucide-react"
+
+// Icon mapping by index (matches ru.json s4.stats order)
+const STAT_ICONS: LucideIcon[] = [
+    Factory,      // 01 - Полный цикл производства
+    ShieldCheck,  // 02 - Высокое качество
+    Globe,        // 03 - Экспортная ориентация
+    Handshake,    // 04 - Надёжное партнёрство
+    Lightbulb,    // 05 - Инновации и развитие
+    Leaf,         // 06 - Устойчивое производство
+];
 
 // ── Параграф ───────────────────────────────────────────────
 function TextPara({ text, delay }: { text: string; delay: number }) {
@@ -23,9 +34,11 @@ function TextPara({ text, delay }: { text: string; delay: number }) {
 }
 
 // ── Карточка ───────────────────────────────────────────────
-function StatCard({ stat, index }: { stat: { value: string; title:string, label: string }; index: number }) {
+function StatCard({ stat, index }: { stat: { value: string; title: string; label: string }; index: number }) {
     const ref = useRef(null);
     const inView = useInView(ref, { once: true, margin: '-50px' });
+
+    const Icon = STAT_ICONS[index] ?? Factory;
 
     return (
         <motion.div
@@ -51,13 +64,25 @@ function StatCard({ stat, index }: { stat: { value: string; title:string, label:
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 h-[90%] w-[1px] bg-black/20 transition-opacity duration-300 group-hover:opacity-0" />
             </>
 
-            <div className={[
-                "title_font font-bold leading-none tracking-tight mb-3",
-                "text-2xl sm:text-3xl md:text-4xl",
-                "text-[#50D873] group-hover:text-white",
-                "[transition:color_0.35s_ease]",
-            ].join(' ')}>
-                {stat.value}
+            {/* Number + Icon row */}
+            <div className="flex items-center justify-between w-full mb-3">
+                <div className={[
+                    "title_font font-bold leading-none tracking-tight",
+                    "text-2xl sm:text-3xl md:text-4xl",
+                    "text-[#50D873] group-hover:text-white",
+                    "[transition:color_0.35s_ease]",
+                ].join(' ')}>
+                    {stat.value}
+                </div>
+
+                <Icon
+                    className={[
+                        "w-7 h-7 sm:w-8 sm:h-8 shrink-0",
+                        "text-[#50D873] group-hover:text-white",
+                        "[transition:color_0.35s_ease]",
+                    ].join(' ')}
+                    strokeWidth={1.5}
+                />
             </div>
 
             <div className={[
