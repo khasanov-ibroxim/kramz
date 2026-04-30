@@ -5,7 +5,7 @@ import i1 from "@/assets/home/home_s3/716da3ecb5500d70b1b469f8dd6fb673.jpg"
 import i2 from "@/assets/home/home_s3/DSC04412.jpg"
 import i3 from "@/assets/home/home_s3/DSC01061.jpg"
 import i4 from "@/assets/home/home_s3/image_2026-04-18_12-51-17.jpg"
-import i5 from "@/assets/home/home_s3/image_2026-04-18_12-55-49.jpg"
+import i5 from "@/assets/home/home_s3/kkkkkk.jpg"
 
 import Image, {StaticImageData} from "next/image";
 import type {HomeDictionary} from "@/lib/dictionary";

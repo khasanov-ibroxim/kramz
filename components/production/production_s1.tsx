@@ -6,7 +6,7 @@ import type { ProductionDictionary, CommonDictionary } from '@/lib/dictionary';
 
 import i1 from "@/assets/production/production_s1/DSC04440.jpg"
 import i2 from "@/assets/production/production_s1/DSC04323.jpg"
-import i3 from "@/assets/production/production_s1/DSC01060.jpg"
+import i3 from "@/assets/production/production_s1/kras.jpg"
 import i4 from "@/assets/production/production_s1/DSC04173.jpg"
 
 interface ProductionS1Props {
