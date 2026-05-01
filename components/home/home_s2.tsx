@@ -56,7 +56,10 @@ function StatCard({ stat, index, total }: {
             </div>
             <div className={["other_font text-sm leading-snug max-w-[200px]",
                 stat.highlight ? "text-white/75" : "text-black/55"].join(" ")}>
-                {stat.label}
+                {stat.label && Array.isArray(stat.label) ? <>
+                    {stat.label[0]} <br/>
+                    {stat.label[1]}
+                </>: stat.label}
             </div>
         </motion.div>
     );
