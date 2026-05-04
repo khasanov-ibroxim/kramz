@@ -1,5 +1,6 @@
 import { i18n, Locale } from "@/i18n-config";
 import { getCommonDictionary } from "@/lib/dictionary";
+import { generateOrganizationSchema, generateWebSiteSchema, generateManufacturerSchema } from "@/lib/structured-data";
 import { notFound } from "next/navigation";
 import PageTransition from "@/components/UI/Pagetransition";
 import Navbar from "@/components/UI/navbar";
@@ -24,11 +25,29 @@ export default async function LangLayout({
 
     const dict = await getCommonDictionary(lang as Locale);
 
+    const organizationSchema = generateOrganizationSchema(lang as Locale);
+    const websiteSchema = generateWebSiteSchema(lang as Locale);
+    const manufacturerSchema = generateManufacturerSchema(lang as Locale);
+
     return (
-        <PageTransition>
-            <Navbar lang={lang} />
-            {children}
-            <Footer dict={dict} lang={lang}/>
-        </PageTransition>
+        <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(manufacturerSchema) }}
+            />
+            <PageTransition>
+                <Navbar lang={lang} />
+                {children}
+                <Footer dict={dict} lang={lang}/>
+            </PageTransition>
+        </>
     );
 }

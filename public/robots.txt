@@ -1,0 +1,22 @@
+# robots.txt for Gurlan Global Teks
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://gurlanglobalteks.uz/sitemap.xml
+
+# Disallow admin and private paths
+Disallow: /api/
+Disallow: /_next/
+
+# Allow all images and assets
+Allow: /optimized/
+Allow: /public/
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.webp
+Allow: /*.svg
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

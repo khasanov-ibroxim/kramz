@@ -18,6 +18,7 @@ const EASE = [0.76, 0, 0.24, 1] as const;
 const NAV_LINKS = [
     { label: 'О компании', href: '/about' },
     { label: 'Производство',   href: '/production' },
+    { label: 'Продукция',   href: '/products' },
     { label: 'Контакты',   href: '/contact' },
 ];
 

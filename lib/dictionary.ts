@@ -20,6 +20,9 @@ export const getAboutDictionary = async (locale: Locale) =>
 export const getProductionDictionary = async (locale: Locale) =>
     (await import(`@/dictionaries/production/${locale}.json`)).default;
 
+export const getProductsDictionary = async (locale: Locale) =>
+    (await import(`@/dictionaries/products/${locale}.json`)).default;
+
 export const getContactDictionary = async (locale: Locale) =>
     (await import(`@/dictionaries/contact/${locale}.json`)).default;
 

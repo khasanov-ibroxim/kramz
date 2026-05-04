@@ -6,47 +6,64 @@ import Image, { StaticImageData } from 'next/image';
 import type { ProductionDictionary } from '@/lib/dictionary';
 
 // ── Мужская (Men's) images ────────────────────────────────────────────
-import m1 from "@/assets/production/production_s6/men/1.jpg"
-import m2 from "@/assets/production/production_s6/men/2.jpg"
-import m3 from "@/assets/production/production_s6/men/3.jpg"
-import m4 from "@/assets/production/production_s6/men/4.jpg"
-import m5 from "@/assets/production/production_s6/men/5.jpg"
-import m6 from "@/assets/production/production_s6/men/6.jpg"
-import m7 from "@/assets/production/production_s6/men/7.jpg"
-import m8 from "@/assets/production/production_s6/men/8.jpg"
-import m9 from "@/assets/production/production_s6/men/9.jpg"
-import m10 from "@/assets/production/production_s6/men/10.jpg"
-import m11 from "@/assets/production/production_s6/men/11.jpg"
-import m12 from "@/assets/production/production_s6/men/12.jpg"
-import m13 from "@/assets/production/production_s6/men/13.jpg"
-import m14 from "@/assets/production/production_s6/men/14.jpg"
+import m1 from "@/assets/products/men/1.jpg"
+import m2 from "@/assets/products/men/2.jpg"
+import m3 from "@/assets/products/men/3.jpg"
+import m4 from "@/assets/products/men/4.jpg"
+import m5 from "@/assets/products/men/5.jpg"
+import m6 from "@/assets/products/men/6.jpg"
+import m7 from "@/assets/products/men/7.jpg"
+import m8 from "@/assets/products/men/8.jpg"
+import m9 from "@/assets/products/men/9.jpg"
+import m10 from "@/assets/products/men/10.jpg"
+import m11 from "@/assets/products/men/11.jpg"
+import m12 from "@/assets/products/men/12.jpg"
+import m13 from "@/assets/products/men/13.jpg"
+import m14 from "@/assets/products/men/14.jpg"
 
 
 // ── Женская (Women's) images ──────────────────────────────────────────
-import w1 from "@/assets/production/production_s6/women/1.jpg"
-import w2 from "@/assets/production/production_s6/women/2.jpg"
-import w3 from "@/assets/production/production_s6/women/3.jpg"
-import w4 from "@/assets/production/production_s6/women/4.jpg"
-import w5 from "@/assets/production/production_s6/women/5.jpg"
-import w6 from "@/assets/production/production_s6/women/6.jpg"
-import w7 from "@/assets/production/production_s6/women/7.jpg"
-import w8 from "@/assets/production/production_s6/women/8.jpg"
-import w9 from "@/assets/production/production_s6/women/9.jpg"
-import w10 from "@/assets/production/production_s6/women/10.jpg"
-import w11 from "@/assets/production/production_s6/women/11.jpg"
-import w12 from "@/assets/production/production_s6/women/12.jpg"
-import w13 from "@/assets/production/production_s6/women/13.jpg"
-import w14 from "@/assets/production/production_s6/women/14.jpg"
-import w15 from "@/assets/production/production_s6/women/15.jpg"
+import w1 from "@/assets/products/women/1.jpg"
+import w2 from "@/assets/products/women/2.jpg"
+import w3 from "@/assets/products/women/3.jpg"
+import w4 from "@/assets/products/women/4.jpg"
+import w5 from "@/assets/products/women/5.jpg"
+import w6 from "@/assets/products/women/6.jpg"
+import w7 from "@/assets/products/women/7.jpg"
+import w8 from "@/assets/products/women/8.jpg"
+import w9 from "@/assets/products/women/9.jpg"
+import w10 from "@/assets/products/women/10.jpg"
+import w11 from "@/assets/products/women/11.jpg"
+import w12 from "@/assets/products/women/12.jpg"
+import w13 from "@/assets/products/women/13.jpg"
+import w14 from "@/assets/products/women/14.jpg"
+import w15 from "@/assets/products/women/15.jpg"
+
+// ── fabric (fabric) images ──────────────────────────────────────────
+import f1 from "@/assets/products/fabric/1.jpg"
+import f2 from "@/assets/products/fabric/2.jpg"
+import f3 from "@/assets/products/fabric/3.jpg"
+import f4 from "@/assets/products/fabric/4.jpg"
+import f5 from "@/assets/products/fabric/5.jpg"
+import f6 from "@/assets/products/fabric/6.jpg"
+import f7 from "@/assets/products/fabric/7.jpg"
+import f8 from "@/assets/products/fabric/8.jpg"
+import f9 from "@/assets/products/fabric/9.jpg"
 
 
 interface ProductionS6Props {
     dict: ProductionDictionary['s6'];
 }
 
-type TabKey = 'men' | 'women' | "paint" | "fabric" | "yarn";
+type TabKey = 'women' | 'men' | "paint" | "fabric" | "yarn";
 
-const MEN_IMAGES: { id: number; src: StaticImageData }[] = [
+interface ImageItem {
+    id: number;
+    src: StaticImageData;
+    name?: string;
+}
+
+const MEN_IMAGES: ImageItem[] = [
     { id: 1, src: m1 },
     { id: 2, src: m2 },
     { id: 3, src: m3 },
@@ -63,7 +80,7 @@ const MEN_IMAGES: { id: number; src: StaticImageData }[] = [
     { id: 14, src: m14 },
 ];
 
-const WOMEN_IMAGES: { id: number; src: StaticImageData }[] = [
+const WOMEN_IMAGES: ImageItem[] = [
     { id: 1, src: w1 },
     { id: 2, src: w2 },
     { id: 3, src: w3 },
@@ -81,11 +98,23 @@ const WOMEN_IMAGES: { id: number; src: StaticImageData }[] = [
     { id: 15, src: w15 },
 ];
 
-const GALLERY: Record<TabKey, { id: number; src: StaticImageData }[]> = {
+const FABRIC_IMAGES: ImageItem[] = [
+    { id: 1, src: f1, name: "2 нитка" },
+    { id: 2, src: f2, name: "3 нитка" },
+    { id: 3, src: f3, name: "Kulirka" },
+    { id: 4, src: f4, name: "Велюр" },
+    { id: 5, src: f5, name: "Интерлок" },
+    { id: 6, src: f6, name: "Кашкорсе" },
+    { id: 7, src: f7, name: "Махра" },
+    { id: 8, src: f8, name: "Пике" },
+    { id: 9, src: f9, name: "Супрем" },
+];
+
+const GALLERY: Record<TabKey, ImageItem[]> = {
     men: MEN_IMAGES,
     women: WOMEN_IMAGES,
     paint: WOMEN_IMAGES,
-    fabric: WOMEN_IMAGES,
+    fabric: FABRIC_IMAGES,
     yarn: WOMEN_IMAGES,
 };
 
@@ -95,7 +124,7 @@ const ImageModal = ({
                         startIndex,
                         onClose,
                     }: {
-    images: { id: number; src: StaticImageData }[];
+    images: ImageItem[];
     startIndex: number;
     onClose: () => void;
 }) => {
@@ -250,9 +279,11 @@ const ImageModal = ({
 const ImageGallery = ({
                           images,
                           onOpen,
+                          showNames = false,
                       }: {
-    images: { id: number; src: StaticImageData }[];
+    images: ImageItem[];
     onOpen: (index: number) => void;
+    showNames?: boolean;
 }) => (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
         {images.map((img, i) => (
@@ -279,7 +310,7 @@ const ImageGallery = ({
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <span className="other_font text-xs text-white/80">
-                        {String(i + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}
+                        {showNames && img.name ? img.name : `${String(i + 1).padStart(2, '0')} / ${String(images.length).padStart(2, '0')}`}
                     </span>
                 </div>
                 {/* Green corner accent */}
@@ -294,18 +325,18 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
     const [tab, setTab] = useState<TabKey>('men');
     const [modalIndex, setModalIndex] = useState<number | null>(null);
 
-    const tabs: { key: TabKey; label: string }[] = [
-        { key: 'men',   label: dict.tabs.men   },
-        { key: 'women', label: dict.tabs.women },
-        { key: 'paint', label: dict.tabs.paint },
+    const tabs: { key: TabKey; label: string; disabled?: boolean }[] = [
+        { key: 'women',   label: dict.tabs.women   },
+        { key: 'men', label: dict.tabs.men },
+        { key: 'paint', label: dict.tabs.paint, disabled: true },
         { key: 'fabric', label: dict.tabs.fabric },
-        { key: 'yarn', label: dict.tabs.yarn},
+        { key: 'yarn', label: dict.tabs.yarn, disabled: true },
     ];
 
     const currentImages = GALLERY[tab];
 
     return (
-        <div className="bg-[#0D3E29] py-16 md:py-24">
+        <div className="bg-[#0D3E29] py-24 md:py-32">
             <div className="container">
 
                 {/* Header row */}
@@ -315,18 +346,19 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
                     </h1>
 
                     {/* Tab switcher */}
-                    <div className="flex items-center gap-1 bg-white/30 rounded-full p-1 w-fit">
-                        {tabs.map(({ key, label }) => (
+                    <div className="grid grid-cols-3 md:flex items-center gap-1.5 md:gap-1 bg-white/30 rounded-2xl md:rounded-full p-1.5 md:p-1 w-full md:w-fit">
+                        {tabs.map(({ key, label, disabled }) => (
                             <button
                                 key={key}
-                                onClick={() => setTab(key)}
-                                className="other_font relative px-5 py-2 rounded-full text-sm font-medium transition-colors duration-300 cursor-pointer"
+                                onClick={() => !disabled && setTab(key)}
+                                disabled={disabled}
+                                className="other_font relative px-3 md:px-5 py-2 rounded-xl md:rounded-full text-xs md:text-sm font-medium transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap"
                                 style={{ color: tab === key ? '#fff' : '#2B362D' }}
                             >
-                                {tab === key && (
+                                {tab === key && !disabled && (
                                     <motion.span
                                         layoutId="tab-bg"
-                                        className="absolute inset-0 bg-[#50D873] rounded-full"
+                                        className="absolute inset-0 bg-[#50D873] rounded-xl md:rounded-full"
                                         transition={{ type: 'spring', bounce: 0.2, duration: 0.4 }}
                                     />
                                 )}
@@ -348,6 +380,7 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
                         <ImageGallery
                             images={currentImages}
                             onOpen={(i) => setModalIndex(i)}
+                            showNames={tab === 'fabric'}
                         />
                     </motion.div>
                 </AnimatePresence>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Locale } from '@/i18n-config';
 import { getHomeDictionary, getCommonDictionary } from '@/lib/dictionary';
+import { generatePageMetadata } from '@/lib/metadata';
 
 import HomeHeader from "@/components/home/home_header";
 import HomeS2 from "@/components/home/home_s2";
@@ -9,6 +10,11 @@ import HomeS4 from "@/components/home/home_s4";
 import HomeS5 from "@/components/home/home_s5";
 import HomeS6 from "@/components/home/home_s6";
 import HomeS7 from "@/components/home/home_s7";
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
+    const { lang } = await params;
+    return generatePageMetadata('home', lang as Locale);
+}
 
 const Page = async ({ params }: { params: Promise<{ lang: string }> }) => {
     const { lang } = await params;
