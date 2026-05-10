@@ -2,7 +2,7 @@ import React from 'react';
 import { Locale } from "@/i18n-config";
 import { generatePageMetadata } from '@/lib/metadata';
 import { getProductsDictionary} from "@/lib/dictionary";
-import Products from "@/components/products/products";
+import {ProductionS6 as Products} from "@/components/products/products";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }) {
     const { lang } = await params;

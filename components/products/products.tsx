@@ -98,25 +98,17 @@ const WOMEN_IMAGES: ImageItem[] = [
     { id: 15, src: w15 },
 ];
 
-const FABRIC_IMAGES: ImageItem[] = [
-    { id: 1, src: f1, name: "2 нитка" },
-    { id: 2, src: f2, name: "3 нитка" },
-    { id: 3, src: f3, name: "Кулирка" },
-    { id: 4, src: f4, name: "Велюр" },
-    { id: 5, src: f5, name: "Интерлок" },
-    { id: 6, src: f6, name: "Кашкорсе" },
-    { id: 7, src: f7, name: "Махра" },
-    { id: 8, src: f8, name: "Пике" },
-    { id: 9, src: f9, name: "Супрем" },
+const FABRIC_IMAGES_BASE = [
+    { id: 1, src: f1 },
+    { id: 2, src: f2 },
+    { id: 3, src: f3 },
+    { id: 4, src: f4 },
+    { id: 5, src: f5 },
+    { id: 6, src: f6 },
+    { id: 7, src: f7 },
+    { id: 8, src: f8 },
+    { id: 9, src: f9 },
 ];
-
-const GALLERY: Record<TabKey, ImageItem[]> = {
-    men: MEN_IMAGES,
-    women: WOMEN_IMAGES,
-    paint: WOMEN_IMAGES,
-    fabric: FABRIC_IMAGES,
-    yarn: WOMEN_IMAGES,
-};
 
 /* ─── Image Modal ─────────────────────────────────────────────── */
 const ImageModal = ({
@@ -321,9 +313,29 @@ const ImageGallery = ({
 );
 
 /* ─── Main component ─────────────────────────────────────────────── */
-const ProductionS6 = ({ dict }: ProductionS6Props) => {
+export const ProductionS6 = ({ dict }: ProductionS6Props) => {
     const [tab, setTab] = useState<TabKey>('men');
     const [modalIndex, setModalIndex] = useState<number | null>(null);
+
+    const FABRIC_IMAGES: ImageItem[] = [
+        { id: 1, src: f1, name: dict.fabric_names.i1 },
+        { id: 2, src: f2, name: dict.fabric_names.i2 },
+        { id: 3, src: f3, name: dict.fabric_names.i3 },
+        { id: 4, src: f4, name: dict.fabric_names.i4 },
+        { id: 5, src: f5, name: dict.fabric_names.i5 },
+        { id: 6, src: f6, name: dict.fabric_names.i6 },
+        { id: 7, src: f7, name: dict.fabric_names.i7 },
+        { id: 8, src: f8, name: dict.fabric_names.i8 },
+        { id: 9, src: f9, name: dict.fabric_names.i9 },
+    ];
+
+    const GALLERY: Record<TabKey, ImageItem[]> = {
+        men: MEN_IMAGES,
+        women: WOMEN_IMAGES,
+        paint: WOMEN_IMAGES,
+        fabric: FABRIC_IMAGES,
+        yarn: WOMEN_IMAGES,
+    };
 
     const tabs: { key: TabKey; label: string; disabled?: boolean }[] = [
         { key: 'women',   label: dict.tabs.women   },
@@ -398,4 +410,3 @@ const ProductionS6 = ({ dict }: ProductionS6Props) => {
     );
 };
 
-export default ProductionS6;

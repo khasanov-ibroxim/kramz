@@ -6,5 +6,16 @@
     "paint": "Dyeing",
     "fabric": "Fabric",
     "yarn": "Yarn"
+  },
+  "fabric_names": {
+    "i1": "2TF",
+    "i2": "3TF",
+    "i3": "Jersey",
+    "i4": "Velour",
+    "i5": "Interlock",
+    "i6": "Rib",
+    "i7": "Terry",
+    "i8": "Piqué",
+    "i9": "Supreme"
   }
 }
