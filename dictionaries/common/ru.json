@@ -23,8 +23,9 @@
         "links": [
           { "title": "Главная", "link": "" },
           { "title": "О компании", "link": "about" },
-          { "title": "Производство", "link": "production" },
-          { "title": "Продукция", "link": "products" }
+          { "title": "Продукция", "link": "products" },
+          { "title": "Производство", "link": "production" }
+
         ]
       },
 
