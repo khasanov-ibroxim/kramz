@@ -23,14 +23,8 @@
         "links": [
           { "title": "Home", "link": "" },
           { "title": "About Us", "link": "about" },
-          { "title": "Production", "link": "production" }
-        ]
-      },
-      "clients": {
-        "title": "For Clients",
-        "links": [
-          { "title": "Products", "link": "/products" },
-          { "title": "Services", "link": "/services" }
+          { "title": "Production", "link": "production" },
+          { "title": "Products", "link": "products" }
         ]
       },
       "contacts": {

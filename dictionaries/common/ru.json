@@ -23,16 +23,11 @@
         "links": [
           { "title": "Главная", "link": "" },
           { "title": "О компании", "link": "about" },
-          { "title": "Производство", "link": "production" }
+          { "title": "Производство", "link": "production" },
+          { "title": "Продукция", "link": "products" }
         ]
       },
-      "clients": {
-        "title": "Клиентам",
-        "links": [
-          { "title": "Продукция", "link": "/products" },
-          { "title": "Услуги", "link": "/services" }
-        ]
-      },
+
       "contacts": {
         "title": "Контакты",
         "links": [

@@ -18,7 +18,6 @@ const Footer = ({ dict ,lang}: FooterProps) => {
 
     const navLinks = [
         { title: footer.columns.about.title,    children: footer.columns.about.links },
-        { title: footer.columns.clients.title,  children: footer.columns.clients.links },
         { title: footer.columns.contacts.title, children: footer.columns.contacts.links },
     ];
 
