@@ -9,7 +9,13 @@ import img2 from "@/assets/home/home_header/DSC04173.jpg"
 const IMAGES = [img1, img2];
 
 interface HomeHeaderProps {
-    dict: { title: string };
+    dict: {
+        title: string;
+        videoButton: string;
+        videoModal: {
+            close: string;
+        };
+    };
 }
 
 // ── Play Icon ─────────────────────────────────────────────────
@@ -22,7 +28,7 @@ function PlayIcon() {
 }
 
 // ── Video Modal ───────────────────────────────────────────────
-function VideoModal({ onClose }: { onClose: () => void }) {
+function VideoModal({ onClose, closeText }: { onClose: () => void; closeText: string }) {
     useEffect(() => {
         document.body.style.overflow = 'hidden';
         const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
@@ -98,7 +104,7 @@ function VideoModal({ onClose }: { onClose: () => void }) {
                         onClick={onClose}
                         className="other_font text-white/40 hover:text-white/70 text-xs transition-colors duration-200 cursor-pointer"
                     >
-                        ESC — yopish
+                        {closeText}
                     </button>
                 </div>
             </motion.div>
@@ -204,7 +210,7 @@ const HomeHeader = ({ dict }: HomeHeaderProps) => {
                             className="other_font text-white text-[13px] font-medium whitespace-nowrap hidden sm:block"
                             style={{ letterSpacing: '0.04em' }}
                         >
-                            Video ko&apos;rish
+                            {dict.videoButton}
                         </span>
                     </motion.div>
                 </motion.button>
@@ -243,7 +249,7 @@ const HomeHeader = ({ dict }: HomeHeaderProps) => {
 
             {/* Video Modal */}
             <AnimatePresence>
-                {videoOpen && <VideoModal onClose={() => setVideoOpen(false)} />}
+                {videoOpen && <VideoModal onClose={() => setVideoOpen(false)} closeText={dict.videoModal.close} />}
             </AnimatePresence>
         </>
     );

@@ -1,10 +1,10 @@
 {
-  "title": "АССОРТИМЕНТ ПРОДУКЦИИ",
+  "title": "PRODUCT RANGE",
   "tabs": {
-    "men": "Мужская",
-    "women": "Женская",
-    "paint": "Краска",
-    "fabric": "Полотно",
-    "yarn": "Пряжа"
+    "men": "Men’s",
+    "women": "Women’s",
+    "paint": "Dyeing",
+    "fabric": "Fabric",
+    "yarn": "Yarn"
   }
 }

@@ -1,54 +1,77 @@
 {
   "s1": {
-    "tabs": [
-      { "id": "clients",    "label": "Clients" },
-      { "id": "general",   "label": "General" },
-      { "id": "suppliers", "label": "Suppliers" },
-      { "id": "applicants","label": "Applicants" },
-      { "id": "dealers",   "label": "Official dealers and representatives" }
-    ],
-    "phone": "Phone:",
-    "email": "E-mail:"
+    "subtitle": "Contacts",
+    "title": "We're here to help",
+    "contacts": [
+      {
+        "title": "Email",
+        "lines": [
+          { "text": "gurlanglobal@gmail.com", "href": "mailto:gurlanglobal@gmail.com" }
+        ]
+      },
+      {
+        "title": "Phone",
+        "lines": [
+          { "text": "+998 97 857 00 05", "href": "tel:+998978570005" }
+        ]
+      },
+      {
+        "title": "Telegram",
+        "lines": [
+          { "text": "@ggt_inc", "href": "https://t.me/ggt_inc" }
+        ]
+      },
+      {
+        "title": "WhatsApp",
+        "lines": [
+          { "text": "+998 97 857 00 05", "href": "https://wa.me/998978570005" }
+        ]
+      },
+      {
+        "title": "Instagram",
+        "lines": [
+          { "text": "@ggt_textile", "href": "https://www.instagram.com/ggt_textile/" }
+        ]
+      }
+    ]
   },
   "s2": {
     "title": "Directions",
     "loading": "Loading map...",
     "routeButton": "Get directions",
-    "markers": [
-      {
-        "label": "Commercial Directorate",
-        "popup": { "title": "Commercial Directorate", "hoursLabel": "Working hours:", "hours": "Mon–Fri: 8:00–17:00" }
-      },
-      {
-        "label": "Plant administration",
-        "popup": { "title": "Plant administration", "hoursLabel": "Working hours:", "hours": "Mon–Fri: 8:00–17:00" }
-      },
-      {
-        "label": "Pass office",
-        "popup": { "title": "Freight transport entry point", "hoursLabel": "Working hours:", "hours": "24/7, no days off" }
-      }
-    ]
+    "hoursLabel": "Working hours:",
+    "marker": {
+      "label": "Gurlan Global Teks",
+      "title": "Republic of Uzbekistan, Khorezm Region, Gurlan District, Mustaqillik Street, 5",
+      "hours": "24/7, no days off"
+    }
   },
   "s3": {
     "title": "Contact us",
     "fields": {
-      "name":    "[ Name / organization ]*",
-      "email":   "[ E-mail ]*",
-      "phone":   "[ Phone ]*",
+      "name": "[ Name / organization ]*",
+      "email": "[ E-mail ]*",
+      "phone": "[ Phone ]*",
       "message": "[ Message ]*"
     },
     "consent": {
       "text": "I confirm that I have read and give",
       "link1": "Consent to the processing of my personal data",
-      "middle": "in accordance with Federal Law of 27.07.2006 No.152-FZ in the manner and on the terms specified in the",
+      "middle": "in accordance with the Law of the Republic of Uzbekistan \"On Personal Data\" dated 02.07.2019 No. ZRU-547 in the manner and on the terms specified in the",
       "link2": "Personal Data Processing Policy"
     },
     "captcha": {
       "placeholder": "Enter answer",
       "refreshTitle": "Refresh"
     },
-    "success": "✓ Message sent successfully!",
-    "error": "Sending error. Please try again.",
+    "buttons": {
+      "submit": "Submit",
+      "sending": "Sending..."
+    },
+    "messages": {
+      "success": "✓ Message sent successfully!",
+      "error": "Sending error. Please try again."
+    },
     "validation": {
       "required": "Required field",
       "invalidEmail": "Invalid e-mail",

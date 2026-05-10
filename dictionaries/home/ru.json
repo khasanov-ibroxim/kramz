@@ -1,6 +1,10 @@
 {
   "header": {
-    "title": " Gurlan global teks-ОТ ХЛОПКОВОГО ПОЛЯ ДО ГОТОВОЙ ОДЕЖДЫ ДЛЯ ВАШЕГО БРЕНДА"
+    "title": " Gurlan global teks-ОТ ХЛОПКОВОГО ПОЛЯ ДО ГОТОВОЙ ОДЕЖДЫ ДЛЯ ВАШЕГО БРЕНДА",
+    "videoButton": "Video ko'rish",
+    "videoModal": {
+      "close": "ESC — yopish"
+    }
   },
   "s2": {
     "title": "Ключевые показатели",

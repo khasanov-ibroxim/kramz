@@ -2,6 +2,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronRight, RefreshCw } from 'lucide-react';
+import type { ContactDictionary } from '@/lib/dictionary';
+import PrivacyModal from './PrivacyModal';
+
+interface ContactS3Props {
+    dict: ContactDictionary['s3'];
+    lang: string;
+}
 
 const TELEGRAM_TOKEN = 'YOUR_BOT_TOKEN';
 const CHAT_ID = 'YOUR_CHAT_ID';
@@ -13,13 +20,14 @@ const generateCaptcha = () => {
     return { question: `${a} + ${b}`, answer: a + b };
 };
 
-const ContactS3 = () => {
+const ContactS3 = ({ dict, lang }: ContactS3Props) => {
     const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
     const [agreed, setAgreed] = useState(false);
     const [captcha, setCaptcha] = useState(generateCaptcha);
     const [captchaInput, setCaptchaInput] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errors, setErrors] = useState<Record<string, string>>({});
+    const [modalOpen, setModalOpen] = useState<'consent' | 'policy' | null>(null);
 
     const refreshCaptcha = () => {
         setCaptcha(generateCaptcha());
@@ -28,14 +36,14 @@ const ContactS3 = () => {
 
     const validate = () => {
         const e: Record<string, string> = {};
-        if (!form.name.trim()) e.name = 'Обязательное поле';
-        if (!form.email.trim()) e.email = 'Обязательное поле';
-        else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = 'Неверный e-mail';
-        if (!form.phone.trim()) e.phone = 'Обязательное поле';
-        if (!form.message.trim()) e.message = 'Обязательное поле';
-        if (!agreed) e.agreed = 'Необходимо согласие';
-        if (!captchaInput.trim()) e.captcha = 'Введите ответ';
-        else if (parseInt(captchaInput) !== captcha.answer) e.captcha = 'Неверный ответ';
+        if (!form.name.trim()) e.name = dict.validation.required;
+        if (!form.email.trim()) e.email = dict.validation.required;
+        else if (!/\S+@\S+\.\S+/.test(form.email)) e.email = dict.validation.invalidEmail;
+        if (!form.phone.trim()) e.phone = dict.validation.required;
+        if (!form.message.trim()) e.message = dict.validation.required;
+        if (!agreed) e.agreed = dict.validation.consentRequired;
+        if (!captchaInput.trim()) e.captcha = dict.validation.captchaRequired;
+        else if (parseInt(captchaInput) !== captcha.answer) e.captcha = dict.validation.captchaWrong;
         return e;
     };
 
@@ -77,10 +85,10 @@ const ContactS3 = () => {
     };
 
     const fields = [
-        { key: 'name', placeholder: '[ Имя / организация ]*' },
-        { key: 'email', placeholder: '[ E-mail ]*' },
-        { key: 'phone', placeholder: '[ Телефон ]*' },
-        { key: 'message', placeholder: '[ Сообщение ]*' },
+        { key: 'name', placeholder: dict.fields.name },
+        { key: 'email', placeholder: dict.fields.email },
+        { key: 'phone', placeholder: dict.fields.phone },
+        { key: 'message', placeholder: dict.fields.message },
     ];
 
     return (
@@ -88,7 +96,7 @@ const ContactS3 = () => {
             <div className="container">
                 <div className="h-screen flex flex-col items-start justify-center ">
                     <h1 className="other_font uppercase font-bold text-4xl md:text-5xl lg:text-6xl text-[#fff] mb-12">
-                        Свяжитесь с нами
+                        {dict.title}
                     </h1>
 
                     <div className="max-w-2xl flex flex-col gap-2">
@@ -131,10 +139,22 @@ const ContactS3 = () => {
                                     )}
                                 </div>
                                 <span className="other_font text-xs text-[#fff]/80 leading-relaxed">
-                            Я подтверждаю ознакомление и даю{' '}
-                                    <a href="#" className="text-[#50D873] hover:underline">Согласие на обработку моих персональных данных</a>
-                                    {' '}в соответствии с ФЗ от 27.07.2006 №152-ФЗ в порядке и на условиях, указанных в{' '}
-                                    <a href="#" className="text-[#50D873] hover:underline">Политике обработки персональных данных</a>
+                            {dict.consent.text}{' '}
+                                    <a
+                                        href="#"
+                                        onClick={(e) => { e.preventDefault(); setModalOpen('consent'); }}
+                                        className="text-[#50D873] hover:underline cursor-pointer"
+                                    >
+                                        {dict.consent.link1}
+                                    </a>
+                                    {' '}{dict.consent.middle}{' '}
+                                    <a
+                                        href="#"
+                                        onClick={(e) => { e.preventDefault(); setModalOpen('policy'); }}
+                                        className="text-[#50D873] hover:underline cursor-pointer"
+                                    >
+                                        {dict.consent.link2}
+                                    </a>
                         </span>
                             </label>
                             {errors.agreed && (
@@ -150,8 +170,8 @@ const ContactS3 = () => {
                                 disabled={status === 'loading'}
                                 className="flex items-center gap-2 rounded-full border border-black/12 bg-transparent py-2 pl-5 pr-2 group hover:bg-[#50D873] hover:border-[#50D873] transition-colors duration-300 cursor-pointer disabled:opacity-60"
                             >
-                        <span className="other_font text-sm font-medium text-[#2B362D] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
-                            {status === 'loading' ? 'Отправка...' : 'Отправить'}
+                        <span className="other_font text-sm font-medium text-[#fff] group-hover:text-white transition-colors duration-300 whitespace-nowrap">
+                            {status === 'loading' ? dict.buttons.sending : dict.buttons.submit}
                         </span>
                                 <span className="w-9 h-9 rounded-full bg-[#50D873] group-hover:bg-white flex items-center justify-center transition-colors duration-300 shrink-0">
                             <ChevronRight size={18} className="stroke-white group-hover:stroke-[#50D873] transition-colors duration-300" strokeWidth={2.5} />
@@ -171,13 +191,13 @@ const ContactS3 = () => {
                                             setCaptchaInput(e.target.value);
                                             if (errors.captcha) setErrors(prev => ({ ...prev, captcha: '' }));
                                         }}
-                                        placeholder="Введите текст"
+                                        placeholder={dict.captcha.placeholder}
                                         className="other_font w-28 bg-transparent outline-none text-sm text-[#2B362D] placeholder-[#2B362D]/40"
                                     />
                                     <button
                                         onClick={refreshCaptcha}
                                         className="text-[#2B362D]/40 hover:text-[#50D873] transition-colors duration-200 cursor-pointer"
-                                        title="Обновить"
+                                        title={dict.captcha.refreshTitle}
                                     >
                                         <RefreshCw size={14} />
                                     </button>
@@ -195,7 +215,7 @@ const ContactS3 = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="other_font text-sm text-[#50D873] mt-2"
                             >
-                                ✓ Сообщение успешно отправлено!
+                                {dict.messages.success}
                             </motion.p>
                         )}
                         {status === 'error' && (
@@ -204,13 +224,21 @@ const ContactS3 = () => {
                                 animate={{ opacity: 1, y: 0 }}
                                 className="other_font text-sm text-red-500 mt-2"
                             >
-                                Ошибка отправки. Попробуйте ещё раз.
+                                {dict.messages.error}
                             </motion.p>
                         )}
                     </div>
                 </div>
 
             </div>
+
+            {/* Privacy Modal */}
+            <PrivacyModal
+                isOpen={modalOpen !== null}
+                onClose={() => setModalOpen(null)}
+                type={modalOpen || 'consent'}
+                lang={lang}
+            />
         </div>
     );
 };

@@ -3,104 +3,96 @@
     "title": "Production"
   },
   "s1": {
-    "title": "Main Production Units",
-    "subtitle": "Years of accumulated experience and a quality control system at all stages of production guarantee reliability, precision and consistency of characteristics to consumers of aluminum semi-finished products",
+    "title": "PRODUCTION COMPLEX",
+    "subtitle": "The modern production structure of Gurlan Global Teks integrates all stages of the textile cycle — from cotton processing to finished product manufacturing. Process integration, the use of advanced technologies, and quality control at every stage ensure stability, efficiency, and compliance with international standards.",
     "button": "Our products",
     "cards": [
       {
-        "title": "Press tooling",
-        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+        "title": "Spinning Department",
+        "description": ["Yarn production using equipment from Trützschler, Rieter, Zinser, and Saurer."]
       },
       {
-        "title": "Press shops",
-        "description": "Production of rods, profiles and pipes from hard- and easy-deformable alloys"
+        "title": "Knitting Department",
+        "description": "Production of knitted fabrics using machinery from Mayer, Orizio, Pilotelli, and Vilike."
       },
       {
-        "title": "Tube press shop",
-        "description": "Production of pipes, calibrated rods, extruded rods into coil — blank for welding wire"
+        "title": "Dyeing Department",
+        "description": "Fabric dyeing using technologies from Corino, Ferraro, and Odesi."
       },
       {
-        "title": "Forging and press shop",
-        "description": "Production of forgings and stampings, semi-finished products and finished automotive wheels"
-      },
-      {
-        "title": "Rolling section",
-        "description": "Production of rolled strips and sheets for electrolyzers"
+        "title": "Sewing Department",
+        "description": "Manufacturing of finished garments using equipment from Juki, Kansai, Jack, and Herbert Pavagon."
       }
     ]
   },
   "s2": {
-    "title": "KraMZ production capacity exceeds 130 thousand tons per year",
-    "text": "KraMZ ships more than 10 thousand tons of finished products monthly to various regions of the country, as well as near and far abroad"
+    "title": [ "PRODUCTION CAPACITIES" , " OF GURLAN GLOBAL TEKS"],
+    "text": "The company’s total production capacities ensure a full-cycle textile manufacturing process — from yarn to finished products. Each year, the enterprise produces thousands of tons of goods, including yarn, fabrics, and finished garments that comply with international quality standards."
   },
   "s3": {
-    "title": "One of the country's largest processors",
-    "subtitle": "Years of accumulated experience and a quality control system at all stages of production guarantee reliability, precision and consistency of characteristics to consumers of aluminum semi-finished products",
+    "title": "Annually, the company produces",
+    "subtitle": "Modern technologies and large-scale production enable stable supplies to international markets.",
     "stats": [
       {
-        "value": "17000+",
-        "unit": "product\ntypes",
+        "value": "+ 4000 tons",
+        "unit": " of yarn",
         "label": "Product nomenclature"
       },
       {
-        "value": "22+",
-        "unit": "thousand\ntons/year",
-        "label": "HARD ALLOYS: pipes, rods, profiles for engineering, aviation, shipbuilding and other transport segments"
+        "value": "Up to 300 tons",
+        "unit": "of knitted fabrics",
+        "label": "HARD ALLOYS: pipes, rods, and profiles for engineering, aviation, shipbuilding, and other transport sectors"
       },
       {
-        "value": "18+",
-        "unit": "thousand\ntons/year",
-        "label": "SOFT ALLOYS: standard profile per customer drawings for construction, bridge building, load-bearing systems and transport segments"
+        "value": "+ 3 500 tons",
+        "unit": "of dyed fabrics",
+        "label": "SOFT ALLOYS: standard profiles manufactured according to customer drawings for construction, bridge engineering, load-bearing systems, and transport sectors"
       },
       {
-        "value": "70+",
-        "unit": "aluminum\nbridges",
-        "label": "Manufactured for cities of the Russian Federation and foreign customers"
+        "value": "Up to 9 million",
+        "unit": "finished garments",
+        "label": "Manufactured for cities in the Russian Federation and foreign customers"
       }
     ]
   },
   "s4": {
-    "title": "Clean Aluminum",
+    "title": "CERTIFICATION AND QUALITY",
     "paragraphs": [
-      "KraMZ pays great attention to environmental issues and strives to minimize the negative impact on the environment. The climate agenda is one of the key areas of KraMZ's environmental activities and is an integral part of the company's corporate culture.",
-      "The carbon footprint of ALLOW is one of the lowest in the industry. We continue our work in reducing greenhouse gas emissions and have set ourselves the task: increasing the use of ALLOW in the company's products.",
-      "We support our clients' desire to increase social responsibility and are ready to move in this direction together!"
+      "Gurlan Global Teks places special emphasis on product quality, sustainable development, and compliance with international standards. The integration of modern technologies, quality control at all stages of production, and responsible resource management enable the company to produce competitive products for the global market.",
+      "Our activities are based on the principles of transparency, environmental responsibility, and continuous process improvement. We strive to meet the expectations of our international partners and ensure consistent product quality."
     ],
     "certificates": [
-      { "title": "OEKO-TEX®", "subtitle": "Сертификат безопасности текстильной продукции" ,
+      { "title": "OEKO-TEX®", "subtitle": "Certificate of textile product safety" ,
         "pdf_name": "oeko"
       },
-      { "title": "WRAP", "subtitle": "Сертификат социальной ответственности производства",
-        "pdf_name": "wrap" },
-      { "title": "ISO 9001", "subtitle": "Система менеджмента качества",
-        "pdf_name": "iso"},
-      { "title": "SEDEX", "subtitle": "Стандарт этичной и ответственной деловой практики",
+      { "title": "SEDEX", "subtitle": "Standard for ethical and responsible business practices",
         "pdf_name": "sedex" }
     ],
     "downloadButton": "Download"
   },
   "s5": {
-    "title": "We create opportunities to implement any of your ideas",
+    "title": "MODERN FULL-CYCLE TEXTILE PRODUCTION",
+    "btn": "Contacts",
     "cards": [
       {
-        "title": "Smelting shop",
-        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+        "title": "Spinning Department",
+        "description": ["Production of KD and OE yarn", "Modern equipment from leading global brands", "Stable quality and high product strength"]
       },
       {
-        "title": "Press shops",
-        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+        "title": "Knitting Department",
+        "description": ["Production of various types of knitted fabrics", "Technologies from Mayer, Orizio, and Pilotelli", "Flexibility according to customer requirements"]
       },
       {
-        "title": "Tube press shop",
-        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+        "title": "Dyeing Department",
+        "description": ["Fabric dyeing with quality control", "Technologies from Corino, Ferraro, and Odesi", "Color fastness and eco-friendly processes"]
       },
       {
-        "title": "Forging and press shop",
-        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+        "title": "Printing and Garment Manufacturing",
+        "description": ["Screen printing and design application", "Full-cycle finished garment production", "Equipment: Fabrobrand, Juki, Kansai, Jack","Up to 9 million garments per year"]
       },
       {
-        "title": "Rolling section",
-        "description": ["Design and 3D modeling", "CNC machine program preparation", "Press tooling manufacturing"]
+        "title": "Прокатный участок",
+        "description": ["Проектирование и 3D-моделирование", "Подготовка программ для ЧПУ станков", "Изготовление прессового инструмента"]
       }
     ]
   },

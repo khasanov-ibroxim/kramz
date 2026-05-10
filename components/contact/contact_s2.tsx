@@ -3,23 +3,16 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import type { Map as LeafletMap } from 'leaflet';
+import type { ContactDictionary } from '@/lib/dictionary';
+
+interface ContactS2Props {
+    dict: ContactDictionary['s2'];
+}
 
 const MAP_CENTER: [number, number] = [41.840569, 60.394338];
 const MAP_ZOOM = 16;
 const MAP_URL = "https://www.google.com/maps/dir/?api=1&destination=41.840569,60.394338";
 const QR_URL = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(MAP_URL)}`;
-
-const MARKERS = [
-    {
-        id: 1,
-        label: 'Gurlan Global Teks',
-        pos: { x: 45, y: 48 },
-        popup: {
-            title: 'Республика Узбекистан,Хорезмская область,Гурленский район,ул.Мустакиллик,5',
-            hours: 'Круглосуточно, без выходных',
-        },
-    },
-];
 
 const mapStyles = `
 .leaflet-container { cursor: default !important; }
@@ -29,10 +22,22 @@ const mapStyles = `
 
 type ReactLeaflet = typeof import('react-leaflet');
 
-const ContactS2 = () => {
+const ContactS2 = ({ dict }: ContactS2Props) => {
     const [activeMarker, setActiveMarker] = useState<number | null>(null);
     const [LeafletMap, setLeafletMap] = useState<ReactLeaflet | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
+
+    const MARKERS = [
+        {
+            id: 1,
+            label: dict.marker.label,
+            pos: { x: 45, y: 48 },
+            popup: {
+                title: dict.marker.title,
+                hours: dict.marker.hours,
+            },
+        },
+    ];
 
     useEffect(() => {
         import('react-leaflet').then((rl) => {
@@ -75,7 +80,7 @@ const ContactS2 = () => {
                 transition={{ duration: 0.25 }}
                 className="other_font uppercase font-semibold text-3xl md:text-4xl text-[#2B362D] mb-10"
             >
-                Схема проезда
+                {dict.title}
             </motion.h1>
 
             <div
@@ -103,7 +108,7 @@ const ContactS2 = () => {
                     </LeafletMap.MapContainer>
                 ) : (
                     <div className="w-full h-full bg-[#e8ede8] flex items-center justify-center">
-                        <span className="other_font text-sm text-black/30">Загрузка карты...</span>
+                        <span className="other_font text-sm text-black/30">{dict.loading}</span>
                     </div>
                 )}
 
@@ -157,7 +162,7 @@ const ContactS2 = () => {
                                                     <p className="other_font text-sm font-semibold text-[#2B362D] mb-1.5 leading-snug">
                                                         {marker.popup.title}
                                                     </p>
-                                                    <p className="other_font text-xs text-black/40 mb-0.5">Режим работы:</p>
+                                                    <p className="other_font text-xs text-black/40 mb-0.5">{dict.hoursLabel}</p>
                                                     <p className="other_font text-sm text-[#2B362D]">
                                                         {marker.popup.hours}
                                                     </p>
@@ -191,7 +196,7 @@ const ContactS2 = () => {
                         rel="noopener noreferrer"
                         className="other_font text-[9px] md:text-[11px] font-bold text-[#2B362D] uppercase tracking-wide hover:text-[#50D873] transition-colors duration-200"
                     >
-                        Проложить маршрут
+                        {dict.routeButton}
                     </a>
                 </div>
 

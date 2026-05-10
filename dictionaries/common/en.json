@@ -3,6 +3,7 @@
     "links": {
       "about": "About",
       "production": "Production",
+      "products": "Products",
       "contacts": "Contacts"
     },
     "actions": {
@@ -18,34 +19,36 @@
   "footer": {
     "columns": {
       "about": {
-        "title": "Меню",
+        "title": "Menu",
         "links": [
-          { "title": "Главная", "link": "" },
-          { "title": "О компании", "link": "about" },
-          { "title": "Производство", "link": "production" }
+          { "title": "Home", "link": "" },
+          { "title": "About Us", "link": "about" },
+          { "title": "Production", "link": "production" }
         ]
       },
       "clients": {
-        "title": "Клиентам",
+        "title": "For Clients",
         "links": [
-          { "title": "Продукция", "link": "/products" },
-          { "title": "Услуги", "link": "/services" }
+          { "title": "Products", "link": "/products" },
+          { "title": "Services", "link": "/services" }
         ]
       },
       "contacts": {
-        "title": "Контакты",
+        "title": "Contacts",
         "links": [
-          { "title": "+7 391 226 70 99", "link": "tel:+73912267099" },
-          { "title": "info@gurlanglobalteks.uz", "link": "mailto:info@gurlanglobalteks.uz" },
-          { "title": "Telegram", "link": "https://t.me/ggt_inc" }
+          { "title": "+998 97 857 00 05", "link": "tel:+998978570005" },
+          { "title": "gurlanglobal@gmail.com", "link": "mailto:gurlanglobal@gmail.com" },
+          { "title": "Telegram", "link": "https://t.me/ggt_inc" },
+          { "title": "Whatsapp", "link": "https://wa.me/998978570005" },
+          { "title": "Instagram", "link": "https://www.instagram.com/ggt_textile/" }
         ]
       }
     },
-    "address_title": "Адрес",
-    "address": "Республика Узбекистан,\nХорезмская область,\nГурленский район,\nул. Мустакиллик, 5\n",
-    "viewOnMap": "Посмотреть на карте",
-    "suppliers": "Каталог",
-    "orderProducts": "Заказать продукцию "
+    "address_title": "Address",
+    "address": "Republic of Uzbekistan, Khorezm Region, Gurlan District, Mustaqillik Street, 5",
+    "viewOnMap": "View on map",
+    "suppliers": "Catalog",
+    "orderProducts": "Order products"
   },
   "buttons": {
     "readMore": "Read more",

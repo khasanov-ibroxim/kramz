@@ -44,7 +44,7 @@ export default async function LangLayout({
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(manufacturerSchema) }}
             />
             <PageTransition>
-                <Navbar lang={lang} />
+                <Navbar lang={lang} dict={dict} />
                 {children}
                 <Footer dict={dict} lang={lang}/>
             </PageTransition>

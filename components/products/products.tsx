@@ -101,7 +101,7 @@ const WOMEN_IMAGES: ImageItem[] = [
 const FABRIC_IMAGES: ImageItem[] = [
     { id: 1, src: f1, name: "2 нитка" },
     { id: 2, src: f2, name: "3 нитка" },
-    { id: 3, src: f3, name: "Kulirka" },
+    { id: 3, src: f3, name: "Кулирка" },
     { id: 4, src: f4, name: "Велюр" },
     { id: 5, src: f5, name: "Интерлок" },
     { id: 6, src: f6, name: "Кашкорсе" },

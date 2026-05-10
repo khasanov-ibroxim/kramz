@@ -8,19 +8,14 @@ import { sweepNavigate } from '@/components/UI/Pagetransition';
 import logo from "@/assets/Gurlan_global-03.png"
 import Image from "next/image";
 import Link from "next/link";
+import type { CommonDictionary } from '@/lib/dictionary';
 
 interface NavbarProps {
     lang: string;
+    dict: CommonDictionary;
 }
 
 const EASE = [0.76, 0, 0.24, 1] as const;
-
-const NAV_LINKS = [
-    { label: 'О компании', href: '/about' },
-    { label: 'Производство',   href: '/production' },
-    { label: 'Продукция',   href: '/products' },
-    { label: 'Контакты',   href: '/contact' },
-];
 
 const LOCALES = ['en', 'ru'] as const;
 
@@ -78,8 +73,15 @@ function SweepLink({
 }
 
 // ── Mobile Menu ────────────────────────────────────────────
-function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => void; lang: string }) {
+function MobileMenu({ open, onClose, lang, dict }: { open: boolean; onClose: () => void; lang: string; dict: CommonDictionary }) {
     const pathname = usePathname();
+
+    const NAV_LINKS = [
+        { label: dict.navbar.links.about, href: '/about' },
+        { label: dict.navbar.links.production, href: '/production' },
+        { label: dict.navbar.links.products, href: '/products' },
+        { label: dict.navbar.links.contacts, href: '/contact' },
+    ];
 
     useEffect(() => {
         if (open) document.body.style.overflow = 'hidden';
@@ -172,11 +174,11 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
                                 color: 'rgba(255,255,255,0.45)',
                                 fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                                 marginBottom: 14, textTransform: 'uppercase',
-                            }}>Действия:</p>
+                            }}>{dict.navbar.mobile.actions}</p>
                             <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
                                 {[
-                                    { label: 'Связаться с нами', pdf: false },
-                                    { label: 'Скачать каталог', pdf: true },
+                                    { label: dict.navbar.mobile.contactUs, pdf: false },
+                                    { label: dict.navbar.mobile.downloadCatalog, pdf: true },
                                 ].map(({ label, pdf }) => (
                                     <button key={label} style={{
                                         padding: '9px 18px', borderRadius: 24,
@@ -244,10 +246,17 @@ function MobileMenu({ open, onClose, lang }: { open: boolean; onClose: () => voi
 }
 
 // ── Main Navbar ────────────────────────────────────────────
-export default function Navbar({ lang }: NavbarProps) {
+export default function Navbar({ lang, dict }: NavbarProps) {
     const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+
+    const NAV_LINKS = [
+        { label: dict.navbar.links.about, href: '/about' },
+        { label: dict.navbar.links.production, href: '/production' },
+        { label: dict.navbar.links.products, href: '/products' },
+        { label: dict.navbar.links.contacts, href: '/contact' },
+    ];
 
     const isHeroPage = pathname === `/${lang}` || pathname === `/${lang}/`;
 
@@ -355,7 +364,7 @@ export default function Navbar({ lang }: NavbarProps) {
                             fontSize: 14, cursor: 'pointer', whiteSpace: 'nowrap',
                             transition: 'border-color 0.4s, color 0.4s',
                         }}>
-                            Скачать каталог
+                            {dict.navbar.actions.downloadCatalog}
                             <span style={{
                                 background: '#50D873', color: '#fff',
                                 borderRadius: 5, padding: '2px 6px',
@@ -371,7 +380,7 @@ export default function Navbar({ lang }: NavbarProps) {
                             fontSize: 14, cursor: 'pointer', whiteSpace: 'nowrap',
                             transition: 'border-color 0.4s, color 0.4s',
                         }}>
-                            Связаться с нами
+                            {dict.navbar.actions.contactUs}
                         </Link>
 
                         <a href={"tel:+998978570005"} style={{
@@ -414,7 +423,7 @@ export default function Navbar({ lang }: NavbarProps) {
                             fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif',
                             cursor: 'pointer', whiteSpace: 'nowrap',
                         }}>
-                            Скачать каталог
+                            {dict.navbar.actions.downloadCatalog}
                             <span style={{
                                 background: '#50D873', color: '#fff',
                                 borderRadius: 4, padding: '1px 5px',
@@ -440,7 +449,7 @@ export default function Navbar({ lang }: NavbarProps) {
                 </div>
             </motion.header>
 
-            <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} lang={lang} />
+            <MobileMenu open={mobileOpen} onClose={() => setMobileOpen(false)} lang={lang} dict={dict} />
 
             <style>{`
                 .nav-desktop { display: flex !important; }

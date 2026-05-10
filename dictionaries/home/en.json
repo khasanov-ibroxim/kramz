@@ -1,32 +1,36 @@
 {
   "header": {
-    "title": " Gurlan global teks-ОТ ХЛОПКОВОГО ПОЛЯ ДО ГОТОВОЙ ОДЕЖДЫ ДЛЯ ВАШЕГО БРЕНДА"
+    "title": "Gurlan Global Teks — From Cotton Fields to Ready-to-Wear Products for Your Brand",
+    "videoButton": "Watch video",
+    "videoModal": {
+      "close": "ESC — close"
+    }
   },
   "s2": {
-    "title": "Ключевые показатели",
+    "title": "Key Metrics",
     "texts": [
-      "Gurlan Global Teks- это современный текстильный кластер, объединяющий все этапы: от выращивания собственного хлопка до выпуска готовой одежды. Мы контролируем каждый микропроцесс, что позволяет нам гарантировать чистоту сырья, стабильность цвета и прозрачное ценообразование без участия посредников.",
-      "Наша экосистема мощностью 6 млн изделий в год адаптирована под высокие требования международного ритейла. Благодаря внедрению инноваций и сертификации SEDEX,OEKO-TEX и ISO, мы обеспечиваем брендам не только высокое качество пошива, но и полную социальную и экологическую ответственность производства."
+      "Gurlan Global Teks is a modern textile cluster that integrates every stage of production — from cultivating our own cotton to manufacturing finished garments. We control every micro-process, enabling us to guarantee raw material purity, color consistency, and transparent pricing without intermediaries.",
+      "Our ecosystem, with a capacity of 6 million garments per year, is tailored to meet the high standards of international retail. Through the implementation of innovative technologies and certifications such as SEDEX, OEKO-TEX, and ISO, we provide brands not only with high-quality manufacturing but also with full social and environmental responsibility."
     ],
     "stats": [
-      { "value": "№1",           "label": "Вертикально интегрированное текстильное производство полного цикла" },
-      { "value": "Наши сертификаты",  "label": "OEKO_TEX , SEDEX , ISO" },
-      { "value": "Экспорт",    "label": "Наш основной опыт работы связан с экспортом в зарубежные страны." },
-      { "value": "6 000 000",   "label": "Мы производим готовых изделий в год" },
-      { "value": "с 2020 года",  "label": "Динамичное развитие и выход на международный рынок" },
-      { "value": "1000+ сотрудников", "label": "Профессиональная команда предприятия" }
+      { "value": "№1",           "label": "Fully vertically integrated textile manufacturing (full-cycle production)" },
+      { "value": "Our Certifications",  "label": ["OEKO-TEX, SEDEX, ISO." , "BCI and Better Cotton — in progress"] },
+      { "value": "Export",    "label": "Our core experience is focused on exporting to international markets" },
+      { "value": "6 000 000",   "label": "Garments produced annually" },
+      { "value": "Since 2020",  "label": "Dynamic growth and expansion into international markets" },
+      { "value": "1000+ Employees", "label": "A highly professional team" }
     ]
   },
   "s3": {
-    "title": "Продукция",
-    "subtitle": "Мы создаём высококачественную текстильную продукцию в рамках вертикально-интегрированного кластера. Контроль на каждом этапе -от семени хлопка до финальной упаковки готовой одежды-позволяет нам гарантировать соответствие международным стандартам ISO и OEKO-TEX.",
+    "title": "Products",
+    "subtitle": "We produce high-quality textile products within a vertically integrated cluster. Control at every stage — from cotton seed to final garment packaging — allows us to ensure full compliance with international standards such as ISO and OEKO-TEX.",
     "tabs": ["Продукция", "Контакты"],
     "byType": [
-      { "title": "Хлопок", "desc": "Натуральное сырьё высокого качества, выращенное с соблюдением современных агротехнологий и стандартов устойчивого производства." },
-      { "title": "Пряжа", "desc": "Производственная мощность составляет 4000 тонн пряжи в год. Мы используем передовые технологии от мировых лидеров- Trützschler, Rieter, Zinser и Saurer, что позволяет выпускать высококачественную пряжу кольцевого (KD) и пневмомеханического (OE) способов прядения. " },
-      { "title": "Крашение и отделка", "desc": "Мощность цеха крашения составляет 3,5 тысячи тонн полотна в год. Мы используем передовое оборудование Dilmenler, а также технологии от ведущих брендов Corino, Ferraro и Odesi. Это гарантирует безупречную стойкость цвета, мягкость и долговечность трикотажа" },
-      { "title": "Ткани", "desc": "Наш вязальный цех оснащен высокотехнологичным оборудованием от мировых лидеров: Mayer, Orizio, Pilotelli и Vilike. Годовая мощность производства составляет 300 тонн трикотажного полотна высокого качества." },
-      { "title": "Готовая продукция", "desc": "Наша фабрика выпускает до 6 000 000 единиц готовой продукции в год, обеспечивая стабильные поставки для крупного ритейла." }
+      { "title": "Cotton", "desc": "High-quality natural raw material grown in compliance with modern agricultural technologies and sustainable production standards." },
+      { "title": "Yarn", "desc": "Our production capacity reaches 4,000 tons of yarn per year. We use advanced technologies from global industry leaders — Trützschler, Rieter, Zinser, and Saurer — enabling us to produce high-quality yarn using both ring spinning (KD) and open-end (OE) spinning methods." },
+      { "title": "Dyeing & Finishing", "desc": "The dyeing facility has a capacity of 3,500 tons of fabric per year. We use advanced equipment from Dilmenler, along with technologies from leading brands such as Corino, Ferraro, and Odesi. This ensures excellent color fastness, softness, and durability of knitted fabrics." },
+      { "title": "Fabrics", "desc": "Our knitting department is equipped with high-tech machinery from global leaders including Mayer, Orizio, Pilotelli, and Vilike. The annual production capacity reaches 300 tons of high-quality knitted fabric." },
+      { "title": "Finished Products", "desc": "Our factory produces up to 6,000,000 finished garments per year, ensuring stable supply for large-scale retail." }
     ],
     "solutions": [
       { "title": "Строительство", "desc": "Мы предлагаем как готовые архитектурно-строительные системы, так и нестандартные решения под нужды заказчика" },
@@ -36,15 +40,15 @@
     ]
   },
   "s4": {
-    "title": "Преимущества",
-    "text": "Gurlan Global Teks — это сочетание технологий, опыта и стратегического подхода, формирующее устойчивое конкурентное преимущество на международном рынке.",
+    "title": "Advantages",
+    "text": "Gurlan Global Teks brings together advanced technology, deep expertise, and a strategic approach to build a strong and sustainable competitive advantage in the global market.",
     "stats": [
-      { "value": "01", "title": "Полный цикл производства", "label": "Вертикальная интеграция — от хлопка до готовой продукции с контролем качества на каждом этапе." },
-      { "value": "02", "title": "Высокое качество", "label": "Современное оборудование и стандарты обеспечивают стабильность и соответствие международным требованиям." },
-      { "value": "03", "title": "Экспортная ориентация", "label": "Развитое международное сотрудничество и опыт работы с глобальными рынками." },
-      { "value": "04", "title": "Надёжное партнёрство", "label": "Долгосрочные отношения, основанные на доверии и выполнении обязательств." },
-      { "value": "05", "title": "Инновации и развитие", "label": "Внедрение современных технологий и постоянная оптимизация производственных процессов." },
-      { "value": "06", "title": "Устойчивое производство", "label": "Экологическая ответственность и эффективное использование ресурсов." }
+      { "value": "01", "title": "Full-Cycle Production", "label": "Vertical integration — from cotton to finished products with quality control at every stage." },
+      { "value": "02", "title": "High Quality", "label": "Modern equipment and standards ensure consistency and compliance with international requirements." },
+      { "value": "03", "title": "Export-Oriented", "label": "Strong international partnerships and extensive experience in global markets." },
+      { "value": "04", "title": "Reliable Partnership", "label": "Long-term relationships built on trust and commitment." },
+      { "value": "05", "title": "Innovation & Development", "label": "Implementation of advanced technologies and continuous optimization of production processes." },
+      { "value": "06", "title": "Sustainable Production", "label": "Environmental responsibility and efficient use of resources." }
     ]
   },
   "s5": {
@@ -85,18 +89,18 @@
     ]
   },
   "s6": {
-    "title": "ПОЧЕМУ ВЫБИРАЮТ НАС",
-    "text": "Мы обеспечиваем полный контроль качества на всех этапах: от выращивания хлопка до пошива готовой одежды. Производственная мощность нашей фабрики составляет 6 000 000 изделий в год. Наше производство сертифицировано по международным стандартам ISO, OEKO-TEX и SEDEX. Собственные цеха прядения и крашения позволяют нам гарантировать стабильность характеристик полотна. Мы используем современное оборудование от ведущих мировых технологических лидеров. Гарантированные сроки производства составляют от 30 до 45 рабочих дней. При заказе объемом от одной фуры мы берем на себя все расходы по доставке товара до вашего склада. Возможность работы по системе СТМ позволяет гибко адаптироваться под требования вашего бизнеса. Мы предлагаем прозрачное партнерство, основанное на надежности и долгосрочном сотрудничестве.\n",
-    "button": "Связаться с нами"
+    "title": "WHY CHOOSE US",
+    "text": "We ensure full quality control at every stage — from cotton cultivation to the production of finished garments. Our factory has a production capacity of 6,000,000 units per year. Our manufacturing is certified in accordance with international standards such as ISO, OEKO-TEX, and SEDEX. Our in-house spinning and dyeing facilities allow us to guarantee consistent fabric quality and performance. We use modern equipment from leading global technology providers. Production lead times are guaranteed and range from 7 to 35 business days. For orders starting from one full truckload, we cover all delivery costs to your warehouse. Our CMT (Cut, Make, Trim) service model provides flexibility to meet your specific business requirements. We offer transparent partnerships built on reliability and long-term cooperation.",
+    "button": "Contact Us"
   },
   "s7": {
-    "title": "МЫ ЦЕНИМ КАЖДОГО НАШЕГО ПАРТНЁРА",
+    "title": "WE VALUE EVERY ONE OF OUR PARTNERS",
     "buttons": {
-      "feedback": "Связаться с нами",
-      "directions": "Локация"
+      "feedback": "Contact Us",
+      "directions": "Location"
     },
     "phones": [
-      { "number": "+998 97 857 00 05", "label": "Справочная:" }
+      { "number": "+998 97 857 00 05", "label": "Information Desk:" }
     ]
   }
 }
